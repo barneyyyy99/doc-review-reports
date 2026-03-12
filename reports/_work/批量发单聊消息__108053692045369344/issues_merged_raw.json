@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "category": "api",
+    "type": "示例与描述不一致",
+    "severity": "P0",
+    "location": "应答包体示例（部分账号发送失败） + 应答包字段说明 > ActionStatus",
+    "original": "应答示例: \"ActionStatus\": \"SomeError\" / 字段说明: OK：表示处理成功 FAIL：表示失败",
+    "issue": "应答包体示例中"部分账号发送失败"场景使用了 ActionStatus: \"SomeError\"，但应答包字段说明中只列出了 OK 和 FAIL 两个值，未说明 SomeError 的含义。开发者无法确定如何正确判断部分失败的响应状态。",
+    "suggestion": "在应答包字段说明的 ActionStatus 字段说明中，补充 SomeError 值及其含义（表示部分账号发送成功，部分失败）。"
+  },
+  {
+    "id": 2,
+    "category": "代码",
+    "type": "字段名拼写错误",
+    "severity": "P1",
+    "location": "请求包示例 > 管理员指定某一账号向目标账号批量发消息 > 示例说明文字",
+    "original": "From_Accout 为管理员指定的发送方，接收方看到发送者不是管理员，而是 From_Account。",
+    "issue": "说明文字中首次出现的"From_Accout"拼写错误（缺少字母'n'），应为"From_Account"",
+    "suggestion": "将"From_Accout"修改为"From_Account""
+  }
+]

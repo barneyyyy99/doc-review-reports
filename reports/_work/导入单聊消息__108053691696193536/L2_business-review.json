@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/消息相关__发送消息__导入单聊消息__108053691696193536.md",
+  "label": "api",
+  "business_skill_id": "review-api",
+  "rule_path": ".claude/skills/review-api/SKILL.md",
+  "executed_at": "2026-03-11",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "类型结构矛盾",
+      "severity": "P0",
+      "category": "api",
+      "location": "错误码说明 > 错误码 90008",
+      "original": "JSON 格式请求包体中缺少 From_Account 字段或者 From_Account 字段不是 Integer 类型",
+      "description": "错误码 90008 的描述称 From_Account 应为 Integer 类型，但请求包字段说明中明确标注 From_Account 的类型为 String。类型描述相互矛盾，开发者无法确定正确类型。",
+      "suggestion": "将错误码 90008 的描述从"From_Account 字段不是 Integer 类型"修改为"From_Account 字段不是 String 类型"。"
+    }
+  ]
+}

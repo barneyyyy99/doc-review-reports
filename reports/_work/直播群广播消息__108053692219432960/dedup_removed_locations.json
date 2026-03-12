@@ -1,0 +1,13 @@
+{
+  "doc_path": "input-docs/batch_001/消息相关__发送消息__直播群广播消息__108053692219432960.md",
+  "generated_at": "2026-03-12",
+  "removed": [
+    {
+      "issue_summary": "适用的群组类型表格表头 \"支持此 REST API\" 与批次内其他文档不一致",
+      "kept_id": "P1-001",
+      "kept_source": "L1_terms-review",
+      "removed_source": "L2_business-review (API-001)",
+      "reason": "同类问题同位置，L1 与 L2 均发现，合并为 1 条"
+    }
+  ]
+}

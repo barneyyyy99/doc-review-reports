@@ -1,0 +1,18 @@
+{
+  "doc_path": "input-docs/batch_001/消息相关__发送消息__在群组中发送普通消息__108053691350163456.md",
+  "skill_id": "terms-review",
+  "rule_path": ".claude/skills/_shared/terms-review.md",
+  "executed_at": "2026-03-11",
+  "status": "completed",
+  "issues": [
+    {
+      "category": "术语",
+      "type": "术语不一致",
+      "severity": "P2",
+      "location": "错误码说明 > 错误码表头",
+      "original": "错误码 | 含义说明",
+      "issue": "错误码表格列标题使用"含义说明"，同批次其他接口文档（如单发单聊消息、在群组中发送系统通知等）的对应列名均为"描述"，不一致",
+      "suggestion": "将"含义说明"统一改为"描述""
+    }
+  ]
+}

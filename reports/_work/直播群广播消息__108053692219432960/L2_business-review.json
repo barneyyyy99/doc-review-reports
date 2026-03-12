@@ -1,0 +1,20 @@
+{
+  "doc_path": "input-docs/batch_001/消息相关__发送消息__直播群广播消息__108053692219432960.md",
+  "label": "api",
+  "business_skill_id": "review-api",
+  "rule_path": ".claude/skills/review-api/SKILL.md",
+  "executed_at": "2026-03-12",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "API-001",
+      "severity": "P1",
+      "category": "术语",
+      "type": "术语不一致",
+      "location": "接口调用说明 > 适用的群组类型 > 表格表头",
+      "original": "支持此 REST API",
+      "issue": "本文档\"适用的群组类型\"表格的第二列标题为\"支持此 REST API\"，而同批次\"在群组中发送普通消息\"接口的同类表格标题为\"是否支持此 REST API\"，用词不一致。",
+      "suggestion": "统一修改为\"是否支持此 REST API\"。"
+    }
+  ]
+}

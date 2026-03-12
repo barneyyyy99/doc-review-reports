@@ -1,0 +1,6 @@
+## confernece/roomkit
+
+appid：1600124969
+key：85b1a5e8ca5ac76d5460eeae9b62baa20dd4256003f174a228bef0bd3bc6b7f9
+usersig：eJwtzEELgjAcBfDvsnPY3NzmhE4FFUk16lJ4Ebbsbylrs0ii756px-d7j-dBx-QQvIxDCSIBRpM*gzZ1Axfo2T8djO71LbcWNEpCjnFIIsnl0Ji3BWc6Z4wRjPGgDVR-E1yKiJF43Hooulu1KmQ7p9lUUqrUJq*r07W0bvtYpou79LwN9f68U1zE5XqGvj8gmzD4
+userid：suri

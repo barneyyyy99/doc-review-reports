@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "category": "代码/api",
+    "type": "类型描述错误",
+    "severity": "P0",
+    "location": "错误码说明 > 错误码 90008",
+    "original": "JSON 格式请求包体中缺少 From_Account 字段或者 From_Account 字段不是 Integer 类型",
+    "issue": "错误码 90008 描述称 From_Account 字段"不是 Integer 类型"，但请求包字段说明中明确标注 From_Account 类型为 String。类型描述与字段定义相互矛盾，开发者无法确定正确类型。",
+    "suggestion": "将错误码 90008 的描述从"From_Account 字段不是 Integer 类型"修改为"From_Account 字段不是 String 类型"。"
+  },
+  {
+    "id": 2,
+    "category": "逻辑",
+    "type": "描述前后矛盾",
+    "severity": "P1",
+    "location": "功能说明 + 错误码说明 > 错误码 90992",
+    "original": "功能说明：该接口不会触发回调。/ 错误码90992：如果所有请求都返回该错误码，且 App 配置了第三方回调，请检查 App 服务器是否正常向即时通信 IM 后台服务器返回回调结果",
+    "issue": "功能说明明确指出"该接口不会触发回调"，但错误码 90992 描述中提到"如果 App 配置了第三方回调，请检查回调结果"，两处描述存在明显矛盾。[需人工确认]",
+    "suggestion": "如果该接口确实不触发回调，则删除错误码 90992 中关于回调检查的描述；如果某些情况下仍会触发，则在功能说明中补充说明例外场景。"
+  },
+  {
+    "id": 3,
+    "category": "术语",
+    "type": "术语不一致",
+    "severity": "P1",
+    "location": "错误码说明 > 错误码 90992",
+    "original": "请检查 App 服务器是否正常向即时通信 IM 后台服务器返回回调结果",
+    "issue": "错误码 90992 描述中使用"即时通信 IM"，与文档其他位置使用的"即时通信 Chat"术语不一致",
+    "suggestion": "将"即时通信 IM"统一替换为"即时通信 Chat""
+  }
+]

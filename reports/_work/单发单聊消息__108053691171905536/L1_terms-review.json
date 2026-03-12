@@ -1,0 +1,18 @@
+{
+  "doc_path": "input-docs/batch_001/消息相关__发送消息__单发单聊消息__108053691171905536.md",
+  "skill_id": "terms-review",
+  "rule_path": ".claude/skills/_shared/terms-review.md",
+  "executed_at": "2026-03-11",
+  "status": "completed",
+  "issues": [
+    {
+      "category": "术语",
+      "type": "术语不一致",
+      "severity": "P1",
+      "location": "错误码说明 > 错误码 90992",
+      "original": "请检查 App 服务器是否正常向即时通信 IM 后台服务器返回回调结果",
+      "issue": "错误码描述中使用"即时通信 IM"，与文档其他位置使用的"即时通信 Chat"术语不一致",
+      "suggestion": "将"即时通信 IM"统一替换为"即时通信 Chat""
+    }
+  ]
+}
