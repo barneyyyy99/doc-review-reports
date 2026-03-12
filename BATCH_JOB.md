@@ -76,6 +76,12 @@ Claude Code 不应在本文件中预设固定的目标文件夹。
 - 输入 `input-docs/batch_001/017_xxx.md`  
   -> 输出到 `reports_final/batch_001/`
 
+当第一轮报告文件已成功生成并写入目标目录后，执行：
+`bash scripts/publish_reports.sh main "update round1 review reports"`
+
+若无文件变更，则跳过提交与推送。
+若推送失败，保留本地生成结果并输出失败原因。
+
 ---
 
 ## 本批次必须先读取的文件
