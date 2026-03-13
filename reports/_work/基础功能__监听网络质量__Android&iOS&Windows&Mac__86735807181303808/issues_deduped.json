@@ -1,0 +1,59 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__监听网络质量__Android&iOS&Windows&Mac__86735807181303808.md",
+  "deduped_at": "2026-03-13",
+  "total_before_dedup": 6,
+  "total_after_dedup": 5,
+  "dedup_removed": 1,
+  "issues": [
+    {
+      "id": "logic-001",
+      "type": "前后描述矛盾",
+      "severity": "P0",
+      "category": "logic",
+      "location": "通话中网络质量检测 — 正文描述",
+      "original": "localQuality：代表您当前的网络质量，分为 6 个等级，分别是 Excellent、Good、Poor、Bad、VeryBad 和 Down。",
+      "description": "正文描述"分为 6 个等级"，但实际在网络质量等级表格中列出了 7 个值（0 Unknown、1 Excellent、2 Good、3 Poor、4 Bad、5 VeryBad、6 Down）。描述数量（6）与实际列出数量（7）不符，会导致开发者理解错误（该问题在逻辑审查和术语审查中均被发现）",
+      "suggestion": "将"分为 6 个等级"改为"分为 7 个等级，分别是 Unknown、Excellent、Good、Poor、Bad、VeryBad 和 Down""
+    },
+    {
+      "id": "code-001",
+      "type": "API 拼写错误",
+      "severity": "P0",
+      "category": "code",
+      "location": "执行网络测速 — C++ 和 C# 代码示例",
+      "original": "C++/C# 示例：TRTCSpeedTestParams params; ... param.userSig = userSig; param.expectedUpBandwidth = 5000; param.expectedDownBandwidth = 5000;",
+      "description": "C++ 和 C# 代码示例中，变量声明为 TRTCSpeedTestParams params，但后续部分赋值语句使用了 param（缺少尾部 s），与声明的变量名不一致，会导致编译错误",
+      "suggestion": "将 C++ 和 C# 示例中所有 param. 前缀统一改为 params.，确保与变量声明一致"
+    },
+    {
+      "id": "code-002",
+      "type": "语法错误",
+      "severity": "P0",
+      "category": "code",
+      "location": "通话中网络质量检测 — Android 代码示例",
+      "original": "public void onNetworkQuality(TRTCCloudDef.TRTCQuality localQuality, ArrayList<trtcclouddef.trtcquality> remoteQuality) ... for (TRTCCloudDef.TRTCQuality info : arrayList)",
+      "description": "Android 代码示例中存在两处问题：1）方法签名中的泛型参数写为 ArrayList<trtcclouddef.trtcquality>（全小写），Java 中类名区分大小写，应为 ArrayList<TRTCCloudDef.TRTCQuality>；2）for 循环遍历使用的变量名 arrayList 与方法参数名 remoteQuality 不一致，会导致编译错误",
+      "suggestion": "1）将 ArrayList<trtcclouddef.trtcquality> 改为 ArrayList<TRTCCloudDef.TRTCQuality>；2）将 for 循环中的 arrayList 改为 remoteQuality"
+    },
+    {
+      "id": "feat-001",
+      "type": "核心 API 参数缺少说明",
+      "severity": "P1",
+      "category": "feature",
+      "location": "执行网络测速 — 调用 API 章节",
+      "original": "通过调用 TRTCCloud 的 startSpeedTest 启动测速功能，测速结果将会通过回调函数返回。",
+      "description": "startSpeedTest 是本文档的核心 API，其 TRTCSpeedTestParams 参数各字段的含义、类型、必填/可选信息仅在代码注释中简略提及，正文中未提供参数说明表",
+      "suggestion": "在调用代码示例前，增加 TRTCSpeedTestParams 的参数说明表，至少说明 expectedUpBandwidth 和 expectedDownBandwidth 的含义、取值范围及默认值"
+    },
+    {
+      "id": "fmt-001",
+      "type": "空格",
+      "severity": "P2",
+      "category": "format",
+      "location": "网络测速原理 — TRTCSpeedTestResult 字段表格",
+      "original": "预测的上行带宽，单位为kbps， -1表示无效值",
+      "description": "中文"为"后直接接英文"kbps"，缺少空格，共出现 2 处（availableUpBandwidth 和 availableDownBandwidth 行）",
+      "suggestion": "改为"单位为 kbps"，全文中有多处，请批量修改"
+    }
+  ]
+}

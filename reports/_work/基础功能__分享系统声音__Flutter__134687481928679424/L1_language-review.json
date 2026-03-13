@@ -1,0 +1,27 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Flutter__134687481928679424.md",
+  "skill_id": "language-review",
+  "rule_path": ".claude/skills/_shared/language-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "标题规范",
+      "severity": "P1",
+      "category": "language",
+      "location": "iOS标签 步骤3：中途开启和关闭系统声音",
+      "original": "步骤3：中途开启和关闭系统声音",
+      "description": "「中途开启和关闭系统声音」不是「动词+宾语」结构，「中途」是时间状语，整个标题结构为「时间状语+动词+宾语」，与同文档其他步骤标题（如「开启麦克风」「开启屏幕分享」）的「动词+宾语」结构不一致。",
+      "suggestion": "改为「步骤3：调节系统声音音量」或「步骤3：开启/关闭系统声音」，与其他步骤标题结构保持一致。"
+    },
+    {
+      "type": "视角混乱",
+      "severity": "P1",
+      "category": "language",
+      "location": "iOS标签 步骤3：中途开启和关闭系统声音",
+      "original": "当您不希望将系统声音输出时，可以将音量设置为0",
+      "description": "「当您不希望将系统声音输出时」中的「您」语境指向最终用户（希望关闭声音的人），而文档目标读者为开发者。建议改用开发者视角的表达。",
+      "suggestion": "改为「如需禁止系统声音输出，可将音量设置为 0」，去掉「您」并使用客观表达。"
+    }
+  ]
+}

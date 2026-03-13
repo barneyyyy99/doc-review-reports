@@ -1,0 +1,27 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Electron__86735807516860416.md",
+  "skill_id": "logic_review",
+  "rule_path": ".claude/skills/_shared/logic-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "前后描述矛盾",
+      "severity": "P0",
+      "category": "logic",
+      "location": "步骤4：观看屏幕分享",
+      "original": "当房间里有一个用户启动了屏幕分享，会通过辅路进行分享。",
+      "description": "文档开头介绍中说明 Electron 平台支持主路分享和辅路分享两种方案，主路分享使用 TRTCVideoStreamTypeBig。但步骤4（观看屏幕分享）的正文和代码均只处理辅路（TRTCVideoStreamTypeSub / onUserSubStreamAvailable），完全未说明当发送方使用主路分享时观看端如何订阅。这造成主路分享场景的逻辑断裂：开发者按步骤4无法订阅主路屏幕共享流。",
+      "suggestion": "在步骤4中补充主路分享的观看说明：主路分享时监听 onUserVideoAvailable 事件，调用 startRemoteView(userId, dom, TRTCVideoStreamTypeBig) 来订阅画面；辅路分享则如现有示例，监听 onUserSubStreamAvailable 并调用 startRemoteView with TRTCVideoStreamTypeSub。"
+    },
+    {
+      "type": "关键分支场景缺失",
+      "severity": "P1",
+      "category": "logic",
+      "location": "介绍段落（主路分享 vs 辅路分享）",
+      "original": "Electron 平台下的屏幕分享支持主路分享和辅路分享两种方案",
+      "description": "文档介绍了两种方案（主路分享、辅路分享），但全文操作步骤仅以辅路分享为示例，未说明开发者如何选择方案、以及两种方案的适用场景（例如：是否同时上行摄像头、是否需要与腾讯会议互通等）。开发者不清楚何时选择主路分享。",
+      "suggestion": "在介绍两种方案时，补充选择建议，例如：'如需同时上行摄像头画面，建议使用辅路分享；如只需上行屏幕画面（互斥摄像头），可使用主路分享。'并在操作步骤中说明主路分享对应的参数差异。"
+    }
+  ]
+}

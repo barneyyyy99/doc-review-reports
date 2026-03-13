@@ -1,0 +1,30 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__iOS__115998184532062208.md",
+  "label": "feature",
+  "business_skill_id": "review-feature",
+  "rule_path": ".claude/skills/review-feature/SKILL.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "FEAT-001",
+      "type": "时序流程不完整",
+      "severity": "P1",
+      "category": "feature",
+      "location": "步骤3：中途开启和关闭系统声音",
+      "original_description": "SDK 提供了 TRTCCloud#setSystemAudioLoopbackVolume 方法对系统声音进行音量调节。当您不希望将系统声音输出时，可以将音量设置为0。",
+      "description": "`setSystemAudioLoopbackVolume` 作为本步骤唯一核心 API，正文中缺少参数的取值范围、类型说明（仅通过链接指向 API 文档）。功能指南要求核心 API 参数必须在正文中说明，不能仅依赖代码注释或外链。",
+      "suggestion": "在正文补充参数说明，例如："`setSystemAudioLoopbackVolume(volume: Int)` 的 `volume` 参数取值范围为 0–100，其中 0 表示静音。""
+    },
+    {
+      "id": "FEAT-002",
+      "type": "时序流程不完整",
+      "severity": "P1",
+      "category": "feature",
+      "location": "步骤1：开启麦克风",
+      "original_description": "调用 startLocalAudio 开启麦克风采集，推荐使用 TRTCAudioQualityDefault 音质。",
+      "description": "`startLocalAudio` 的参数 `quality`（即音质枚举）在正文中仅提到了推荐值 `TRTCAudioQualityDefault`，但未在正文中说明该参数的类型、取值范围或其他可选枚举值及适用场景，开发者无法判断自己的场景是否应使用其他音质。",
+      "suggestion": "在正文中补充 `quality` 参数说明，列出常用枚举值（如 `TRTCAudioQualityDefault`/`TRTCAudioQualitySpeech`/`TRTCAudioQualityMusic`）及其适用场景，或通过链接指向完整的枚举说明并在正文中注明"其他选项详见 API 文档"。"
+    }
+  ]
+}

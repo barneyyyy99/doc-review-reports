@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Windows__86735807479099392.md",
+  "skill_id": "format-review",
+  "rule_path": ".claude/skills/_shared/format-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "FMT-001",
+      "type": "空格",
+      "severity": "P2",
+      "category": "format",
+      "location": "获取分享目标、开始屏幕分享、设定画面质量章节",
+      "original": "通过`getScreenCaptureSources`可以枚举；通过调用`selectScreenCaptureTarget`更换分享目标；通过`setSubStreamEncoderParam`接口设定",
+      "description": "正文中行内代码（反引号包裹的 API 名）前后与中文字符之间缺少空格，违反中英文间距规范。",
+      "suggestion": "改为：「通过 `getScreenCaptureSources` 可以枚举」；「通过调用 `selectScreenCaptureTarget` 更换分享目标」；「通过 `setSubStreamEncoderParam` 接口设定」。全文中有多处，请批量修改。"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "doc_path": "input-docs/batch_001/消息相关__全员推送__全员推送__108053688609185792.md",
+  "merged_at": "2026-03-12T00:00:00Z",
+  "issues": [
+    {
+      "id": "doc1-fmt-001",
+      "category": "format_issues",
+      "type": "中英文之间未加空格",
+      "location": "接口调用说明 > 请求参数说明表格",
+      "original": "创建应用时，即时通信控制台分配的 SdkAppid",
+      "issue": "表格中对 sdkappid 参数的描述里，\"SdkAppid\" 与文档其他位置（如 URL 示例 sdkappid=88888888 的说明）及同系列文档中的 \"SDKAppID\" 写法不一致",
+      "suggestion": "统一改为 \"SDKAppID\"，与其他同系列文档保持一致",
+      "severity": "P2"
+    },
+    {
+      "id": "doc1-terms-001",
+      "category": "terms_issues",
+      "type": "产品名称不一致",
+      "location": "功能说明 > HINT 块",
+      "original": "\"全员推送\"为 IM 专业版、专业版Plus或企业版功能",
+      "issue": "HINT 块中使用了 \"IM 专业版\"，而同系列其他文档均使用 \"Chat 专业版\"",
+      "suggestion": "统一改为 \"Chat 专业版\"",
+      "severity": "P1"
+    },
+    {
+      "id": "doc1-code-001",
+      "category": "code_issues",
+      "type": "JSON 代码块内含非法注释",
+      "location": "请求包示例 > 第3个示例（设置离线推送信息）> ApnsInfo 部分",
+      "original": "\"BadgeMode\": 1, // 这个字段缺省或者为 0 表示需要计数...",
+      "issue": "JSON 格式不支持 `//` 行注释，代码块中出现了多处 `// ...` 注释，该 JSON 示例无法直接解析，会导致开发者复制使用时报错",
+      "suggestion": "将注释移到代码块外部作为文字说明，或改用独立字段说明表格",
+      "severity": "P1"
+    },
+    {
+      "id": "doc1-api-001",
+      "category": "api_issues",
+      "type": "字段说明缺少完整性",
+      "location": "请求包字段说明 > OfflinePushInfo",
+      "original": "\"离线推送信息配置，具体可参考 消息格式描述\"",
+      "issue": "OfflinePushInfo 字段的子字段（PushFlag、Desc、Ext、AndroidInfo、ApnsInfo 等）在请求示例中已出现，但字段说明表中未列出，仅以引用链接代替",
+      "suggestion": "补充 OfflinePushInfo 的主要子字段说明表，或在引用链接旁注明主要子字段列表",
+      "severity": "P2"
+    }
+  ]
+}

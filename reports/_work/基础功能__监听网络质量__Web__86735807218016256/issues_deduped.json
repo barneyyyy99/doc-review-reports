@@ -1,0 +1,29 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__监听网络质量__Web__86735807218016256.md",
+  "deduped_at": "2026-03-13",
+  "total_before_dedup": 2,
+  "total_after_dedup": 2,
+  "dedup_removed": 0,
+  "issues": [
+    {
+      "id": "logic-001",
+      "type": "信息缺失",
+      "severity": "P1",
+      "category": "logic",
+      "location": "通话前的网络质量检测 — 代码示例",
+      "original": "testUplinkNetworkQuality 函数：uplinkTRTC.enterRoom(...) 后直接注册 NETWORK_QUALITY 事件，未执行推流",
+      "description": "实现流程第3步描述"使用 uplinkTRTC 进行推流，监听 NETWORK_QUALITY 事件"，但代码示例中的 testUplinkNetworkQuality 函数调用 enterRoom 后未执行推流操作，与正文流程描述不一致",
+      "suggestion": "在 testUplinkNetworkQuality 函数中补充推流代码，或在正文说明中澄清无需主动推流即可检测上行网络质量"
+    },
+    {
+      "id": "fmt-001",
+      "type": "空格",
+      "severity": "P2",
+      "category": "format",
+      "location": "通话前的网络质量检测 — 实现流程，第5步",
+      "original": "整个过程可持续15s左右",
+      "description": "英文单位字母"s"与紧跟的中文"左右"之间缺少空格",
+      "suggestion": "改为"整个过程可持续 15s 左右""
+    }
+  ]
+}

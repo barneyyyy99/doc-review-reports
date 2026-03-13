@@ -1,0 +1,27 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Flutter__134687481928679424.md",
+  "skill_id": "logic-review",
+  "rule_path": ".claude/skills/_shared/logic-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "前后描述矛盾",
+      "severity": "P0",
+      "category": "logic",
+      "location": "iOS标签 步骤3：中途开启和关闭系统声音",
+      "original": "步骤3标题：「中途开启和关闭系统声音」；正文：「只能随录制开启而自动启动，随录制关闭而一起停止。无法单独对系统声音进行开关或静音操作。」",
+      "description": "步骤3的标题承诺介绍「中途开启和关闭系统声音」，但正文内容却明确说「无法单独对系统声音进行开关或静音操作」，正文实际内容与标题所承诺的内容直接矛盾，会造成开发者误解。",
+      "suggestion": "修改步骤3的标题，使其与正文内容一致，例如改为「步骤3：调节系统声音音量」，因为正文实际介绍的是音量调节（setSystemAudioLoopbackVolume），而非开关操作。"
+    },
+    {
+      "type": "信息缺失",
+      "severity": "P1",
+      "category": "logic",
+      "location": "iOS标签 步骤3：setSystemAudioLoopbackVolume 参数说明",
+      "original": "SDK 提供了 TRTCCloud#setSystemAudioLoopbackVolume 方法对系统声音进行音量调节，参数为0-100的整数。当您不希望将系统声音输出时，可以将音量设置为0",
+      "description": "「当您不希望将系统声音输出时，可以将音量设置为0」这句话句末缺少句号，是不完整的句子。",
+      "suggestion": "句末补充句号：「…可以将音量设置为 0。」"
+    }
+  ]
+}

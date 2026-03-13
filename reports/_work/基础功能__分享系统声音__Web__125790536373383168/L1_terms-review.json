@@ -1,0 +1,18 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Web__125790536373383168.md",
+  "skill_id": "terms-review",
+  "rule_path": ".claude/skills/_shared/terms-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "功能概念术语不一致",
+      "severity": "P2",
+      "category": "terms",
+      "location": "文档元数据（source 字段）vs 正文全文",
+      "original": "元数据：基础功能 / 分享系统声音 / Web；正文："分享系统音频"",
+      "description": "文档元数据（breadcrumb）中功能名称为"分享系统声音"，而正文各处（功能描述、实现流程、兼容性说明）均使用"分享系统音频"。"声音"与"音频"是不同词汇，混用可能使开发者在文档间交叉查阅时产生混淆。",
+      "suggestion": "统一使用一个术语。建议以正文为准，将元数据/breadcrumb 中的"分享系统声音"改为"分享系统音频"；或在正文首处注明"本文介绍分享系统音频（即分享系统声音）功能"。"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__监听网络质量__Web__86735807218016256.md",
+  "skill_id": "logic-review",
+  "rule_path": ".claude/skills/_shared/logic-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "logic-001",
+      "type": "信息缺失",
+      "severity": "P1",
+      "category": "logic",
+      "location": "通话前的网络质量检测 — 代码示例",
+      "original": "testUplinkNetworkQuality 函数中调用 uplinkTRTC.enterRoom 后，未推流直接监听网络质量事件",
+      "description": "实现流程第3步描述"使用 uplinkTRTC 进行推流，监听 NETWORK_QUALITY 事件"，但代码示例中的 testUplinkNetworkQuality 函数调用 enterRoom 后并未执行推流操作（未调用 startLocalAudio/startLocalVideo 或 publish 等接口），代码与流程描述不一致",
+      "suggestion": "在 testUplinkNetworkQuality 函数中补充推流代码（如 uplinkTRTC.startLocalAudio() 或 publish），或在正文说明中澄清不需要主动推流即可检测上行质量"
+    }
+  ]
+}

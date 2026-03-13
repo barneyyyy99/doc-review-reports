@@ -1,0 +1,18 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Mac__86735807661563904.md",
+  "label": "feature",
+  "business_skill_id": "review-feature",
+  "rule_path": ".claude/skills/review-feature/SKILL.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "核心 API 参数缺少说明",
+      "severity": "P1",
+      "location": "步骤6：设置系统声音采集音量",
+      "original_description": "调用 setSystemAudioLoopbackVolume 接口设置系统声音的采集音量。代码示例：[trtcCloud setSystemAudioLoopbackVolume:80];",
+      "description": "setSystemAudioLoopbackVolume 是本节的核心 API，但正文仅一句话描述其用途，未说明参数含义（音量值）、类型（整数）、取值范围（如 0-100）及默认值。开发者无法从文档判断参数的合法范围。",
+      "suggestion": "在步骤6正文中补充参数说明，例如：'参数为音量大小，类型为整数，取值范围 0-100，0 为静音，100 为原始采集音量，默认值为 [XX]。'"
+    }
+  ]
+}

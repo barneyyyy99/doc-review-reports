@@ -1,0 +1,18 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Android__86735807367962624.md",
+  "skill_id": "format_review",
+  "rule_path": ".claude/skills/_shared/format-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "空格",
+      "severity": "P2",
+      "category": "format",
+      "location": "步骤2：启动屏幕分享 / 推荐参数说明列表",
+      "original": "推荐10 FPS即可。",
+      "description": "英文缩写 \"FPS\" 与后续中文 \"即可\" 之间缺少空格，违反中英文之间需加空格的规范。",
+      "suggestion": "改为：推荐 10 FPS 即可。"
+    }
+  ]
+}

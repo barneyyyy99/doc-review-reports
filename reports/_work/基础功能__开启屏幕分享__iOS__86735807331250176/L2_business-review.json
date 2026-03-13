@@ -1,0 +1,40 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__iOS__86735807331250176.md",
+  "label": "feature",
+  "business_skill_id": "review-feature",
+  "rule_path": ".claude/skills/review-feature/SKILL.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "FEAT-001",
+      "type": "时序流程不完整",
+      "severity": "P0",
+      "category": "feature",
+      "location": "应用内分享 章节",
+      "original_description": "应用内分享的方案非常简单，只需要调用 TRTC SDK 提供的接口 TRTCCloud#startScreenCaptureInApp 并传入编码参数 TRTCVideoEncParam 即可。",
+      "description": "应用内分享章节仅说明了如何调用 startScreenCaptureInApp 开始屏幕分享，没有说明如何停止应用内屏幕分享（对应 stopScreenCapture），导致功能生命周期不完整（只有开始没有结束）。",
+      "suggestion": "在应用内分享章节补充停止屏幕分享的说明和示例：调用 TRTCCloud#stopScreenCapture 可随时中止屏幕分享，并补充对应代码示例。"
+    },
+    {
+      "id": "FEAT-002",
+      "type": "核心 API 参数缺少说明",
+      "severity": "P1",
+      "category": "feature",
+      "location": "步骤3：对接主 App 端的接收逻辑 → 步骤2（调用 startScreenCaptureByReplaykit:appGroup:）",
+      "original_description": "调用 TRTCCloud#startScreenCaptureByReplaykit:appGroup: 方法，并传入步骤1中设置的 AppGroup，让 SDK 进入"等待"状态。",
+      "description": "startScreenCaptureByReplaykit:appGroup: 是跨应用屏幕分享的核心启动 API，其第一个参数（videoEncParam，TRTCVideoEncParam 类型）在正文中未作任何说明（含义、必填/可选、传 nil 的行为）。代码示例中有该参数，但正文中缺乏说明，不满足核心 API 参数必须在正文中说明的要求。",
+      "suggestion": "在步骤3第2条正文中补充 startScreenCaptureByReplaykit:appGroup: 的参数说明：videoEncParam（TRTCVideoEncParam）：视频编码参数，可选，传 nil 时 SDK 沿用屏幕分享前的编码参数；appGroup（NSString）：App Group Identifier，必填，需与步骤1中配置的 App Group 一致。"
+    },
+    {
+      "id": "FEAT-003",
+      "type": "回调处理缺失",
+      "severity": "P1",
+      "category": "feature",
+      "location": "跨应用分享 → 步骤3：对接主 App 端的接收逻辑",
+      "original_description": "步骤3仅说明了启动和停止屏幕分享的调用，代码示例中包含 onScreenCaptureStarted 回调，但文档正文未说明其他关键回调（如屏幕分享停止/失败的回调）。",
+      "description": "代码示例仅展示了 onScreenCaptureStarted 成功回调，正文也未说明当屏幕分享因异常终止（如 Extension 进程被系统杀死）时，主 App 端应如何感知并响应。对于稳定性要求较高的场景，缺失失败/停止回调的说明会让开发者无法处理异常情况。",
+      "suggestion": "在步骤3中补充说明其他关键回调，例如：onScreenCaptureStopped：屏幕分享停止时触发（包含主动停止和异常停止），回调参数 reason 表示停止原因。"
+    }
+  ]
+}

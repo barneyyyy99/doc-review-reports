@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__uni-app__86735807589199872.md",
+  "skill_id": "format-review",
+  "rule_path": ".claude/skills/_shared/format-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "fmt-001",
+      "type": "空格",
+      "severity": "P2",
+      "category": "format",
+      "location": "开启屏幕分享章节",
+      "original": "通过设置 startScreenCapture 中参数encParams，您可以指定屏幕分享的编码质量。如果您指定encParams为 null",
+      "description": "正文中中文字符与英文字符之间缺少空格，存在两处：1）"参数encParams" 2）"指定encParams为"",
+      "suggestion": "改为"中参数 encParams，您可以指定……如果您指定 encParams 为 null"，全文中有多处，请批量修改"
+    }
+  ]
+}

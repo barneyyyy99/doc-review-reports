@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__监听网络质量__Android&iOS&Windows&Mac__86735807181303808.md",
+  "skill_id": "terms-review",
+  "rule_path": ".claude/skills/_shared/terms-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "terms-001",
+      "type": "技术术语不一致",
+      "severity": "P2",
+      "category": "terms",
+      "location": "通话中网络质量检测 — 正文描述，以及网络质量等级表格",
+      "original": "正文描述：localQuality 分为 6 个等级，分别是 Excellent、Good、Poor、Bad、VeryBad 和 Down；表格中列出 Quality 值 0（Unknown）",
+      "description": "正文描述"分为 6 个等级"，但随后的表格中列出了包括 Unknown（值0）在内的 7 行数据，实际上是 7 个等级（0-6）。描述数量与实际数量不一致，容易使开发者产生混淆",
+      "suggestion": "将正文中"分为 6 个等级"改为"分为 7 个等级（含 Unknown）"，或将 Unknown 排除并在说明中注明其特殊性"
+    }
+  ]
+}

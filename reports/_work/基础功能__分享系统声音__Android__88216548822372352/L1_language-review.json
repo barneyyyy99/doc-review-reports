@@ -1,0 +1,18 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Android__88216548822372352.md",
+  "skill_id": "language_review",
+  "rule_path": ".claude/skills/_shared/language-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "标题规范",
+      "severity": "P1",
+      "category": "language",
+      "location": "H3「开启分享系统声音」",
+      "original": "### 开启分享系统声音",
+      "description": "H3「开启分享系统声音」标题下的三个步骤既包含「开启」（步骤1、步骤2）也包含「关闭」（步骤3），标题与内容不匹配，容易误导读者以为该章节只介绍开启流程。",
+      "suggestion": "将 H3 标题改为「分享系统声音」或「开启和关闭分享系统声音」，以准确反映章节内容范围。"
+    }
+  ]
+}

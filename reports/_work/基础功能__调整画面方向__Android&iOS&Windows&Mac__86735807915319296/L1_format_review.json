@@ -1,0 +1,18 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__调整画面方向__Android&iOS&Windows&Mac__86735807915319296.md",
+  "skill_id": "format_review",
+  "rule_path": ".claude/skills/_shared/format_review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "中英文空格缺失",
+      "severity": "P2",
+      "category": "format",
+      "location": "正文多处，如"将 resMode 指定为`TRTCVideoResolutionModePortrait`即可"、"应该指定为`TRTCVideoResolutionModeLandscape`"等",
+      "original": "将 resMode 指定为`TRTCVideoResolutionModePortrait`即可",
+      "description": "正文中代码前后缺少空格，影响可读性",
+      "suggestion": "将代码标记前后补充空格，如"将 resMode 指定为 `TRTCVideoResolutionModePortrait` 即可""
+    }
+  ]
+}

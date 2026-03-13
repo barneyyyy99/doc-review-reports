@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Android__88216548822372352.md",
+  "label": "feature",
+  "business_skill_id": "review-feature",
+  "rule_path": ".claude/skills/review-feature/SKILL.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "回调处理缺失",
+      "severity": "P1",
+      "category": "feature",
+      "location": "步骤2：开启分享系统声音",
+      "original": "调用 TRTCCloud 中的 startSystemAudioLoopback 接口即可，这时候采集的系统声音会自动混入上行流中。",
+      "description": "文档未说明 startSystemAudioLoopback 的调用结果如何确认（成功/失败），开发者无法感知接口调用是否成功，也不知道是否有错误回调或返回值。",
+      "suggestion": "补充说明接口是否有返回值或对应的结果回调（如 onSystemAudioLoopbackError 等），指明开发者如何判断开启是否成功；若该接口为同步无返回值，请明确说明。"
+    }
+  ]
+}

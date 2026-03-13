@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__监听网络质量__Android&iOS&Windows&Mac__86735807181303808.md",
+  "skill_id": "logic-review",
+  "rule_path": ".claude/skills/_shared/logic-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "logic-001",
+      "type": "前后描述矛盾",
+      "severity": "P0",
+      "category": "logic",
+      "location": "通话中网络质量检测 — 正文描述",
+      "original": "localQuality：代表您当前的网络质量，分为 6 个等级，分别是 Excellent、Good、Poor、Bad、VeryBad 和 Down。",
+      "description": "正文描述"分为 6 个等级"，但实际在网络质量等级表格中列出了 7 个值（0 Unknown、1 Excellent、2 Good、3 Poor、4 Bad、5 VeryBad、6 Down）。描述数量（6）与实际列出数量（7）不符，会导致开发者理解错误",
+      "suggestion": "将"分为 6 个等级"改为"分为 7 个等级，分别是 Unknown、Excellent、Good、Poor、Bad、VeryBad 和 Down""
+    }
+  ]
+}

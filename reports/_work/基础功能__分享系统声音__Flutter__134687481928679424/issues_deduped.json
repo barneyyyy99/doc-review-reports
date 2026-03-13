@@ -1,0 +1,118 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Flutter__134687481928679424.md",
+  "generated_at": "2026-03-13",
+  "total_issues_before_dedup": 13,
+  "total_issues_after_dedup": 11,
+  "issues": [
+    {
+      "id": "P0-001",
+      "type": "前后描述矛盾",
+      "severity": "P0",
+      "category": "logic",
+      "location": "iOS标签 步骤3：中途开启和关闭系统声音",
+      "original": "步骤3标题：「中途开启和关闭系统声音」；正文：「只能随录制开启而自动启动，随录制关闭而一起停止。无法单独对系统声音进行开关或静音操作。」",
+      "description": "步骤3的标题承诺介绍「中途开启和关闭系统声音」，但正文明确说「无法单独对系统声音进行开关或静音操作」，标题与正文内容直接矛盾，会造成开发者误解。",
+      "suggestion": "修改步骤3的标题，使其与正文内容一致，例如改为「步骤3：调节系统声音音量」，因为正文实际介绍的是音量调节（setSystemAudioLoopbackVolume），而非开关操作。"
+    },
+    {
+      "id": "P0-002",
+      "type": "时序流程不完整（代码示例缺失）",
+      "severity": "P0",
+      "category": "feature",
+      "location": "文档整体（Android标签 & iOS标签）",
+      "original": "全文未提供任何代码示例",
+      "description": "本文档作为 Flutter 功能指南，描述了需要调用的 API（startSystemAudioLoopback、stopSystemAudioLoopback、startLocalAudio、setSystemAudioLoopbackVolume），但全文没有提供任何 Dart/Flutter 代码示例，开发者无法直接参考实际代码结构和参数传递方式，需要额外查阅 API 文档才能使用。",
+      "suggestion": "为 Android 和 iOS 各自的核心步骤补充 Dart/Flutter 代码示例，至少展示 startSystemAudioLoopback 和 stopSystemAudioLoopback 的完整调用方式。"
+    },
+    {
+      "id": "P1-001",
+      "type": "标题层级",
+      "severity": "P1",
+      "category": "format",
+      "location": "Android标签：开启分享系统声音（H3）下仅含步骤 H4，关闭步骤未提升为独立 H3",
+      "original": "## TRTC 系统声音分享功能 → ### 开启分享系统声音 → #### 步骤1/步骤2/步骤3（步骤3为关闭操作）",
+      "description": "Android 标签中，H3「开启分享系统声音」下只有 H4 步骤子章节，而「关闭分享系统声音」（步骤3）使用同级 H4，未作为独立的 H3 章节，导致孤立的 H3 和结构不对等。",
+      "suggestion": "将「关闭分享系统声音」（步骤3）提升为独立的 H3 标题，与「开启分享系统声音」（H3）保持对等。"
+    },
+    {
+      "id": "P1-002",
+      "type": "标题规范",
+      "severity": "P1",
+      "category": "language",
+      "location": "iOS标签 步骤3：中途开启和关闭系统声音",
+      "original": "步骤3：中途开启和关闭系统声音",
+      "description": "「中途开启和关闭系统声音」不是「动词+宾语」结构，「中途」是时间状语，与同文档其他步骤标题（如「开启麦克风」「开启屏幕分享」）的「动词+宾语」结构不一致。且标题承诺内容与正文矛盾（见 P0-001）。",
+      "suggestion": "改为「步骤3：调节系统声音音量」，与其他步骤标题结构保持一致，且与正文实际内容匹配。"
+    },
+    {
+      "id": "P1-003",
+      "type": "视角混乱",
+      "severity": "P1",
+      "category": "language",
+      "location": "iOS标签 步骤3正文",
+      "original": "当您不希望将系统声音输出时，可以将音量设置为0",
+      "description": "「当您不希望将系统声音输出时」中的「您」语境指向最终用户，而文档目标读者为开发者，视角混乱。同时句末缺少句号。",
+      "suggestion": "改为「如需禁止系统声音输出，可将音量设置为 0。」，去掉「您」，使用客观表达，并补充句号。"
+    },
+    {
+      "id": "P1-004",
+      "type": "时序流程不完整（回调缺失）",
+      "severity": "P1",
+      "category": "feature",
+      "location": "Android标签 步骤2：开启分享系统声音",
+      "original": "调用 TRTCCloud 的 startSystemAudioLoopback 接口即可，这时候采集的系统声音会自动混入上行流中。",
+      "description": "startSystemAudioLoopback 是异步操作，文档未说明如何确认调用成功或失败（如是否有回调、成功/失败的表现），开发者无法判断操作是否生效。",
+      "suggestion": "补充说明 startSystemAudioLoopback 的调用结果获取方式，例如说明是否有回调方法确认启动成功/失败。"
+    },
+    {
+      "id": "P1-005",
+      "type": "核心 API 参数缺少说明",
+      "severity": "P1",
+      "category": "feature",
+      "location": "iOS标签 步骤3：setSystemAudioLoopbackVolume",
+      "original": "SDK 提供了 TRTCCloud#setSystemAudioLoopbackVolume 方法对系统声音进行音量调节，参数为0-100的整数。",
+      "description": "正文仅说明了参数范围（0-100的整数），但未说明参数名称、类型，也未说明默认值是多少，信息不完整。",
+      "suggestion": "补充完整参数信息：参数名（如 volume）、类型（int）、默认值（如有）。参考格式：「setSystemAudioLoopbackVolume(volume: int)，取值范围 0~100，默认值为 100。0 表示静音。」"
+    },
+    {
+      "id": "P1-006",
+      "type": "场景适配缺失",
+      "severity": "P1",
+      "category": "feature",
+      "location": "文档整体（Android标签 vs iOS标签）",
+      "original": "Android：调用 startSystemAudioLoopback 接口即可；iOS：由于 iOS 限制，只有在屏幕录制时才能采集系统声音。",
+      "description": "文档标题是「Flutter」但分平台 Tab 说明，未提供 Flutter 代码中如何根据平台分别调用的示例，开发者需要自行理解两套方案并拼装代码。",
+      "suggestion": "在文档开头补充说明：在 Flutter 中使用 Platform.isAndroid / Platform.isIOS 判断平台分别调用，并提供代码示例框架。"
+    },
+    {
+      "id": "P2-001",
+      "type": "内容重复",
+      "severity": "P2",
+      "category": "base_standards",
+      "location": "文档开头 & Android标签开头",
+      "original": "本文档主要介绍如何分享系统声音，目前 TRTC 默认不采集所在应用的音频。",
+      "description": "该介绍段落在文档顶层（根节点段落）和Android标签内各出现了一次，内容完全相同，造成重复。",
+      "suggestion": "删除Android标签内的重复段落，只保留文档顶层的一条说明即可。"
+    },
+    {
+      "id": "P2-002",
+      "type": "空格（代码格式一致性）",
+      "severity": "P2",
+      "category": "format",
+      "location": "iOS标签 步骤3正文",
+      "original": "SDK 提供了 TRTCCloud#setSystemAudioLoopbackVolume 方法…",
+      "description": "Android 章节中 TRTCCloud 以行内代码（反引号）格式出现，但 iOS 章节中链接文本 TRTCCloud#setSystemAudioLoopbackVolume 内的 TRTCCloud 没有反引号包裹，同一 token 在全文格式不一致。",
+      "suggestion": "将 iOS 章节正文中的 TRTCCloud 也用反引号包裹，保持全文格式一致。全文中有多处，请批量修改。"
+    },
+    {
+      "id": "P2-003",
+      "type": "功能概念术语不一致",
+      "severity": "P2",
+      "category": "terms",
+      "location": "iOS标签 步骤2标题 vs 步骤2正文；iOS标签 vs Android标签",
+      "original": "iOS步骤2标题：「开启屏幕分享」；iOS步骤2正文：「开启屏幕录制」；iOS步骤3正文：「系统声音采集」；Android标签：「分享系统声音」",
+      "description": "同一 iOS 标签内混用「屏幕录制」（正文）和「屏幕分享」（标题），可能造成开发者混淆；「系统声音分享」与「系统声音采集」也未统一。",
+      "suggestion": "统一 iOS 标签中的术语：若平台行为本质是「屏幕录制」则全用「屏幕录制」；若对外称「屏幕分享」则全用「屏幕分享」。同时「系统声音分享」与「系统声音采集」建议统一为一个表达。"
+    }
+  ]
+}

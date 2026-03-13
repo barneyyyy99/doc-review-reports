@@ -1,0 +1,29 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__uni-app__86735807589199872.md",
+  "skill_id": "logic-review",
+  "rule_path": ".claude/skills/_shared/logic-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "logic-001",
+      "type": "信息缺失",
+      "severity": "P1",
+      "category": "logic",
+      "location": "观看屏幕分享 — 观看 Android / iOS 屏幕分享",
+      "original": "观看屏幕分享的用户可以通过 startRemoteView 接口来启动渲染远端用户主流画面",
+      "description": "段落描述了调用 startRemoteView 渲染主流画面，但句子未完整，缺少句号，且未说明具体如何调用（缺少示例代码或参数说明），与前面"开启屏幕分享"章节有示例代码形成对比",
+      "suggestion": "补充调用 startRemoteView 的示例代码或至少说明关键参数，并为该段落补充句号"
+    },
+    {
+      "id": "logic-002",
+      "type": "信息缺失",
+      "severity": "P1",
+      "category": "logic",
+      "location": "观看屏幕分享",
+      "original": "观看屏幕分享章节仅介绍了 Android / iOS 屏幕分享的观看方式",
+      "description": "文档标题为"开启屏幕分享 uni-app"，但"观看屏幕分享"章节仅说明了 Android/iOS 端通过主流分享的情况，没有说明 uni-app 自身如何发起屏幕分享后其他端（如 Web 端）的观看方式，内容覆盖不完整",
+      "suggestion": "补充说明当 uni-app 端发起屏幕分享时，其他端如何观看（订阅辅流），或明确说明本章节仅列举部分场景"
+    }
+  ]
+}

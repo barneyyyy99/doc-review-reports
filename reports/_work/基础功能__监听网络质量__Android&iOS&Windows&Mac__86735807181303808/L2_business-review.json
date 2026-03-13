@@ -1,0 +1,20 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__监听网络质量__Android&iOS&Windows&Mac__86735807181303808.md",
+  "label": "feature",
+  "business_skill_id": "review-feature",
+  "rule_path": ".claude/skills/review-feature/SKILL.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "feat-001",
+      "type": "核心 API 参数缺少说明",
+      "severity": "P1",
+      "category": "feature",
+      "location": "执行网络测速 — 调用 API 章节",
+      "original_description": "startSpeedTest 接口的参数 expectedUpBandwidth 和 expectedDownBandwidth 仅在代码注释中说明了取值范围",
+      "description": "startSpeedTest 是本文档的核心 API，其参数 TRTCSpeedTestParams 中 expectedUpBandwidth 和 expectedDownBandwidth 取值含义仅在代码注释中简略说明，正文中未单独列出参数说明表（含义、类型、必填/可选、默认值、取值范围），不符合核心 API 参数必须在正文中说明的要求",
+      "suggestion": "在调用代码示例前，增加 TRTCSpeedTestParams 参数说明表，列出 sdkAppID、userID、userSig、expectedUpBandwidth、expectedDownBandwidth 的含义、类型、必填/可选及取值范围"
+    }
+  ]
+}

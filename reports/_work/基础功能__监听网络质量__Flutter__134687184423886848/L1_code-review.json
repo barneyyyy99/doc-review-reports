@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__监听网络质量__Flutter__134687184423886848.md",
+  "skill_id": "code-review",
+  "rule_path": ".claude/skills/_shared/code-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "code-001",
+      "type": "代码块语言标记错误",
+      "severity": "P1",
+      "category": "code",
+      "location": "调用指引 — 代码示例",
+      "original": "代码块语言标记为 java，实际代码为 Flutter Dart 语法（TRTCCloudListener、TRTCQuality.unknown、TRTCQualityInfo 等 Dart 类）",
+      "description": "代码块标记语言为 java，但代码内容是 Dart/Flutter 代码，语法高亮不匹配",
+      "suggestion": "将代码块语言标记由 java 改为 dart"
+    }
+  ]
+}

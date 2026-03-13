@@ -1,0 +1,20 @@
+{
+  "doc_path": "input-docs/batch_001/消息相关__消息扩展__设置单聊消息扩展__108053693775519744.md",
+  "label": "api",
+  "business_skill_id": "review-api",
+  "rule_path": ".claude/skills/review-api/SKILL.md",
+  "executed_at": "2026-03-12T00:00:00Z",
+  "status": "done",
+  "issues": [
+    {
+      "id": "doc4-api-001",
+      "category": "api_issues",
+      "type": "引用链接缺失",
+      "location": "请求包字段说明 > MsgKey 行",
+      "original": "获取消息 MsgKey 的方法请参见单发单聊消息的接口说明",
+      "issue": "MsgKey 字段描述中说「参见单发单聊消息的接口说明」，但该文本未附带超链接，开发者无法直接跳转查看，降低了文档可用性",
+      "suggestion": "将「单发单聊消息的接口说明」添加相应链接，指向单发单聊消息的 REST API 文档页面",
+      "severity": "P1"
+    }
+  ]
+}

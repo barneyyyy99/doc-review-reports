@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__监听网络质量__Electron__86735807257862144.md",
+  "deduped_at": "2026-03-13",
+  "total_before_dedup": 1,
+  "total_after_dedup": 1,
+  "dedup_removed": 0,
+  "issues": [
+    {
+      "id": "feat-001",
+      "type": "时序流程不完整",
+      "severity": "P1",
+      "category": "feature",
+      "location": "调用指引 章节",
+      "original": "文档直接展示监听 onNetworkQuality 的代码，未说明前置条件",
+      "description": "文档直接展示监听 onNetworkQuality 事件的代码示例，但未说明使用前提（如需要先进入 TRTC 房间，onNetworkQuality 才会触发），也未引用说明前置条件的文档",
+      "suggestion": "在代码示例前补充前置条件说明，例如："需先调用 enterRoom 进入房间，onNetworkQuality 事件才会每 2 秒触发一次。""
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Web__86735807442399232.md",
+  "skill_id": "code_review",
+  "rule_path": ".claude/skills/_shared/code_review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "代码逻辑不完整",
+      "severity": "P1",
+      "category": "code",
+      "location": "H2"实现流程"→步骤5"停止屏幕分享"代码块",
+      "original": "trtcA.on(TRTC.EVENT.REMOTE_VIDEO_UNAVAILABLE, ({ userId, streamType }) => {\n  if (streamType === TRTC.TYPE.STREAM_TYPE_SUB) {\n    // 分支体为空\n  }\n});",
+      "description": "步骤5 代码块中，`REMOTE_VIDEO_UNAVAILABLE` 事件的 `STREAM_TYPE_SUB` 分支体为空，没有任何处理逻辑。代码注释说明"房间内的其他用户会收到 REMOTE_VIDEO_UNAVAILABLE 事件"，但未说明收到后应如何处理（如停止播放辅路视频），导致代码示例不完整，开发者无法直接参考。",
+      "suggestion": "在空分支内补充处理逻辑，例如：`trtcB.stopRemoteVideo({ userId, streamType });`，或补充注释说明为何此处为空以及开发者应在此处添加什么逻辑。"
+    }
+  ]
+}

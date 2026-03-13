@@ -1,0 +1,29 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__监听网络质量__Android&iOS&Windows&Mac__86735807181303808.md",
+  "skill_id": "code-review",
+  "rule_path": ".claude/skills/_shared/code-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "code-001",
+      "type": "API 拼写错误",
+      "severity": "P0",
+      "category": "code",
+      "location": "执行网络测速 — C++ 和 C# 代码示例",
+      "original": "C++ 示例：param.userSig = userSig; / param.expectedUpBandwidth = 5000; / param.expectedDownBandwidth = 5000;\nC# 示例：param.userSig = userSig; / param.expectedUpBandwidth = 5000; / param.expectedDownBandwidth = 5000;",
+      "description": "C++ 和 C# 代码示例中，变量声明使用的是 TRTCSpeedTestParams params，但后续赋值时部分字段使用了 param（缺少尾部 s），与前面声明的变量名 params 不一致，会导致编译错误。具体位置：C++ 第9-13行的 param.userSig、param.expectedUpBandwidth、param.expectedDownBandwidth；C# 第9-13行相同字段",
+      "suggestion": "将 C++ 和 C# 示例中的 param.userSig、param.expectedUpBandwidth、param.expectedDownBandwidth 全部改为 params.userSig、params.expectedUpBandwidth、params.expectedDownBandwidth"
+    },
+    {
+      "id": "code-002",
+      "type": "代码块语言标记错误",
+      "severity": "P1",
+      "category": "code",
+      "location": "通话中网络质量检测 — Android 代码示例",
+      "original": "ArrayList<trtcclouddef.trtcquality>（代码块中出现的泛型类型名使用了小写形式）",
+      "description": "Android 代码示例中，方法签名中的泛型参数写为 ArrayList<trtcclouddef.trtcquality>，而后续循环处理时使用 ArrayList<TRTCCloudDef.TRTCQuality>（大写形式）。前后大小写不一致；另外遍历时使用的变量名 arrayList 与方法参数名 remoteQuality 不一致，会导致编译错误",
+      "suggestion": "将方法签名中的 ArrayList<trtcclouddef.trtcquality> 改为 ArrayList<TRTCCloudDef.TRTCQuality>，并将遍历变量 arrayList 改为 remoteQuality"
+    }
+  ]
+}

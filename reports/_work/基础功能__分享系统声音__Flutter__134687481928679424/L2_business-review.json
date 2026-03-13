@@ -1,0 +1,46 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Flutter__134687481928679424.md",
+  "label": "feature",
+  "business_skill_id": "review-feature",
+  "rule_path": ".claude/skills/review-feature/SKILL.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "时序流程不完整",
+      "severity": "P1",
+      "category": "feature",
+      "location": "Android标签 步骤2：开启分享系统声音",
+      "original": "调用 TRTCCloud 的 startSystemAudioLoopback 接口即可，这时候采集的系统声音会自动混入上行流中。",
+      "description": "startSystemAudioLoopback 是异步操作，文档未说明如何确认调用成功或失败（如是否有回调、成功/失败的表现），开发者无法判断操作是否生效。",
+      "suggestion": "补充说明 startSystemAudioLoopback 的调用结果获取方式，例如：如有回调通知开始成功/失败，应说明对应的回调方法名；如无回调，说明通过何种方式（如日志、状态查询）确认是否生效。"
+    },
+    {
+      "type": "时序流程不完整",
+      "severity": "P0",
+      "category": "feature",
+      "location": "文档整体（Android标签 & iOS标签）",
+      "original": "全文未提供任何代码示例",
+      "description": "本文档作为功能指南，描述了需要调用的 API（startSystemAudioLoopback、stopSystemAudioLoopback、startLocalAudio、setSystemAudioLoopbackVolume），但全文没有提供任何 Dart/Flutter 代码示例，开发者无法直接参考实际代码结构和参数传递方式，需要额外查阅 API 文档才能使用，降低了文档的可操作性。",
+      "suggestion": "为 Android 和 iOS 各自的核心步骤补充 Dart/Flutter 代码示例，至少展示 startSystemAudioLoopback 和 stopSystemAudioLoopback 的完整调用方式。"
+    },
+    {
+      "type": "核心 API 参数缺少说明",
+      "severity": "P1",
+      "category": "feature",
+      "location": "iOS标签 步骤3：setSystemAudioLoopbackVolume",
+      "original": "SDK 提供了 TRTCCloud#setSystemAudioLoopbackVolume 方法对系统声音进行音量调节，参数为0-100的整数。",
+      "description": "正文仅说明了参数范围（0-100的整数），但未说明参数名称、类型，也未说明默认值是多少，信息不完整。",
+      "suggestion": "补充说明参数信息：参数名（如 volume）、类型（int）、默认值（如有），完整格式示例：「setSystemAudioLoopbackVolume(volume: int)，取值范围 0~100，默认值为 100。0 表示静音。」"
+    },
+    {
+      "type": "场景适配缺失",
+      "severity": "P1",
+      "category": "feature",
+      "location": "文档整体（Android标签 vs iOS标签）",
+      "original": "Android：调用 startSystemAudioLoopback 接口即可；iOS：由于 iOS 限制，只有在屏幕录制时才能采集系统声音。",
+      "description": "文档以 Tab 形式区分 Android 和 iOS，但文档标题是「Flutter」，Flutter 开发者需要同时了解两个平台的差异并做平台判断，文档未说明如何在 Flutter 代码中区分平台实现。",
+      "suggestion": "在文档开头或每个平台标签的开头补充说明：在 Flutter 中使用 Platform.isAndroid / Platform.isIOS 判断平台，分别调用不同的系统声音采集流程，并提供示例代码框架。"
+    }
+  ]
+}

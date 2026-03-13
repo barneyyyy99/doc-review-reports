@@ -1,0 +1,47 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__iOS__115998184532062208.md",
+  "executed_at": "2026-03-13",
+  "sources": ["L1_base-standards.json", "L1_severity-standards.json", "L1_format-review.json", "L1_language-review.json", "L1_terms-review.json", "L1_logic-review.json", "L1_code-review.json", "L2_business-review.json"],
+  "issues_raw": [
+    {
+      "id": "FORMAT-001",
+      "type": "标题层级",
+      "severity": "P1",
+      "category": "format",
+      "location": "H1 标题 \"iOS\"",
+      "original": "# iOS\n## 调用指引",
+      "description": "H1 标题 \"iOS\" 下仅有一个 H2 子章节 \"调用指引\"，违反"一个标题下至少需要有两个子章节"规则。",
+      "suggestion": "在 \"调用指引\" 同级补充其他章节（如\"注意事项\"、\"常见问题\"等），或将 H1 页面标题移除，改为以 H2 \"调用指引\" 作为首级内容标题。"
+    },
+    {
+      "id": "LOGIC-001",
+      "type": "信息缺失",
+      "severity": "P1",
+      "category": "logic",
+      "location": "步骤3：中途开启和关闭系统声音",
+      "original": "SDK 提供了 TRTCCloud#setSystemAudioLoopbackVolume 方法对系统声音进行音量调节。当您不希望将系统声音输出时，可以将音量设置为0。",
+      "description": "`setSystemAudioLoopbackVolume` 的参数（取值范围、类型、单位）在正文中未说明，仅通过链接指向 API 文档。",
+      "suggestion": "在正文中补充参数说明，例如："`setSystemAudioLoopbackVolume` 接受一个整型参数，取值范围 0–100，其中 0 表示静音。""
+    },
+    {
+      "id": "FEAT-001",
+      "type": "时序流程不完整",
+      "severity": "P1",
+      "category": "feature",
+      "location": "步骤3：中途开启和关闭系统声音",
+      "original_description": "SDK 提供了 TRTCCloud#setSystemAudioLoopbackVolume 方法对系统声音进行音量调节。当您不希望将系统声音输出时，可以将音量设置为0。",
+      "description": "`setSystemAudioLoopbackVolume` 作为本步骤唯一核心 API，正文中缺少参数的取值范围、类型说明。",
+      "suggestion": "在正文补充参数说明，例如："`setSystemAudioLoopbackVolume(volume: Int)` 的 `volume` 参数取值范围为 0–100，其中 0 表示静音。""
+    },
+    {
+      "id": "FEAT-002",
+      "type": "时序流程不完整",
+      "severity": "P1",
+      "category": "feature",
+      "location": "步骤1：开启麦克风",
+      "original_description": "调用 startLocalAudio 开启麦克风采集，推荐使用 TRTCAudioQualityDefault 音质。",
+      "description": "`startLocalAudio` 的 `quality` 参数在正文中仅提到推荐值，未说明其他枚举选项及适用场景。",
+      "suggestion": "在正文中补充 `quality` 参数说明，列出常用枚举值及其适用场景，或注明"其他选项详见 API 文档"。"
+    }
+  ]
+}

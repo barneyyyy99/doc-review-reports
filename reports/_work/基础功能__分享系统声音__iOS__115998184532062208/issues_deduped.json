@@ -1,0 +1,37 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__iOS__115998184532062208.md",
+  "executed_at": "2026-03-13",
+  "dedup_note": "LOGIC-001 和 FEAT-001 均指向同一问题（步骤3中 setSystemAudioLoopbackVolume 参数信息缺失），合并为 P1-001；其余两条独立保留。",
+  "issues": [
+    {
+      "id": "P1-001",
+      "type": "核心 API 参数说明缺失",
+      "severity": "P1",
+      "category": "logic/feature",
+      "location": "步骤3：中途开启和关闭系统声音",
+      "original": "SDK 提供了 TRTCCloud#setSystemAudioLoopbackVolume 方法对系统声音进行音量调节。当您不希望将系统声音输出时，可以将音量设置为0。",
+      "description": "`setSystemAudioLoopbackVolume` 为本步骤唯一核心 API，但正文未说明其参数的类型、取值范围等信息，仅通过链接引导至 API 文档。功能指南要求核心 API 参数须在正文中说明，不能仅依赖外链。",
+      "suggestion": "在正文补充参数说明，例如："`setSystemAudioLoopbackVolume(volume: Int)` 中 `volume` 取值范围为 0–100，其中 0 表示静音。当不希望输出系统声音时，将其设置为 0。""
+    },
+    {
+      "id": "P1-002",
+      "type": "标题层级",
+      "severity": "P1",
+      "category": "format",
+      "location": "H1 标题 \"iOS\"",
+      "original": "# iOS\n## 调用指引",
+      "description": "H1 标题 \"iOS\" 下仅有一个 H2 子章节 \"调用指引\"，违反"一个标题下至少需要有两个子章节"规则。",
+      "suggestion": "在 \"调用指引\" 同级补充其他章节（如\"注意事项\"、\"常见问题\"等），或将 H1 页面标题移除，改为以 H2 \"调用指引\" 作为首级内容标题。"
+    },
+    {
+      "id": "P1-003",
+      "type": "核心 API 参数说明缺失",
+      "severity": "P1",
+      "category": "feature",
+      "location": "步骤1：开启麦克风",
+      "original": "调用 startLocalAudio 开启麦克风采集，推荐使用 TRTCAudioQualityDefault 音质。",
+      "description": "`startLocalAudio` 的 `quality` 参数在正文中仅提到推荐值 `TRTCAudioQualityDefault`，未说明该参数的类型、其他可选枚举值及各自适用场景，开发者无法判断自己场景是否应选用其他音质。",
+      "suggestion": "在正文中补充 `quality` 参数说明，列出常用枚举值及其适用场景，或注明"其他选项详见 API 文档"，并附上对应链接。"
+    }
+  ]
+}

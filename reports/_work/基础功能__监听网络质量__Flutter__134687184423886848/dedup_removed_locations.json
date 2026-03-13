@@ -1,0 +1,13 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__监听网络质量__Flutter__134687184423886848.md",
+  "dedup_removed_at": "2026-03-13",
+  "removed_count": 1,
+  "removed_issues": [
+    {
+      "id": "fmt-001",
+      "type": "代码格式（语言标记错误）",
+      "category": "format",
+      "reason": "与 code-001 描述同一问题（代码块语言标记为 java 但实际为 Dart），已合并入 code-001，保留 code 类别"
+    }
+  ]
+}

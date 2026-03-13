@@ -1,0 +1,27 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Mac__86735807405711360.md",
+  "skill_id": "code_review",
+  "rule_path": ".claude/skills/_shared/code-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "代码块语言标记错误",
+      "severity": "P1",
+      "category": "code",
+      "location": "开始屏幕分享章节（代码块1）、观看屏幕分享章节（代码块2）",
+      "original": "代码块1：language=\"swift\"，内容为 - (void)startScreenCapture:(NSView *)view;\n代码块2：language=\"swift\"，内容为 - (void)onUserSubStreamAvailable:(NSString *)userId available:(BOOL)available { [self.trtcCloud startRemoteView:...] }",
+      "description": "两个代码块均标记为 swift，但代码内容明显是 Objective-C 语法：使用 `-` 方法声明前缀、方括号消息发送语法 `[self.trtcCloud startRemoteView:...]`、`(NSString *)` `(BOOL)` 等 ObjC 类型标注。Swift 语言不使用这些语法。",
+      "suggestion": "将两个代码块的语言标记从 swift 改为 objc（即 ```objc 或 ```objective-c）。"
+    },
+    {
+      "type": "正文与代码矛盾",
+      "severity": "P0",
+      "category": "code",
+      "location": "开始屏幕分享章节",
+      "original": "正文：'通过将 TRTCVideoStreamType 参数指定为 TRTCVideoStreamTypeSub 来启用该模式'；代码：'- (void)startScreenCapture:(NSView *)view;'",
+      "description": "正文多次描述 startScreenCapture 接口接受 TRTCVideoStreamType 参数（用于指定主路/辅路），但代码块中展示的方法签名只有一个 NSView 参数，缺少 TRTCVideoStreamType 参数。开发者按代码签名调用，无法传入流类型参数，与正文描述严重矛盾。",
+      "suggestion": "将代码块中的方法签名更正为包含 streamType 参数的完整形式，例如：\n- (void)startScreenCapture:(TRTCVideoStreamType)type encParam:(TRTCVideoEncParam * _Nullable)encParam view:(NSView * _Nullable)view;\n并给出主路/辅路两种调用示例。"
+    }
+  ]
+}

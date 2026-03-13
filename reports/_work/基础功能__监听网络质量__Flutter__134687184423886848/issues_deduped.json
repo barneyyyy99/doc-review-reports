@@ -1,0 +1,39 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__监听网络质量__Flutter__134687184423886848.md",
+  "deduped_at": "2026-03-13",
+  "total_before_dedup": 4,
+  "total_after_dedup": 3,
+  "dedup_removed": 1,
+  "issues": [
+    {
+      "id": "code-001",
+      "type": "代码块语言标记错误",
+      "severity": "P1",
+      "category": "code",
+      "location": "调用指引 — 代码示例",
+      "original": "代码块语言标记为 java，实际代码为 Flutter/Dart 语法（TRTCCloudListener、TRTCQuality.unknown 等 Dart 类）",
+      "description": "代码块标记语言为 java，但代码内容是 Dart/Flutter 代码，导致语法高亮不匹配，影响阅读体验（该问题在格式审查和代码审查中均被发现）",
+      "suggestion": "将代码块语言标记由 java 改为 dart"
+    },
+    {
+      "id": "feat-001",
+      "type": "时序流程不完整",
+      "severity": "P1",
+      "category": "feature",
+      "location": "调用指引 章节",
+      "original": "代码示例直接展示 TRTCCloudListener 回调逻辑，未说明如何注册监听",
+      "description": "代码示例中直接展示了 TRTCCloudListener 的回调处理逻辑，但未说明如何将该 Listener 注册到 TRTCCloud 实例（缺少 addListener 或等效调用方式），也未说明需要先进入房间",
+      "suggestion": "在代码示例前补充完整的注册监听步骤，例如：先获取 TRTCCloud 实例，调用 addListener 注册 TRTCCloudListener，再进房后才能收到 onNetworkQuality 回调"
+    },
+    {
+      "id": "lang-001",
+      "type": "口语化",
+      "severity": "P2",
+      "category": "language",
+      "location": "调用指引 — 正文描述段落",
+      "original": "它会每隔两秒钟一次向您汇报当前的网络质量",
+      "description": ""每隔两秒钟一次"表达冗余，"一次"为赘词",
+      "suggestion": "改为"它会每隔两秒向您汇报当前的网络质量""
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Web__125790536373383168.md",
+  "skill_id": "review-feature",
+  "rule_path": ".claude/skills/review-feature/SKILL.md",
+  "executed_at": "2026-03-13",
+  "label": "feature",
+  "business_skill_id": "review-feature",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "依赖关系缺失",
+      "severity": "P1",
+      "category": "feature",
+      "location": "实现流程（开头段落）",
+      "original": "Web 端实现分享系统音频，需要搭配屏幕分享一起使用。无法脱离屏幕分享，单独实现分享系统音频功能。",
+      "description": "文档说明了分享系统音频必须搭配屏幕分享，但未提供屏幕分享实现文档的链接，也未说明用户进房的前置条件（startScreenShare 本身要求已加入 TRTC 房间）。开发者可能在未完成进房的情况下直接调用 API。",
+      "suggestion": "在"实现流程"开头补充：1) 链接到 Web 屏幕分享文档（如"请先参考 [开启屏幕分享](链接) 完成屏幕分享集成"）；2) 说明调用 startScreenShare 前需已完成进房（可引用进房文档链接）。"
+    },
+    {
+      "type": "核心 API 参数缺少说明",
+      "severity": "P1",
+      "category": "feature",
+      "location": "实现流程 > 代码示例",
+      "original": "await trtcA.startScreenShare({ option: { systemAudio: true }});",
+      "description": "代码示例中调用 startScreenShare 时传入了 option.systemAudio 参数，但正文中对该参数的含义、类型、取值范围及是否必填均无任何说明，不符合功能指南对核心 API 参数必须在正文说明的要求。",
+      "suggestion": "在代码示例前或后用文字说明 option.systemAudio 参数：类型为 boolean，设为 true 时请求系统音频；默认值为 false（不采集系统音频）。建议格式：\n\n> **参数说明**\n> - `option.systemAudio`（boolean，可选，默认 false）：是否采集系统音频。设为 `true` 时，浏览器会在屏幕分享选择框中显示"Share system audio"选项。"
+    },
+    {
+      "type": "回调/事件处理缺失",
+      "severity": "P1",
+      "category": "feature",
+      "location": "实现流程 > 代码示例",
+      "original": "await trtcA.startScreenShare({ option: { systemAudio: true }});",
+      "description": "startScreenShare 是异步操作，文档仅说明房间内其他用户会收到 REMOTE_AUDIO_AVAILABLE 事件，但未说明本地发布方如何确认系统音频是否成功被采集并发布（例如是否有成功回调、或如何区分用户取消了 Share system audio 勾选的情况）。开发者无法验证功能是否真正生效。",
+      "suggestion": "补充说明：1) startScreenShare 返回的 Promise 兑现（resolve）表示屏幕分享（含系统音频轨道）已成功发布，可在 then/await 后继续操作；2) 若用户在浏览器对话框中未勾选"Share system audio"，系统音频轨道不会被包含，建议说明如何检测（如检查本地流中是否包含 audio track）。"
+    }
+  ]
+}

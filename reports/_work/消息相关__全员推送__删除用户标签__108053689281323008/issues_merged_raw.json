@@ -1,0 +1,26 @@
+{
+  "doc_path": "input-docs/batch_001/消息相关__全员推送__删除用户标签__108053689281323008.md",
+  "merged_at": "2026-03-12T00:00:00Z",
+  "issues": [
+    {
+      "id": "doc3-fmt-002",
+      "category": "format_issues",
+      "type": "链接 URL 错误",
+      "location": "接口调试工具 > REST API 在线调试链接",
+      "original": "https://tcc.tencentcs.com/im-api-tool/index.html#/v4/all_member_push/im_remove_attr",
+      "issue": "接口调试工具链接指向 im_remove_attr（删除用户属性接口），但本文档描述的是 im_remove_tag（删除用户标签接口），链接错误将导致开发者进入错误的调试页面",
+      "suggestion": "将链接改为 https://tcc.tencentcs.com/im-api-tool/index.html#/v4/all_member_push/im_remove_tag",
+      "severity": "P0"
+    },
+    {
+      "id": "doc3-fmt-001",
+      "category": "format_issues",
+      "type": "参数名大小写不一致",
+      "location": "接口调用说明 > 请求参数说明表格 > sdkappid 行",
+      "original": "创建应用时即时通信控制台分配的 SdkAppid",
+      "issue": "描述里写作 \"SdkAppid\"，与同系列文档中统一使用的 \"SDKAppID\" 写法不一致",
+      "suggestion": "改为 \"SDKAppID\"",
+      "severity": "P2"
+    }
+  ]
+}

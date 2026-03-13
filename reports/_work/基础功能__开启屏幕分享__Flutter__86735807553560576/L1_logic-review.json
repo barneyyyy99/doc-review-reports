@@ -1,0 +1,27 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Flutter__86735807553560576.md",
+  "skill_id": "logic_review",
+  "rule_path": ".claude/skills/_shared/logic-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "信息缺失",
+      "severity": "P0",
+      "category": "logic",
+      "location": "H2「观看屏幕分享」",
+      "original": "若用户进行屏幕分享，且通过主流进行分享。房间里的其他用户会通过 TRTCCloudListener 中的 onUserVideoAvailable 事件获得这个通知。……希望观看屏幕分享的用户可以通过 startRemoteView 接口来启动渲染远端用户主流画面。",
+      "description": "文档前面多处说明了辅路分享（TRTCVideoStreamType.sub）是推荐/常用方案（iOS 跨应用分享、Windows 辅路分享均使用辅路），但「观看屏幕分享」章节只说明了「通过主流进行分享」的接收方法（onUserVideoAvailable + startRemoteView），完全缺少辅路分享的接收端说明（应使用 onUserSubStreamAvailable + startRemoteSubStreamView 或对应辅路 API）。开发者按文档实现后，辅路分享内容无法被观看方接收。",
+      "suggestion": "在「观看屏幕分享」章节补充辅路分享的接收端说明：当分享走辅路（TRTCVideoStreamType.sub）时，远端用户需监听 onUserSubStreamAvailable 事件，并调用对应接口（如 startRemoteSubStreamView）渲染辅路画面。"
+    },
+    {
+      "type": "关键分支场景缺失",
+      "severity": "P1",
+      "category": "logic",
+      "location": "H2「实现 Windows 平台屏幕分享」步骤3「开始屏幕分享」",
+      "original": "pauseScreenCapture 和 stopScreenCapture 的区别在于 pause 会停止屏幕内容的采集，并以暂停那一刻的画面垫片……",
+      "description": "文档说明了 pauseScreenCapture 的行为（暂停并定格最后一帧），但未说明如何恢复（即 resumeScreenCapture 接口），导致开发者知道可以暂停但不知道如何继续。",
+      "suggestion": "在说明 pauseScreenCapture 后，补充"调用 resumeScreenCapture 可恢复屏幕采集"并提供对应链接。"
+    }
+  ]
+}

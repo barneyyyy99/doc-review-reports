@@ -1,0 +1,16 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__调整画面方向__Flutter__134687494620925952.md",
+  "executed_at": "2026-03-13",
+  "dedup_removed_count": 0,
+  "issues": [
+    {
+      "type": "代码块语言标记错误（批量）",
+      "severity": "P1",
+      "category": "code",
+      "location": "竖屏模式 > 步骤2 > Flutter Dart 代码块；竖屏模式 > 步骤1 > Android XML 代码块",
+      "original": "语言标记均为 java",
+      "description": "竖屏模式步骤2的代码块内容为 Flutter/Dart 语法，但语言标记为 java。步骤1 Android 平台的 XML 代码块语言标记也为 java。",
+      "suggestion": "将 Flutter Dart 代码块语言标记改为 dart，将 Android XML 代码块语言标记改为 xml。"
+    }
+  ]
+}

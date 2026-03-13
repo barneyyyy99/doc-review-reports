@@ -1,0 +1,18 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Flutter__86735807553560576.md",
+  "skill_id": "terms_review",
+  "rule_path": ".claude/skills/_shared/terms-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "功能概念术语不一致",
+      "severity": "P2",
+      "category": "terms",
+      "location": "H2「实现 Windows 平台屏幕分享」辅路/主路描述段",
+      "original": "辅路（substream）；主路（bigstream）；代码示例中参数使用 TRTCVideoStreamType.sub 和 big",
+      "description": "正文将主路通道的英文标识描述为 bigstream，但代码示例中对应参数值为 sub（辅路）和 big（主路），正文括号内用 bigstream 而代码用 big，轻微不一致，但不会实质误导开发者。",
+      "suggestion": "将正文描述统一为与代码一致的参数枚举名，如「主路（big）」和「辅路（sub）」，或在说明括号中同时给出 API 枚举名。"
+    }
+  ]
+}

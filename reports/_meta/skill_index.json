@@ -1,24 +1,50 @@
 {
-  "batch": "batch_001",
-  "run_started_at": "2026-03-11",
-  "target_dir": "input-docs/batch_001",
-  "doc_count": 6,
-  "skills_loaded": [
-    ".claude/skills/_shared/base_standards.md",
-    ".claude/skills/_shared/severity-standards.md",
-    ".claude/skills/_shared/format-review.md",
-    ".claude/skills/_shared/language-review.md",
-    ".claude/skills/_shared/terms-review.md",
-    ".claude/skills/_shared/logic-review.md",
-    ".claude/skills/_shared/code-review.md",
-    ".claude/skills/review-api/SKILL.md"
-  ],
+  "run_time": "2026-03-13",
+  "target": "input-docs/batch_001",
+  "skills_used": {
+    "L1_shared": [
+      ".claude/skills/_shared/base_standards.md",
+      ".claude/skills/_shared/severity-standards.md",
+      ".claude/skills/_shared/format-review.md",
+      ".claude/skills/_shared/language-review.md",
+      ".claude/skills/_shared/terms-review.md",
+      ".claude/skills/_shared/logic-review.md",
+      ".claude/skills/_shared/code-review.md"
+    ],
+    "L2_business": [
+      ".claude/skills/review-feature/SKILL.md"
+    ],
+    "L3_report": [
+      ".claude/skills/_shared/generate-review-report/SKILL.md",
+      ".claude/skills/_shared/check-review-report/SKILL.md"
+    ]
+  },
   "docs": [
-    "消息相关__发送消息__单发单聊消息__108053691171905536.md",
-    "消息相关__发送消息__在群组中发送普通消息__108053691350163456.md",
-    "消息相关__发送消息__在群组中发送系统通知__108053691527372800.md",
-    "消息相关__发送消息__导入单聊消息__108053691696193536.md",
-    "消息相关__发送消息__批量发单聊消息__108053692045369344.md",
-    "消息相关__发送消息__直播群广播消息__108053692219432960.md"
+    "基础功能__分享系统声音__Android__88216548822372352.md",
+    "基础功能__分享系统声音__Electron__86735807698264064.md",
+    "基础功能__分享系统声音__Flutter__134687481928679424.md",
+    "基础功能__分享系统声音__Mac__86735807661563904.md",
+    "基础功能__分享系统声音__Web__125790536373383168.md",
+    "基础功能__分享系统声音__iOS__115998184532062208.md",
+    "基础功能__开启屏幕分享__Android__86735807367962624.md",
+    "基础功能__开启屏幕分享__Electron__86735807516860416.md",
+    "基础功能__开启屏幕分享__Flutter__86735807553560576.md",
+    "基础功能__开启屏幕分享__Mac__86735807405711360.md",
+    "基础功能__开启屏幕分享__Web__86735807442399232.md",
+    "基础功能__开启屏幕分享__Windows__86735807479099392.md",
+    "基础功能__开启屏幕分享__iOS__86735807331250176.md",
+    "基础功能__开启屏幕分享__uni-app__86735807589199872.md",
+    "基础功能__监听网络质量__Android&iOS&Windows&Mac__86735807181303808.md",
+    "基础功能__监听网络质量__Electron__86735807257862144.md",
+    "基础功能__监听网络质量__Flutter__134687184423886848.md",
+    "基础功能__监听网络质量__Web__86735807218016256.md",
+    "基础功能__调整画面方向__Android&iOS&Windows&Mac__86735807915319296.md",
+    "基础功能__调整画面方向__Electron__86735807949910016.md",
+    "基础功能__调整画面方向__Flutter__134687494620925952.md",
+    "基础功能__调整画面方向__Web__117547167742144512.md",
+    "基础功能__调整视频画质__Android&iOS&Windows&Mac__86735807770603520.md",
+    "基础功能__调整视频画质__Electron__86735807841906688.md",
+    "基础功能__调整视频画质__Flutter__134687487600427008.md",
+    "基础功能__调整视频画质__Web__86735807806255104.md"
   ]
 }

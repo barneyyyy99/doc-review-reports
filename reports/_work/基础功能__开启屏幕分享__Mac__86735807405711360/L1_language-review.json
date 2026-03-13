@@ -1,0 +1,27 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Mac__86735807405711360.md",
+  "skill_id": "language_review",
+  "rule_path": ".claude/skills/_shared/language-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "视角混乱",
+      "severity": "P1",
+      "category": "language",
+      "location": "获取分享目标章节",
+      "original": "有了上面这些信息，您就可以实现一个简单的列表页面，将可以分享的目标罗列出来供用户选择",
+      "description": "同一句话中'您'指代开发者，'用户'指代最终用户。这个用法本身没有严格的视角混乱，但句中'供用户选择'已切换到最终用户视角，在开发者文档中这种混合表述会造成一定阅读割裂。",
+      "suggestion": "可改为：'有了上面这些信息，即可实现一个简单的列表页面，将可分享的目标罗列出来供最终用户选择。'（去掉'您'以保持开发者视角的客观表述）"
+    },
+    {
+      "type": "过度使用"您"",
+      "severity": "P2",
+      "category": "language",
+      "location": "辅路分享说明段落、主路分享说明段落、获取分享目标章节、选择分享目标章节、设定画面质量章节，多处",
+      "original": "您可以在调用 startScreenCapture 接口时...（出现多次）",
+      "description": "全文统计"您"约出现 6 次，相对文字量偏高，在每个功能说明段落均有出现，显得冗余。",
+      "suggestion": "将部分'您可以...'改为直接陈述，例如：'调用 startScreenCapture 接口时，通过将 TRTCVideoStreamType 参数指定为 TRTCVideoStreamTypeSub 可启用辅路模式。'全文中有多处，请批量修改。"
+    }
+  ]
+}

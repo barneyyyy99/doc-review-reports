@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__监听网络质量__Android&iOS&Windows&Mac__86735807181303808.md",
+  "skill_id": "format-review",
+  "rule_path": ".claude/skills/_shared/format-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "fmt-001",
+      "type": "空格",
+      "severity": "P2",
+      "category": "format",
+      "location": "网络测速原理章节 — TRTCSpeedTestResult 字段表格",
+      "original": "预测的上行带宽，单位为kbps， -1表示无效值（availableUpBandwidth 和 availableDownBandwidth 两行均出现）",
+      "description": "中文"为"后面直接接英文"kbps"，缺少空格，共出现 2 处",
+      "suggestion": "改为"单位为 kbps"，全文中有多处，请批量修改"
+    }
+  ]
+}

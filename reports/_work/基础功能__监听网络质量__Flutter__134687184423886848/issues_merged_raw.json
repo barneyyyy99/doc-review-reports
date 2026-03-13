@@ -1,0 +1,11 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__监听网络质量__Flutter__134687184423886848.md",
+  "merged_at": "2026-03-13",
+  "total_before_dedup": 3,
+  "all_issues": [
+    {"id": "fmt-001", "type": "代码格式（语言标记错误）", "severity": "P1", "category": "format"},
+    {"id": "lang-001", "type": "口语化", "severity": "P2", "category": "language"},
+    {"id": "code-001", "type": "代码块语言标记错误", "severity": "P1", "category": "code"},
+    {"id": "feat-001", "type": "时序流程不完整", "severity": "P1", "category": "feature"}
+  ]
+}

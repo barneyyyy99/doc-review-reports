@@ -1,0 +1,46 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Android__86735807367962624.md",
+  "label": "feature",
+  "business_skill_id": "review-feature",
+  "rule_path": ".claude/skills/review-feature/SKILL.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "时序流程不完整",
+      "severity": "P0",
+      "category": "feature",
+      "location": "操作指引 / 开启屏幕分享",
+      "original": "步骤1：添加 Activity / 步骤2：启动屏幕分享 / 步骤3：弹出悬浮窗防强杀（可选）",
+      "description": "操作指引仅说明如何开启屏幕分享，但未说明销毁/清理阶段：如何停止屏幕分享、停止后是否需要释放资源或注销监听。作为功能的生命周期，缺少停止流程会导致开发者无法正确结束分享，可能产生资源泄漏或状态异常。",
+      "suggestion": "新增"停止屏幕分享"步骤或章节，说明调用停止 API（如 TRTCCloud#stopScreenCapture()）的时机和方式，以及是否需要额外清理资源。"
+    },
+    {
+      "type": "核心 API 参数缺少说明",
+      "severity": "P1",
+      "category": "feature",
+      "location": "操作指引 / 开启屏幕分享 / 步骤2：启动屏幕分享",
+      "original": "要开启 Android 端的屏幕分享，只需调用 TRTCCloud#startScreenCapture() 接口即可。通过设置 TRTCCloud#startScreenCapture() 中的首个参数 `encParams`……",
+      "description": "TRTCCloud#startScreenCapture() 是本文档的核心 API，但文档中除了通过参数表给出推荐值外，没有说明该 API 的完整参数签名：该接口除 encParams 外是否还有其他参数？各参数的类型、必填/可选状态均未说明。同时，文档缺少该接口的调用示例代码，开发者仅凭文字描述无法知道如何正确构造调用语句。",
+      "suggestion": "在步骤2正文中补充：1）startScreenCapture() 的完整参数列表（参数名、类型、是否必填）；2）基础调用示例代码，展示 encParams 的构造与传入方式。"
+    },
+    {
+      "type": "回调处理缺失",
+      "severity": "P1",
+      "category": "feature",
+      "location": "操作指引 / 开启屏幕分享 / 步骤2：启动屏幕分享",
+      "original": "要开启 Android 端的屏幕分享，只需调用 TRTCCloud#startScreenCapture() 接口即可。",
+      "description": "文档未说明开启屏幕分享后如何确认分享已成功启动，也未说明分享过程中发生错误时的回调（如权限被拒绝、系统强杀后的状态通知）。开发者无法得知操作结果。",
+      "suggestion": "说明屏幕分享启动成功/失败的回调事件（如 TRTCCloudListener 中对应的回调），及回调参数含义。"
+    },
+    {
+      "type": "依赖关系缺失",
+      "severity": "P1",
+      "category": "feature",
+      "location": "操作指引 / 开启屏幕分享",
+      "original": "步骤1：添加 Activity",
+      "description": "文档未说明调用 startScreenCapture() 的前置条件：开发者是否需要先加入 TRTC 房间？如果需要，应在文档开头或步骤2之前明确指出该依赖关系，或引用说明前置条件的文档。",
+      "suggestion": "在文档开头或步骤2前增加前置条件说明，如"调用本接口前，需已成功加入 TRTC 房间（详见 [进入房间](link)）。"如已有相关文档，补充对应链接即可。"
+    }
+  ]
+}

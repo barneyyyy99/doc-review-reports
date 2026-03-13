@@ -1,0 +1,18 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Mac__86735807661563904.md",
+  "skill_id": "logic-review",
+  "rule_path": ".claude/skills/_shared/logic-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "前后描述矛盾",
+      "severity": "P0",
+      "category": "logic",
+      "location": "步骤4：开始系统声音采集",
+      "original": "调用 startSystemAudioLoopback 接口开始系统声音采集，并将其混入上行音频流中，接口执行完成会通过 onSystemAudioLoopbackError 回调成功或失败的结果。",
+      "description": "正文描述 onSystemAudioLoopbackError 用于回调"成功或失败的结果"，但从命名来看 onSystemAudioLoopbackError 语义上是错误回调，不应该用于回调成功结果。这里描述与 API 名称存在明显矛盾：如果仅在失败时触发，则"成功"的描述有误；如果既回调成功也回调失败，则 API 命名具有误导性，文档应加以说明。",
+      "suggestion": "明确说明 onSystemAudioLoopbackError 回调的触发时机：如仅在失败时触发，请将正文改为"接口执行失败时，会通过 onSystemAudioLoopbackError 回调错误信息"；如同时覆盖成功结果，请补充说明成功时的回调参数含义（如错误码为 0 表示成功）。"
+    }
+  ]
+}

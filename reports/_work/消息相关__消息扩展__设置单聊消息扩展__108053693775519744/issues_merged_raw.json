@@ -1,0 +1,36 @@
+{
+  "doc_path": "input-docs/batch_001/消息相关__消息扩展__设置单聊消息扩展__108053693775519744.md",
+  "merged_at": "2026-03-12T00:00:00Z",
+  "issues": [
+    {
+      "id": "doc4-api-001",
+      "category": "api_issues",
+      "type": "引用链接缺失",
+      "location": "请求包字段说明 > MsgKey 行",
+      "original": "获取消息 MsgKey 的方法请参见单发单聊消息的接口说明",
+      "issue": "MsgKey 字段描述中说「参见单发单聊消息的接口说明」，但该文本未附带超链接，开发者无法直接跳转查看",
+      "suggestion": "将「单发单聊消息的接口说明」添加相应链接",
+      "severity": "P1"
+    },
+    {
+      "id": "doc4-fmt-001",
+      "category": "format_issues",
+      "type": "中英文之间缺少空格及格式不一致",
+      "location": "接口调用说明 > 请求参数说明表格 > contenttype 行",
+      "original": "请求格式固定值为json",
+      "issue": "「固定值为json」缺少分隔符，与同系列文档写法不一致",
+      "suggestion": "改为「请求格式固定值为：json」",
+      "severity": "P2"
+    },
+    {
+      "id": "doc4-terms-001",
+      "category": "terms_issues",
+      "type": "套餐名称大小写不一致",
+      "location": "功能说明 > HINT 块；错误码说明 > 10008 错误码行",
+      "original": "专业版plus（两处均出现）",
+      "issue": "「专业版plus」（p 小写）与同系列 Doc 1 中「专业版Plus」（P 大写）拼写不一致",
+      "suggestion": "统一为「专业版Plus」",
+      "severity": "P2"
+    }
+  ]
+}

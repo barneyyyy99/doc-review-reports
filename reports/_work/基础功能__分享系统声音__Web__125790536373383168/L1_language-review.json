@@ -1,0 +1,18 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Web__125790536373383168.md",
+  "skill_id": "language-review",
+  "rule_path": ".claude/skills/_shared/language-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "标题规范",
+      "severity": "P2",
+      "category": "language",
+      "location": "实现流程 > 代码示例 / 兼容性说明",
+      "original": "### 代码示例\n### 兼容性说明",
+      "description": "两个 H3 标题位于"实现流程"H2 下，属于实现章节，按规范应使用"动词+宾语"结构，但"代码示例"和"兼容性说明"均为名词短语。",
+      "suggestion": "将"代码示例"改为"调用 startScreenShare"或"查看示例代码"；将"兼容性说明"改为"确认浏览器兼容性"或"了解平台兼容性"。"
+    }
+  ]
+}

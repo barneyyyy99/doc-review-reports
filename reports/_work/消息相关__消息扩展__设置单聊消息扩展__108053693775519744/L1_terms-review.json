@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/消息相关__消息扩展__设置单聊消息扩展__108053693775519744.md",
+  "skill_id": "terms-review",
+  "rule_path": ".claude/skills/_shared/terms-review.md",
+  "executed_at": "2026-03-12T00:00:00Z",
+  "status": "done",
+  "issues": [
+    {
+      "id": "doc4-terms-001",
+      "category": "terms_issues",
+      "type": "套餐名称大小写不一致",
+      "location": "功能说明 > HINT 块；错误码说明 > 10008 错误码行",
+      "original": "专业版plus（两处均出现）",
+      "issue": "文档中写作「专业版plus」（p 小写），但同系列 Doc 1（全员推送）的 HINT 块中写作「专业版Plus」（P 大写），两者拼写不一致",
+      "suggestion": "统一为「专业版Plus」（首字母大写）",
+      "severity": "P2"
+    }
+  ]
+}

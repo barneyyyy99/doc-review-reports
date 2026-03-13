@@ -1,0 +1,27 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Flutter__134687481928679424.md",
+  "skill_id": "format-review",
+  "rule_path": ".claude/skills/_shared/format-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "空格",
+      "severity": "P2",
+      "category": "format",
+      "location": "Android标签步骤2：开启分享系统声音；Android标签步骤3：关闭分享系统声音；iOS标签步骤3：中途开启和关闭系统声音",
+      "original": "调用 TRTCCloud 的 startSystemAudioLoopback 接口即可 / 调用 TRTCCloud 的 stopSystemAudioLoopback 接口即可 / SDK 提供了 TRTCCloud#setSystemAudioLoopbackVolume 方法...",
+      "description": "正文中 `TRTCCloud` 在 Android 章节以行内代码格式出现，但在 iOS 章节中 `TRTCCloud#setSystemAudioLoopbackVolume` 作为链接文本出现时，TRTCCloud 没有用行内代码包裹（链接文本中），属于同一 token 在不同位置格式不一致。此外，行内代码 `TRTCCloud` 前后与中文之间需要有空格，但原文"调用 `TRTCCloud` 的"格式已正确。",
+      "suggestion": "确认全文中 TRTCCloud 的格式保持一致，凡是正文技术术语描述中应统一用反引号包裹。"
+    },
+    {
+      "type": "标题层级",
+      "severity": "P1",
+      "category": "format",
+      "location": "Android标签下的 H2 TRTC系统声音分享功能 → H3 开启分享系统声音 → H4 步骤1/步骤2/步骤3",
+      "original": "## TRTC 系统声音分享功能 → ### 开启分享系统声音 → #### 步骤1/步骤2/步骤3",
+      "description": "在 Android 标签中，H3「开启分享系统声音」下只有 H4 步骤类子章节，而「关闭分享系统声音」（步骤3）使用的是同级 H4 而非独立 H3，导致「开启分享系统声音」是一个只包含若干 H4 的孤立 H3 章节，而「关闭分享系统声音」没有对等的 H3 层级。此外 iOS 标签直接使用 H3 步骤，层级与 Android 不一致，但该问题在标签结构中属于内容差异，不直接违反层级规则。",
+      "suggestion": "Android 标签中，「关闭分享系统声音」（步骤3）建议提升为独立的 H3 标题，与「开启分享系统声音」（H3）保持对等，避免孤儿章节。"
+    }
+  ]
+}

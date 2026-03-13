@@ -1,0 +1,33 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__uni-app__86735807589199872.md",
+  "merged_at": "2026-03-13",
+  "total_before_dedup": 6,
+  "sources": {
+    "L1_base-standards": [],
+    "L1_severity-standards": [],
+    "L1_format-review": [
+      {"id": "fmt-001", "type": "空格", "severity": "P2", "category": "format"}
+    ],
+    "L1_language-review": [
+      {"id": "lang-001", "type": "标题规范", "severity": "P2", "category": "language"}
+    ],
+    "L1_terms-review": [],
+    "L1_logic-review": [
+      {"id": "logic-001", "type": "信息缺失", "severity": "P1", "category": "logic"},
+      {"id": "logic-002", "type": "信息缺失", "severity": "P1", "category": "logic"}
+    ],
+    "L1_code-review": [],
+    "L2_business-review": [
+      {"id": "feat-001", "type": "时序流程不完整", "severity": "P1", "category": "feature"},
+      {"id": "feat-002", "type": "时序流程不完整", "severity": "P1", "category": "feature"}
+    ]
+  },
+  "all_issues": [
+    {"id": "fmt-001", "type": "空格", "severity": "P2", "category": "format", "location": "开启屏幕分享章节"},
+    {"id": "lang-001", "type": "标题规范", "severity": "P2", "category": "language", "location": "观看屏幕分享章节"},
+    {"id": "logic-001", "type": "信息缺失", "severity": "P1", "category": "logic", "location": "观看屏幕分享 — 观看 Android / iOS 屏幕分享"},
+    {"id": "logic-002", "type": "信息缺失", "severity": "P1", "category": "logic", "location": "观看屏幕分享"},
+    {"id": "feat-001", "type": "时序流程不完整", "severity": "P1", "category": "feature", "location": "开启屏幕分享章节"},
+    {"id": "feat-002", "type": "时序流程不完整", "severity": "P1", "category": "feature", "location": "全文"}
+  ]
+}

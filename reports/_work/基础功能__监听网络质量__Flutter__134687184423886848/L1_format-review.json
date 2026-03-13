@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__监听网络质量__Flutter__134687184423886848.md",
+  "skill_id": "format-review",
+  "rule_path": ".claude/skills/_shared/format-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "fmt-001",
+      "type": "代码格式",
+      "severity": "P1",
+      "category": "format",
+      "location": "调用指引 — 代码示例",
+      "original": "code-block language=\"java\"（代码内容为 Dart/Flutter 语法，如 TRTCCloudListener、TRTCQuality.unknown 等）",
+      "description": "代码块内容为 Flutter/Dart 代码，但语言标记为 java，导致语法高亮错误，影响阅读体验",
+      "suggestion": "将代码块语言标记由 java 改为 dart"
+    }
+  ]
+}

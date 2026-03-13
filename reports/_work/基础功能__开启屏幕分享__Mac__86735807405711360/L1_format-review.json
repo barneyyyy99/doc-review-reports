@@ -1,0 +1,36 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Mac__86735807405711360.md",
+  "skill_id": "format_review",
+  "rule_path": ".claude/skills/_shared/format-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "空格",
+      "severity": "P2",
+      "category": "format",
+      "location": "开头段落（辅路分享说明）、选择分享目标章节、开始屏幕分享章节，多处",
+      "original": "（1）"startScreenCapture接口"（2）"TRTCVideoStreamType参数"（3）"startRemoteSubStreamView接口"",
+      "description": "正文中多处中文字符与英文/代码词之间缺少空格。例如：'startScreenCapture接口' 应为 'startScreenCapture 接口'；'TRTCVideoStreamType参数' 应为 'TRTCVideoStreamType 参数'。全文中有多处，请批量修改。",
+      "suggestion": "在正文中所有中文字符与英文字母/单词之间补充一个半角空格。全文中有多处，请批量修改。"
+    },
+    {
+      "type": "代码格式",
+      "severity": "P2",
+      "category": "format",
+      "location": "选择分享目标章节，列表项 '指定区域分享'",
+      "original": "并将 captureRect 设为非 NULL，例如 { 100, 100, 300, 300 }",
+      "description": "正文中 captureRect 在其他段落已出现为代码格式（`captureRect`），而本列表项中 captureRect 未使用行内代码格式，且当前行处于技术语境（"将...设为"）。",
+      "suggestion": "将 captureRect 改为 `captureRect`。"
+    },
+    {
+      "type": "标题层级",
+      "severity": "P1",
+      "category": "format",
+      "location": "常见问题章节下的两个子标题",
+      "original": "## 常见问题\n### 一个房间里可以同时有多个人共享屏幕吗？\n### 指定窗口分享（SourceTypeWindow），当窗口大小变化时，视频流的分辨率会不会也跟着变化？",
+      "description": "## 常见问题 下只有两个 H3 子标题，符合'至少两个子章节'规则，结构本身无问题。但文档整体是 H2 级别章节，H3 仅出现在常见问题下，层级结构合理。（无实际问题，记录检查结论）",
+      "suggestion": "无需修改。"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__iOS__86735807331250176.md",
+  "skill_id": "logic_review",
+  "rule_path": ".claude/skills/_shared/logic-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "LOGIC-001",
+      "type": "步骤遗漏",
+      "severity": "P0",
+      "category": "logic",
+      "location": "步骤3：对接主 App 端的接收逻辑 → 步骤列表第3项",
+      "original": "等待用户触发屏幕分享。如果不实现步骤4中的"触发按钮"，屏幕分享就需要用户在 iOS 系统的控制中心，通过长按录屏按钮来触发……",
+      "description": "步骤3的内部子步骤共4条，其第3条描述了"等待用户触发屏幕分享"并提到选择录屏扩展，但未说明用户触发 iOS 录屏时如何选择已集成的扩展（即选择正确的 Broadcast Upload Extension），对初次接入的开发者来说存在操作盲区。",
+      "suggestion": "在步骤3第3条补充说明：用户在控制中心长按录屏按钮后，需在弹出的列表中选择本 App 对应的录屏扩展，方可触发屏幕分享数据传输。"
+    },
+    {
+      "id": "LOGIC-002",
+      "type": "信息缺失",
+      "severity": "P1",
+      "category": "logic",
+      "location": "步骤3：对接主 App 端的接收逻辑 → 步骤列表第1条",
+      "original": "确保 TRTCCloud 已经关闭了摄像头采集，如果尚未关闭，请调用 TRTCCloud#stopLocalPreview 关闭摄像头采集。",
+      "description": "文档要求先关闭摄像头再开始屏幕分享，但未说明原因（iOS 设备进行屏幕分享时视频通道同时传输摄像头和屏幕内容会造成冲突）。开发者不清楚为何必须先关闭摄像头，可能忽略该步骤。",
+      "suggestion": "在该步骤后补充原因说明，例如：\"由于 iOS 屏幕分享使用主流（主视频通道），与摄像头采集通道互斥，必须先停止摄像头采集才能正常启动屏幕分享。\""
+    }
+  ]
+}

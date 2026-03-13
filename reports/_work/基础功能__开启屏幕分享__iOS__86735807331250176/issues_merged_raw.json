@@ -1,0 +1,97 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__iOS__86735807331250176.md",
+  "executed_at": "2026-03-13",
+  "sources": ["L1_format-review", "L1_language-review", "L1_terms-review", "L1_logic-review", "L1_code-review", "L2_business-review"],
+  "issues": [
+    {
+      "id": "FORMAT-001",
+      "type": "标题层级",
+      "severity": "P1",
+      "category": "format",
+      "location": "跨应用分享 章节（步骤1-4）",
+      "original": "## 跨应用分享 → #### 步骤1~4（跳过了 H3）",
+      "description": "跨应用分享节下的四个步骤标题直接使用了 H4（####），跳过了 H3（###），违反标题必须按顺序递进（H2 → H3 → H4）的规范。",
+      "suggestion": "将步骤1~4的标题改为 H3（###）级别，或在 H2 下先设立一个 H3 父级标题（如"### 接入步骤"），再将步骤1~4置于其下。"
+    },
+    {
+      "id": "FORMAT-002",
+      "type": "代码格式",
+      "severity": "P2",
+      "category": "format",
+      "location": "跨应用分享章节概述列表 vs 步骤2正文第3条",
+      "original": "概述列表：`TXLiteAVSDK_ReplayKitExt.framework`（有反引号）；步骤2正文第3条：TXLiteAVSDK_ReplayKitExt.framework（无反引号）",
+      "description": "TXLiteAVSDK_ReplayKitExt.framework 在跨应用分享节概述列表中使用了行内代码格式，但在步骤2正文中同一文件名未加反引号，格式不一致。",
+      "suggestion": "将步骤2正文中的 TXLiteAVSDK_ReplayKitExt.framework 改为 `TXLiteAVSDK_ReplayKitExt.framework`，全文保持一致。"
+    },
+    {
+      "id": "TERMS-001",
+      "type": "功能概念术语不一致",
+      "severity": "P2",
+      "category": "terms",
+      "location": "SampleHandler 代码块（步骤2）中文注释字符串",
+      "original": "tip = @\"屏幕共享已结束\"（代码注释）；文档正文全文使用"屏幕分享"",
+      "description": "文档正文统一使用"屏幕分享"，但 SampleHandler 代码示例中的中文字符串为"屏幕共享已结束"，两种表述混用。",
+      "suggestion": "将代码注释字符串中的 \"屏幕共享已结束\" 改为 \"屏幕分享已结束\"，与全文一致。"
+    },
+    {
+      "id": "LOGIC-001",
+      "type": "步骤遗漏",
+      "severity": "P0",
+      "category": "logic",
+      "location": "步骤3：对接主 App 端的接收逻辑 → 第3条",
+      "original": "等待用户触发屏幕分享。如果不实现步骤4中的"触发按钮"，屏幕分享就需要用户在 iOS 系统的控制中心，通过长按录屏按钮来触发……",
+      "description": "描述用户从系统控制中心触发录屏时，未说明用户需要在弹出列表中选择本 App 的扩展，对初次接入的开发者存在操作盲区。",
+      "suggestion": "补充说明：用户在控制中心长按录屏按钮后，需在弹出的列表中选择本 App 对应的录屏扩展，方可触发屏幕分享数据传输。"
+    },
+    {
+      "id": "LOGIC-002",
+      "type": "逻辑断链",
+      "severity": "P1",
+      "category": "logic",
+      "location": "步骤3：对接主 App 端的接收逻辑 → 第1条",
+      "original": "确保 TRTCCloud 已经关闭了摄像头采集，如果尚未关闭，请调用 TRTCCloud#stopLocalPreview 关闭摄像头采集。",
+      "description": "文档要求先关闭摄像头再启动屏幕分享，但未说明原因，开发者不清楚为何必须先关闭摄像头，可能忽略该步骤。",
+      "suggestion": "补充原因说明，例如：\"由于 iOS 屏幕分享使用主流（主视频通道），与摄像头采集通道互斥，必须先停止摄像头采集才能正常启动屏幕分享。\""
+    },
+    {
+      "id": "CODE-001",
+      "type": "代码块语言标记错误",
+      "severity": "P1",
+      "category": "code",
+      "location": "步骤2（SampleHandler 代码块，id=46）、步骤3（startScreenCapture 代码块，id=47）、步骤4（onScreenButtonTapped 代码块，id=48）",
+      "original": "三个代码块均标注 language=\"swift\"，但内容为 Objective-C 语法（#import、@interface、@implementation、[[...] ...]、NS 前缀等）",
+      "description": "三处代码块的语言标记均为 swift，但实际代码是 Objective-C。错误的语言标记会导致语法高亮完全错误，影响开发者阅读体验。",
+      "suggestion": "将三处代码块的语言标记由 swift 改为 objc（或 objective-c）。如需同时提供 Swift 版本，可在每个步骤下新增对应的 Swift 代码块。"
+    },
+    {
+      "id": "FEAT-001",
+      "type": "时序流程不完整",
+      "severity": "P0",
+      "category": "feature",
+      "location": "应用内分享 章节",
+      "original": "应用内分享的方案非常简单，只需要调用 TRTC SDK 提供的接口 TRTCCloud#startScreenCaptureInApp 并传入编码参数 TRTCVideoEncParam 即可。",
+      "description": "应用内分享章节仅说明了如何调用 startScreenCaptureInApp 开始屏幕分享，没有说明如何停止（对应 stopScreenCapture），功能生命周期不完整。",
+      "suggestion": "在应用内分享章节补充停止说明：调用 TRTCCloud#stopScreenCapture 可随时中止屏幕分享，并补充对应代码示例。"
+    },
+    {
+      "id": "FEAT-002",
+      "type": "核心 API 参数缺少说明",
+      "severity": "P1",
+      "category": "feature",
+      "location": "步骤3：对接主 App 端的接收逻辑 → 第2条",
+      "original": "调用 TRTCCloud#startScreenCaptureByReplaykit:appGroup: 方法，并传入步骤1中设置的 AppGroup，让 SDK 进入"等待"状态。",
+      "description": "startScreenCaptureByReplaykit:appGroup: 的第一个参数（videoEncParam，TRTCVideoEncParam 类型）在正文中未作任何说明（含义、必填/可选、传 nil 的行为），不满足核心 API 参数必须在正文中说明的要求。",
+      "suggestion": "补充参数说明：videoEncParam（TRTCVideoEncParam，可选，传 nil 时 SDK 沿用屏幕分享前的编码参数）；appGroup（NSString，必填，需与步骤1中配置的 App Group Identifier 一致）。"
+    },
+    {
+      "id": "FEAT-003",
+      "type": "回调处理缺失",
+      "severity": "P1",
+      "category": "feature",
+      "location": "跨应用分享 → 步骤3：对接主 App 端的接收逻辑",
+      "original": "代码示例仅包含 onScreenCaptureStarted，正文未说明屏幕分享停止或异常时的回调处理。",
+      "description": "代码示例仅展示了 onScreenCaptureStarted 成功回调，未说明当屏幕分享因异常终止时主 App 端应如何感知并响应（如 onScreenCaptureStopped），开发者无法处理异常情况。",
+      "suggestion": "在步骤3中补充说明停止回调：onScreenCaptureStopped：屏幕分享停止时触发（包含主动停止和异常停止），建议在此回调中更新 UI 状态。"
+    }
+  ]
+}

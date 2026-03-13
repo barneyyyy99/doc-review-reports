@@ -1,0 +1,27 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Flutter__86735807553560576.md",
+  "skill_id": "format_review",
+  "rule_path": ".claude/skills/_shared/format_review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "标题层级违规",
+      "severity": "P1",
+      "category": "format",
+      "location": "H2：实现 Windows 平台屏幕分享 章节",
+      "original": "## 实现 Windows 平台屏幕分享\n#### 步骤1：获取分享目标",
+      "description": "Windows 平台章节中，H2 标题下直接出现 H4 标题（步骤1：获取分享目标），跳过了 H3 层级，违反标题层级规范。",
+      "suggestion": "将步骤标题由 H4 改为 H3，或在 H2 下先添加一个 H3 章节，再放 H4 步骤标题。"
+    },
+    {
+      "type": "中英文空格缺失（批量）",
+      "severity": "P2",
+      "category": "format",
+      "location": "Windows 章节"辅路分享"和"主路分享"列表项",
+      "original": "您可以在调用`startScreenCapture`接口时",
+      "description": "正文列表项中，行内代码 token 前后缺少空格，影响阅读体验。涉及多处，如"调用`startScreenCapture`接口时"、"将`TRTCVideoStreamType`参数指定为"等。",
+      "suggestion": "批量在行内代码前后各添加一个空格，例如改为：您可以在调用 `startScreenCapture` 接口时。"
+    }
+  ]
+}

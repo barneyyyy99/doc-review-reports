@@ -1,0 +1,97 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Electron__86735807516860416.md",
+  "executed_at": "2026-03-13",
+  "dedup_notes": "LANG-001（视角混乱）与 LANG-002（过度使用"您"）描述不同角度、severity 不同，保留两条。LOGIC-001（主路分享观看缺失）与 FEAT-001（生命周期缺失）各自独立，无重叠，均保留。所有9条问题均无重复，无需删除。",
+  "issues": [
+    {
+      "id": "FMT-001",
+      "type": "空格",
+      "severity": "P2",
+      "category": "format",
+      "location": "介绍段落主路分享列表项；步骤3正文",
+      "original": "您可以在调用startScreenCapture接口时，通过将TRTCVideoStreamType参数指定为",
+      "description": "正文中技术词（startScreenCapture、TRTCVideoStreamType 等）与前后中文之间缺少半角空格，全文多处存在。",
+      "suggestion": "在中文与英文单词/行内代码之间加一个半角空格。全文中有多处，请批量修改。"
+    },
+    {
+      "id": "LANG-001",
+      "type": "视角混乱",
+      "severity": "P1",
+      "category": "language",
+      "location": "介绍段落辅路分享/主路分享列表项；步骤2；步骤3",
+      "original": "这是腾讯会议的使用方案，您可以在调用 startScreenCapture 接口时……",
+      "description": ""您"在文档中频繁出现（约4次/100字），部分场景隐含视角混乱（将腾讯会议方案与开发者行为混同），属于建议优化范围。",
+      "suggestion": "将操作引导句改为开发者视角的直接描述，减少不必要的"您"。全文中有多处，请批量修改。"
+    },
+    {
+      "id": "LANG-002",
+      "type": "过度使用"您"",
+      "severity": "P2",
+      "category": "language",
+      "location": "步骤2、步骤3",
+      "original": "在您的代码中，可以通过调用……；您可以通过startScreenCapture接口……",
+      "description": "全文"您"使用频率约4次/100字，属于建议优化范围，整体偏啰嗦。",
+      "suggestion": "减少不必要的"您"，改为直接陈述。"
+    },
+    {
+      "id": "LOGIC-001",
+      "type": "前后描述矛盾",
+      "severity": "P0",
+      "category": "logic",
+      "location": "步骤4：观看屏幕分享",
+      "original": "当房间里有一个用户启动了屏幕分享，会通过辅路进行分享。",
+      "description": "文档介绍了主路分享和辅路分享两种方案，但步骤4仅说明辅路分享的观看方式，完全未说明主路分享时观看端如何订阅，导致主路分享场景无法完成。",
+      "suggestion": "在步骤4补充：主路分享时，监听 onUserVideoAvailable 事件，调用 startRemoteView(userId, dom, TRTCVideoStreamTypeBig) 订阅。辅路分享则如现有示例。"
+    },
+    {
+      "id": "LOGIC-002",
+      "type": "关键分支场景缺失",
+      "severity": "P1",
+      "category": "logic",
+      "location": "介绍段落（主路分享 vs 辅路分享）",
+      "original": "Electron 平台下的屏幕分享支持主路分享和辅路分享两种方案",
+      "description": "文档列出两种方案但未说明选择依据，开发者不清楚何时应选择主路分享，何时应选择辅路分享。",
+      "suggestion": "补充选择建议：如需同时上行摄像头画面，使用辅路分享；只需上行屏幕画面（与摄像头互斥），使用主路分享。"
+    },
+    {
+      "id": "CODE-001",
+      "type": "正文与代码矛盾",
+      "severity": "P1",
+      "category": "code",
+      "location": "步骤2：开始屏幕分享 代码块",
+      "original": "const screenshareDom = document.querySelector('screen-dom');",
+      "description": "`document.querySelector('screen-dom')` 是无效的 CSS 选择器（缺少 `.` 或 `#` 前缀），会始终返回 null，可能导致 startScreenCapture 收到 null 参数引发运行时问题。",
+      "suggestion": "修改为有效选择器，如 `document.querySelector('#screen-dom')` 或 `document.querySelector('.screen-dom')`。"
+    },
+    {
+      "id": "FEAT-001",
+      "type": "时序流程不完整",
+      "severity": "P0",
+      "category": "feature",
+      "location": "操作步骤（整体）",
+      "original": "（文档无独立的停止屏幕分享步骤）",
+      "description": "文档缺少屏幕分享生命周期的清理阶段说明，未明确何时及如何调用 stopScreenCapture 结束分享。",
+      "suggestion": "补充"停止屏幕分享"说明，示例：`trtcCloud.stopScreenCapture();` 并说明应在分享结束或离开房间前调用。"
+    },
+    {
+      "id": "FEAT-002",
+      "type": "依赖关系缺失",
+      "severity": "P1",
+      "category": "feature",
+      "location": "文档开头 / 操作步骤前",
+      "original": "（文档无前置条件说明）",
+      "description": "屏幕分享依赖 SDK 初始化和已加入 TRTC 房间，但文档未说明前置条件，也未提供相关文档链接。",
+      "suggestion": "在文档开头增加：'前置条件：需先完成 SDK 初始化并加入 TRTC 音视频房间（详见 [快速集成文档](链接)）。'"
+    },
+    {
+      "id": "FEAT-003",
+      "type": "核心 API 参数缺少说明",
+      "severity": "P1",
+      "category": "feature",
+      "location": "步骤2：开始屏幕分享",
+      "original": "使用 startScreenCapture 接口可以启动屏幕分享。",
+      "description": "startScreenCapture 是核心 API，其参数 view（DOM 元素）和 streamType（TRTCVideoStreamType）的含义未在正文中说明，仅能从代码示例推断。",
+      "suggestion": "在步骤2正文中补充三个参数说明：1) view：本地预览 DOM，不需预览可传 null；2) streamType：TRTCVideoStreamTypeSub 为辅路，TRTCVideoStreamTypeBig 为主路；3) encParam：编码参数，详见步骤3。"
+    }
+  ]
+}

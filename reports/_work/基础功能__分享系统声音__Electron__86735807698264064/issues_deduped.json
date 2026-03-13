@@ -1,0 +1,88 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Electron__86735807698264064.md",
+  "generated_at": "2026-03-13",
+  "total_before_dedup": 9,
+  "total_after_dedup": 8,
+  "issues": [
+    {
+      "id": "fmt-001",
+      "type": "标题层级",
+      "severity": "P1",
+      "category": "format",
+      "location": "步骤1、步骤2、步骤3（H3 标题，其父级为 H2 "场景痛点及解决方案"）",
+      "original": "场景痛点及解决方案（H2）下包含：步骤1（H3）、步骤2（H3）、步骤3（H3）",
+      "description": "H2"场景痛点及解决方案"中既包含场景介绍段落，又直接包含实现步骤子章节，标题语义与内容不对应。",
+      "suggestion": "将步骤1~步骤3单独提升为新的 H2 章节，如"接入步骤"或"实现系统声音采集"，使标题语义与内容一致。"
+    },
+    {
+      "id": "fmt-002",
+      "type": "空格",
+      "severity": "P2",
+      "category": "format",
+      "location": "集成小结段落",
+      "original": "可以通过`启动台`的`其他`文件夹中`音频 MIDI 设置` 应用来检查",
+      "description": "行内代码（反引号包裹）与相邻中文字符之间缺少空格。",
+      "suggestion": "改为：通过 `启动台` 的 `其他` 文件夹中的 `音频 MIDI 设置` 应用来检查。全文中有多处，请批量修改。"
+    },
+    {
+      "id": "lang-001",
+      "type": "简洁性",
+      "severity": "P2",
+      "category": "language",
+      "location": "步骤1、步骤2、步骤3 正文描述",
+      "original": "在您的代码中调用 startSystemAudioLoopback 接口……（共3处）",
+      "description": ""在您的代码中"属于冗余修饰，开发者文档的默认读者即为开发者，无需显式强调。",
+      "suggestion": "将"在您的代码中调用 X 接口"改为"调用 X 接口"，全文共3处，请批量修改。"
+    },
+    {
+      "id": "logic-002",
+      "type": "信息缺失",
+      "severity": "P1",
+      "category": "logic",
+      "location": "场景痛点及解决方案 / 全文",
+      "original": "具体接入步骤见下文。",
+      "description": "文档仅说明 Mac 端需要虚拟声卡，但未说明 Windows 端是否同样适用或有其他限制，开发者面向多平台时无法判断。",
+      "suggestion": "在场景说明中明确该功能的平台限制，说明 Windows 端的情况。"
+    },
+    {
+      "id": "code-001",
+      "type": "正文与代码矛盾",
+      "severity": "P0",
+      "category": "code",
+      "location": "步骤1：开始系统声音采集，代码块",
+      "original": "const rtcCloud = new TRTCCloud();\n...\ntrtcCloud.on('onSystemAudioLoopbackError', onSystemAudioLoopbackError);\ntrtcCloud.startLocalAudio(TRTCAudioQuality.TRTCAudioQualityDefault);\ntrtcCloud.startSystemAudioLoopback();",
+      "description": "实例声明为 `rtcCloud`，但后续调用时使用 `trtcCloud`（未定义变量），运行时会抛出 ReferenceError，代码无法执行。",
+      "suggestion": "将代码中所有 `trtcCloud` 统一改为 `rtcCloud`，或将声明处改为 `const trtcCloud = new TRTCCloud();`。"
+    },
+    {
+      "id": "feat-001",
+      "type": "时序流程不完整",
+      "severity": "P1",
+      "category": "feature",
+      "location": "全文（前置条件缺失）",
+      "original": "（文档直接从"步骤1：开始系统声音采集"讲起，无前置条件说明）",
+      "description": "文档未说明调用 startSystemAudioLoopback 之前的前置条件（SDK 初始化、进房等），也未引用相关文档。",
+      "suggestion": "在文档开头补充前置条件说明，并提供快速开始文档链接。"
+    },
+    {
+      "id": "feat-002",
+      "type": "核心 API 参数缺少说明",
+      "severity": "P1",
+      "category": "feature",
+      "location": "步骤3：设置系统声音采集音量",
+      "original": "trtcCloud.setSystemAudioLoopbackVolume(60);",
+      "description": "setSystemAudioLoopbackVolume 的参数含义、类型、取值范围、默认值在正文中完全未说明，仅通过示例代码传入硬编码值 60。",
+      "suggestion": "在调用示例前补充参数说明，例如：'参数为整型，取值范围 0~100，默认值为 100，0 表示静音。'"
+    },
+    {
+      "id": "feat-003",
+      "type": "时序流程不完整",
+      "severity": "P1",
+      "category": "feature",
+      "location": "全文（销毁/清理阶段缺失）",
+      "original": "（文档仅讲述开始/停止/设置音量，无销毁/清理说明）",
+      "description": "文档未说明退出房间前是否需要先停止采集、是否需要移除 onSystemAudioLoopbackError 事件监听器，可能导致资源泄漏。",
+      "suggestion": "在步骤2后或集成小结中补充清理步骤说明，包括移除监听器示例代码。"
+    }
+  ]
+}

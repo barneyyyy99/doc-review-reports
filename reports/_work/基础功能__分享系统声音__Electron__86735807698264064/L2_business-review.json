@@ -1,0 +1,37 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Electron__86735807698264064.md",
+  "label": "feature",
+  "business_skill_id": "review-feature",
+  "rule_path": ".claude/skills/review-feature/SKILL.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "时序流程不完整",
+      "severity": "P1",
+      "category": "feature",
+      "location": "全文",
+      "original": "（文档直接从"步骤1：开始系统声音采集"讲起，无前置条件说明）",
+      "description": "文档未说明前置条件：调用 startSystemAudioLoopback 之前是否需要先进房（joinRoom/enterRoom）？是否需要先初始化 TRTC SDK？文档也未引用任何快速集成或初始化文档。对于不熟悉 TRTC 的开发者，无法确定何时可以调用该接口。",
+      "suggestion": "在文档开头或步骤1之前补充前置条件，例如："前置条件：需已完成 TRTC SDK 初始化并成功进入房间（详见 [快速开始](link)），再执行以下步骤开启系统声音采集。""
+    },
+    {
+      "type": "核心 API 参数缺少说明",
+      "severity": "P1",
+      "category": "feature",
+      "location": "步骤3：设置系统声音采集音量",
+      "original": "trtcCloud.setSystemAudioLoopbackVolume(60);",
+      "description": "setSystemAudioLoopbackVolume 是步骤3的核心 API，但正文未说明其参数的含义、类型、取值范围（如 0~100）及默认值，仅通过示例代码传入硬编码值 60，开发者无法确认合理取值范围。",
+      "suggestion": "在调用示例前补充参数说明，例如：'参数为整型，取值范围 0~100，0 表示静音，100 表示原始音量，默认为 100。'"
+    },
+    {
+      "type": "时序流程不完整",
+      "severity": "P1",
+      "category": "feature",
+      "location": "全文",
+      "original": "（文档仅讲述开始/停止/设置音量，无销毁/清理说明）",
+      "description": "文档未说明在退出房间或销毁 SDK 实例前是否需要先调用 stopSystemAudioLoopback，以及是否需要移除 onSystemAudioLoopbackError 事件监听器，可能导致资源泄漏或崩溃。",
+      "suggestion": "在文档末尾或步骤2后补充：退出房间前应先调用 stopSystemAudioLoopback 停止采集，并移除 onSystemAudioLoopbackError 事件监听，示例：trtcCloud.off('onSystemAudioLoopbackError', onSystemAudioLoopbackError);"
+    }
+  ]
+}

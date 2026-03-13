@@ -1,0 +1,27 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Electron__86735807516860416.md",
+  "skill_id": "language_review",
+  "rule_path": ".claude/skills/_shared/language-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "视角混乱",
+      "severity": "P1",
+      "category": "language",
+      "location": "介绍段落 辅路分享列表项 / 主路分享列表项",
+      "original": "这是腾讯会议的使用方案，您可以在调用 startScreenCapture 接口时……",
+      "description": ""您"在此处既指代开发者的实现行为，也隐含地将"腾讯会议的使用方案"与开发者等同，造成视角混乱。类似"您"混用情况在步骤2、步骤3中也有出现（"您的代码中"、"您依然可以"、"您可以通过"）。每百字"您"出现频率约为4次，属于"建议优化"范围（3-5次）。",
+      "suggestion": "将操作引导句改为开发者视角的直接描述。例如：'可在调用 startScreenCapture 接口时，通过将 TRTCVideoStreamType 参数指定为 TRTCVideoStreamTypeSub 来启用该模式。' 全文中有多处，请批量修改。"
+    },
+    {
+      "type": "过度使用"您"",
+      "severity": "P2",
+      "category": "language",
+      "location": "步骤2：开始屏幕分享、步骤3：设定画面质量",
+      "original": "在您的代码中，可以通过调用 selectScreenCaptureTarget……；您可以通过startScreenCapture接口……；分享过程中，您依然可以……",
+      "description": "全文约250字正文，"您"出现约10次（约4次/100字），属于"建议优化"范围，整体偏啰嗦。",
+      "suggestion": "减少不必要的"您"，改为直接陈述。如'调用 selectScreenCaptureTarget 接口选取分享目标''分享过程中，可调用 selectScreenCaptureTarget 更换分享目标'。"
+    }
+  ]
+}

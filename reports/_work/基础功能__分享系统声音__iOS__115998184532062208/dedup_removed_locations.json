@@ -1,0 +1,11 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__iOS__115998184532062208.md",
+  "executed_at": "2026-03-13",
+  "dedup_removed": [
+    {
+      "removed_id": "FEAT-001",
+      "reason": "与 LOGIC-001 描述同一问题（步骤3中 setSystemAudioLoopbackVolume 参数信息缺失），合并为 P1-001",
+      "merged_into": "P1-001"
+    }
+  ]
+}

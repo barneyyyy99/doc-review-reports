@@ -1,0 +1,18 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Electron__86735807698264064.md",
+  "skill_id": "code_review",
+  "rule_path": ".claude/skills/_shared/code-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "正文与代码矛盾",
+      "severity": "P0",
+      "category": "code",
+      "location": "步骤1：开始系统声音采集，代码块",
+      "original": "const rtcCloud = new TRTCCloud();\n...\ntrtcCloud.on('onSystemAudioLoopbackError', onSystemAudioLoopbackError);\ntrtcCloud.startLocalAudio(TRTCAudioQuality.TRTCAudioQualityDefault);\ntrtcCloud.startSystemAudioLoopback();",
+      "description": "代码第2行将 TRTCCloud 实例赋值给 `rtcCloud`，但后续第15~17行调用的是 `trtcCloud`（缺少字母 t），变量名不一致，`trtcCloud` 未定义，代码将在运行时抛出 ReferenceError。",
+      "suggestion": "将代码中所有 `trtcCloud` 统一修改为 `rtcCloud`（与声明处一致），或将声明处改为 `const trtcCloud = new TRTCCloud();`，保持全文一致。"
+    }
+  ]
+}

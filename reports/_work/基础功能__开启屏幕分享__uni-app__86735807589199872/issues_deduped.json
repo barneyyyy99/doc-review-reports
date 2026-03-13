@@ -1,0 +1,69 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__uni-app__86735807589199872.md",
+  "deduped_at": "2026-03-13",
+  "total_before_dedup": 6,
+  "total_after_dedup": 6,
+  "dedup_removed": 0,
+  "issues": [
+    {
+      "id": "fmt-001",
+      "type": "空格",
+      "severity": "P2",
+      "category": "format",
+      "location": "开启屏幕分享章节",
+      "original": "通过设置 startScreenCapture 中参数encParams，您可以指定屏幕分享的编码质量。如果您指定encParams为 null",
+      "description": "正文中中文字符与英文字符之间缺少空格，存在两处：1）"参数encParams" 2）"指定encParams为"",
+      "suggestion": "改为"中参数 encParams，您可以指定……如果您指定 encParams 为 null"，全文中有多处，请批量修改"
+    },
+    {
+      "id": "lang-001",
+      "type": "标题规范",
+      "severity": "P2",
+      "category": "language",
+      "location": "观看屏幕分享 — 加粗小标题",
+      "original": "观看 Android / iOS 屏幕分享",
+      "description": "加粗文字作为小标题使用，仅是名词短语，缺少动词，不符合"动词+宾语"的标题规范",
+      "suggestion": "改为"观看 Android / iOS 端屏幕分享"（已含动词"观看"，符合规范）或保持格式一致性"
+    },
+    {
+      "id": "logic-001",
+      "type": "信息缺失",
+      "severity": "P1",
+      "category": "logic",
+      "location": "观看屏幕分享 — 观看 Android / iOS 屏幕分享",
+      "original": "观看屏幕分享的用户可以通过 startRemoteView 接口来启动渲染远端用户主流画面",
+      "description": "该句描述不完整（无句号），且未提供调用 startRemoteView 的示例代码或参数说明，开发者无法直接按照文档操作",
+      "suggestion": "补充调用 startRemoteView 的示例代码，或至少给出参数说明，并为该句补充句号"
+    },
+    {
+      "id": "logic-002",
+      "type": "信息缺失",
+      "severity": "P1",
+      "category": "logic",
+      "location": "观看屏幕分享",
+      "original": "观看屏幕分享章节仅介绍了 Android / iOS 通过主流分享的观看方式",
+      "description": "文档是 uni-app 端屏幕分享指南，但"观看屏幕分享"章节只说明了 Android/iOS 通过主流分享时的观看方式，未说明当 uni-app 端发起辅流屏幕分享时，其他端（如 Web 端）如何订阅辅流进行观看",
+      "suggestion": "补充说明当 uni-app 端通过辅流（TRTCVideoStreamTypeSub）发起屏幕分享时，其他端如何订阅辅流（如通过 startRemoteSubStreamView 等）进行观看"
+    },
+    {
+      "id": "feat-001",
+      "type": "时序流程不完整",
+      "severity": "P1",
+      "category": "feature",
+      "location": "开启屏幕分享 章节",
+      "original": "代码直接调用 startScreenCapture，无前置条件说明",
+      "description": "文档直接展示调用 startScreenCapture 的示例代码，但未说明开启屏幕分享需要先进入 TRTC 房间，也未引用前置文档",
+      "suggestion": "在"开启屏幕分享"章节开头补充前置条件说明，例如："调用本接口前，请确保已完成 TRTC 进房操作（参考快速开始文档）。""
+    },
+    {
+      "id": "feat-002",
+      "type": "时序流程不完整",
+      "severity": "P1",
+      "category": "feature",
+      "location": "全文",
+      "original": "文档未包含停止屏幕分享相关内容",
+      "description": "文档介绍了如何开启屏幕分享，但缺少对应的停止屏幕分享接口说明（如 stopScreenCapture），功能生命周期不完整",
+      "suggestion": "增加"停止屏幕分享"章节，说明调用 stopScreenCapture 接口的时机和方法"
+    }
+  ]
+}

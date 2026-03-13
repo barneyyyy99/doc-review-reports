@@ -1,0 +1,37 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Flutter__86735807553560576.md",
+  "label": "feature",
+  "business_skill_id": "review-feature",
+  "rule_path": ".claude/skills/review-feature/SKILL.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "时序流程不完整",
+      "severity": "P0",
+      "category": "feature",
+      "location": "H2「观看屏幕分享」",
+      "original": "若用户进行屏幕分享，且通过主流进行分享……希望观看屏幕分享的用户可以通过 startRemoteView 接口来启动渲染远端用户主流画面。",
+      "description": "文档仅说明主路分享的观看方接入方式（onUserVideoAvailable + startRemoteView），但文档大量篇幅介绍并推荐使用辅路分享（iOS 跨应用分享和 Windows 分享均以辅路为主），却完全缺少辅路分享的观看方流程（onUserSubStreamAvailable + 对应接口），导致按本文档开发后辅路分享无法被观看端正常接收，功能流程不完整。",
+      "suggestion": "在「观看屏幕分享」章节补充辅路观看流程：说明远端用户需监听 onUserSubStreamAvailable 事件通知，并调用对应的辅路渲染接口（Flutter SDK 中对应方法）启动辅路画面渲染。"
+    },
+    {
+      "type": "依赖关系缺失",
+      "severity": "P1",
+      "category": "feature",
+      "location": "文档开头（无前置条件章节）",
+      "original": "（文档直接以「实现 Android 平台屏幕分享」H2 开篇，未说明前置条件）",
+      "description": "文档未说明使用屏幕分享功能的前置依赖：开发者需要已完成 TRTC SDK 的集成和初始化、已成功进入 TRTC 房间，才能调用屏幕分享相关 API。缺少前置条件说明会导致开发者在未入房间的状态下调用 startScreenCapture 而遭遇失败。",
+      "suggestion": "在文档开头添加前置条件说明，如"使用屏幕分享前，请确保已完成 SDK 集成（参考 [快速集成]）并已调用 enterRoom 成功进入 TRTC 房间。""
+    },
+    {
+      "type": "回调处理缺失",
+      "severity": "P1",
+      "category": "feature",
+      "location": "全文（各平台启动屏幕分享章节）",
+      "original": "要开启 Android 端的屏幕分享，只需调用 TRTCCloud 中的 startScreenCapture() 接口即可。（iOS/Windows 类似表述）",
+      "description": "文档在各平台的屏幕分享启动章节均未说明如何监听屏幕分享启动成功/失败的回调（如 onScreenCaptureStarted、onScreenCaptureStopped 等事件），也未说明屏幕分享被系统中断时开发者应如何处理。开发者无法得知分享是否成功启动。",
+      "suggestion": "在每个平台的启动屏幕分享章节后，补充回调监听说明，例如："可通过监听 TRTCCloudListener 的 onScreenCaptureStarted（分享已开始）、onScreenCaptureStopped（分享已停止，含原因）等回调确认分享状态。""
+    }
+  ]
+}

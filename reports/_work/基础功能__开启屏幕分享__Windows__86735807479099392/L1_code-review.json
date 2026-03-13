@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Windows__86735807479099392.md",
+  "skill_id": "code-review",
+  "rule_path": ".claude/skills/_shared/code-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "CODE-001",
+      "type": "代码片段不完整【需人工确认】",
+      "severity": "P1",
+      "category": "code",
+      "location": "观看屏幕分享章节（C++ 代码示例）",
+      "original": "trtc_cloud_->startRemoteView(userId, liteav::TRTCVideoStreamTypeSub, hWnd);",
+      "description": "`hWnd` 作为渲染窗口句柄传入 `startRemoteView`，但在代码片段中未声明、未注释说明其来源。如果 `hWnd` 是 `CTRTCCloudSDK` 类的成员变量，则属于正常简化；如果需要开发者自行提供，则缺少说明。",
+      "suggestion": "【请确认】如果 `hWnd` 需要开发者自行准备，请在代码注释或正文中补充说明，例如：`hWnd // 用于渲染屏幕分享画面的窗口句柄，由调用方提供`。"
+    }
+  ]
+}

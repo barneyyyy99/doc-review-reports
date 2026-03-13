@@ -1,0 +1,96 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Flutter__86735807553560576.md",
+  "executed_at": "2026-03-13",
+  "dedup_note": "L1-LOGIC-001（信息缺失：辅路观看方流程缺失）与 L2-FEAT-001（时序流程不完整：辅路观看方流程缺失）指向同一位置和同一根因，合并为 P0-001，保留最高级别 P0。共去重 1 条。",
+  "dedup_removed_count": 1,
+  "issues": [
+    {
+      "id": "P0-001",
+      "type": "信息缺失 / 时序流程不完整",
+      "severity": "P0",
+      "category": "logic",
+      "merged_from": ["L1-LOGIC-001", "L2-FEAT-001"],
+      "location": "H2「观看屏幕分享」",
+      "original": "若用户进行屏幕分享，且通过主流进行分享。房间里的其他用户会通过 TRTCCloudListener 中的 onUserVideoAvailable 事件获得这个通知。……希望观看屏幕分享的用户可以通过 startRemoteView 接口来启动渲染远端用户主流画面。",
+      "description": "「观看屏幕分享」章节仅说明主路分享的接收方式（onUserVideoAvailable + startRemoteView），完全缺少辅路分享的观看方流程。而文档在 iOS 跨应用分享和 Windows 平台分享章节中均以辅路（TRTCVideoStreamType.sub）作为推荐/主要方案，辅路观看方式的缺失会导致开发者按文档完成实现后远端无法看到屏幕分享内容。",
+      "suggestion": "在「观看屏幕分享」章节补充辅路分享的接收端说明：若通过辅路进行分享，远端用户需监听 TRTCCloudListener 的 onUserSubStreamAvailable 事件，并调用对应的辅路渲染接口（Flutter SDK 中对应方法）启动辅路画面渲染。"
+    },
+    {
+      "id": "P1-001",
+      "type": "标题层级",
+      "severity": "P1",
+      "category": "format",
+      "merged_from": ["L1-FORMAT-001"],
+      "location": "H2「实现 Windows 平台屏幕分享」及 H2「常见问题」",
+      "original": "实现 Windows 平台屏幕分享 (H2) → 步骤1：获取分享目标 (H4)；常见问题 (H2) → 一个房间里可以同时有多路屏幕分享吗？(H4)",
+      "description": "两处 H2 标题下直接使用 H4 子标题，跳过了 H3 层级，违反标题必须按顺序使用（H1→H2→H3→H4）的规范。",
+      "suggestion": "在「实现 Windows 平台屏幕分享」下补充一个 H3 级别标题（如「实现步骤」），将步骤1/2/3/设定编码参数等 H4 移至其下；在「常见问题」下补充 H3 级别标题，或将问题标题改为 H3。"
+    },
+    {
+      "id": "P1-002",
+      "type": "代码块语言标记错误",
+      "severity": "P1",
+      "category": "code",
+      "merged_from": ["L1-CODE-001"],
+      "location": "iOS 跨应用分享步骤2 SampleHandler 代码块（id=\"23\"）；步骤3接收逻辑代码块（id=\"24\"）",
+      "original": "两个代码块均标记为 language=\"javascript\"",
+      "description": "id=\"23\" 代码块为 Swift 代码，id=\"24\" 代码块为 Dart 代码，均被错误标记为 javascript，导致语法高亮失效，影响阅读体验。",
+      "suggestion": "将 id=\"23\" 的代码块语言标记改为 swift，将 id=\"24\" 的代码块语言标记改为 dart。"
+    },
+    {
+      "id": "P1-003",
+      "type": "关键分支场景缺失",
+      "severity": "P1",
+      "category": "logic",
+      "merged_from": ["L1-LOGIC-002"],
+      "location": "H2「实现 Windows 平台屏幕分享」步骤3「开始屏幕分享」",
+      "original": "pauseScreenCapture 和 stopScreenCapture 的区别在于 pause 会停止屏幕内容的采集，并以暂停那一刻的画面垫片，所以在远端看到一直都是最后一帧画面，直到 resume。",
+      "description": "文档说明了 pauseScreenCapture 的行为并提到"直到 resume"，却未给出 resumeScreenCapture 的调用说明和链接，开发者知道可以暂停但不知道如何恢复，流程不完整。",
+      "suggestion": "在说明 pauseScreenCapture 后，补充"调用 resumeScreenCapture 可恢复屏幕采集"并提供 API 文档链接。"
+    },
+    {
+      "id": "P1-004",
+      "type": "依赖关系缺失",
+      "severity": "P1",
+      "category": "feature",
+      "merged_from": ["L2-FEAT-002"],
+      "location": "文档开头（无前置条件章节）",
+      "original": "（文档直接以「实现 Android 平台屏幕分享」H2 开篇，未说明前置条件）",
+      "description": "文档未说明使用屏幕分享功能的前置依赖：开发者需要已完成 TRTC SDK 的集成和初始化、已成功进入 TRTC 房间，才能调用屏幕分享相关 API。缺少前置条件说明会导致开发者在未入房间的状态下调用 startScreenCapture 而遭遇失败。",
+      "suggestion": "在文档开头添加前置条件说明，如"使用屏幕分享前，请确保已完成 SDK 集成（参考快速集成文档）并已调用 enterRoom 成功进入 TRTC 房间。""
+    },
+    {
+      "id": "P1-005",
+      "type": "回调处理缺失",
+      "severity": "P1",
+      "category": "feature",
+      "merged_from": ["L2-FEAT-003"],
+      "location": "全文（各平台启动屏幕分享章节）",
+      "original": "要开启 Android 端的屏幕分享，只需调用 TRTCCloud 中的 startScreenCapture() 接口即可。（iOS/Windows 类似表述）",
+      "description": "文档在各平台的屏幕分享启动章节均未说明如何监听屏幕分享启动成功/失败的回调（如 onScreenCaptureStarted、onScreenCaptureStopped 等），也未说明屏幕分享被系统中断时开发者应如何处理，开发者无法得知分享是否成功启动。",
+      "suggestion": "在每个平台的启动屏幕分享章节后，补充回调监听说明，例如："可通过监听 TRTCCloudListener 的 onScreenCaptureStarted（分享已开始）、onScreenCaptureStopped（分享已停止，含原因码）等回调确认分享状态。""
+    },
+    {
+      "id": "P2-001",
+      "type": "代码格式",
+      "severity": "P2",
+      "category": "format",
+      "merged_from": ["L1-FORMAT-002"],
+      "location": "H2「实现 Windows 平台屏幕分享」辅路分享与主路分享描述段（全文多处）",
+      "original": "调用`startScreenCapture`接口时，通过将`TRTCVideoStreamType`参数指定为`sub` 来启用该模式",
+      "description": "行内代码前后与相邻中文字符之间缺少空格，影响排版规范。全文中有多处此类问题。",
+      "suggestion": "统一在行内代码左右各加一个空格，如"调用 `startScreenCapture` 接口时，通过将 `TRTCVideoStreamType` 参数指定为 `sub` 来启用该模式"。全文中有多处，请批量修改。"
+    },
+    {
+      "id": "P2-002",
+      "type": "功能概念术语不一致",
+      "severity": "P2",
+      "category": "terms",
+      "merged_from": ["L1-TERMS-001"],
+      "location": "H2「实现 Windows 平台屏幕分享」辅路/主路描述段",
+      "original": "辅路（substream）；主路（bigstream）；代码参数值为 sub / big",
+      "description": "正文括号中用 substream/bigstream 描述辅路/主路通道，但代码示例中对应参数值为 sub/big，正文描述与代码枚举值不一致，轻微混淆。",
+      "suggestion": "将正文括号中的描述统一为与代码一致的参数枚举名，如「辅路（sub）」和「主路（big）」，或明确注明"代码中对应 TRTCVideoStreamType.sub / TRTCVideoStreamType.big"。"
+    }
+  ]
+}

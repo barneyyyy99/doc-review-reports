@@ -1,0 +1,18 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Flutter__134687481928679424.md",
+  "skill_id": "terms-review",
+  "rule_path": ".claude/skills/_shared/terms-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "功能概念术语不一致",
+      "severity": "P2",
+      "category": "terms",
+      "location": "iOS标签 步骤2正文 vs 步骤3标题及正文",
+      "original": "步骤2正文：「开启屏幕录制，系统声音将自动进行采集」/ 注意事项：「开启屏幕录制时」/ 步骤3标题：「中途开启和关闭系统声音」/ 步骤3正文：「系统声音采集与屏幕录制同时进行」；Android标签：「分享系统声音」",
+      "description": "文档核心功能名称在 Android 标签与 iOS 标签中使用的术语不一致：Android 使用「分享系统声音」，iOS 标签内混用「系统声音采集」「系统声音」；同一 iOS 标签内也混用「屏幕录制」和「屏幕分享」（步骤2标题为「开启屏幕分享」，正文为「开启屏幕录制」）。",
+      "suggestion": "在 iOS 标签中统一功能操作术语：若平台行为本质是「屏幕录制」，则统一使用「屏幕录制」；若对外宣称为「屏幕分享」，则统一用「屏幕分享」。同时「系统声音分享」与「系统声音采集」建议统一为一个表达。"
+    }
+  ]
+}

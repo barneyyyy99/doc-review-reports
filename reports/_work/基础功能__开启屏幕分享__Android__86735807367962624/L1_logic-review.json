@@ -1,0 +1,27 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Android__86735807367962624.md",
+  "skill_id": "logic_review",
+  "rule_path": ".claude/skills/_shared/logic-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "信息缺失",
+      "severity": "P0",
+      "category": "logic",
+      "location": "操作指引 / 开启屏幕分享 / 步骤2：启动屏幕分享",
+      "original": "要开启 Android 端的屏幕分享，只需调用 TRTCCloud#startScreenCapture() 接口即可。",
+      "description": "文档描述了"开启"屏幕分享的步骤（步骤1～步骤3），但整个操作指引章节中完全没有说明如何停止/关闭屏幕分享。作为一个完整的功能指南，开启与关闭属于对称操作，缺少关闭说明会导致开发者无法正确结束分享流程（资源泄漏、状态残留）。",
+      "suggestion": "在"开启屏幕分享"章节末尾或新增"停止屏幕分享"小节，说明对应的停止 API（如 TRTCCloud#stopScreenCapture()）的调用方式。"
+    },
+    {
+      "type": "信息缺失",
+      "severity": "P1",
+      "category": "logic",
+      "location": "操作指引 / 开启屏幕分享 / 步骤2：启动屏幕分享",
+      "original": "要开启 Android 端的屏幕分享，只需调用 TRTCCloud#startScreenCapture() 接口即可。",
+      "description": "文档正文仅说明"调用该接口即可"，但完全没有提供该接口的调用示例代码。对于核心启动接口，缺少代码示例会让开发者无法直接参考实现，需要额外查找 API 文档。",
+      "suggestion": "补充 TRTCCloud#startScreenCapture() 的基本调用示例代码，包含 encParams 参数的传入方式。"
+    }
+  ]
+}

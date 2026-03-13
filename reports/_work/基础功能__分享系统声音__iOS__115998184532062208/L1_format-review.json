@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__iOS__115998184532062208.md",
+  "skill_id": "format-review",
+  "rule_path": ".claude/skills/_shared/format-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "FORMAT-001",
+      "type": "标题层级",
+      "severity": "P1",
+      "category": "format",
+      "location": "H1 标题 \"iOS\"",
+      "original": "# iOS\n## 调用指引",
+      "description": "H1 标题 \"iOS\" 下仅有一个 H2 子章节 \"调用指引\"，违反"一个标题下至少需要有两个子章节，不得出现孤儿章节"规则。",
+      "suggestion": "在 \"调用指引\" 同级补充其他章节（如\"注意事项\"、\"常见问题\"等），或将 H1 页面标题移除，改为以 H2 \"调用指引\" 作为首级内容标题。"
+    }
+  ]
+}

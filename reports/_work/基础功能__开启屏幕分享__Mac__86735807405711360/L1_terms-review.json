@@ -1,0 +1,18 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Mac__86735807405711360.md",
+  "skill_id": "terms_review",
+  "rule_path": ".claude/skills/_shared/terms-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "功能概念术语不一致",
+      "severity": "P2",
+      "category": "terms",
+      "location": "文档开头段落、观看屏幕分享章节",
+      "original": "文档开头：'主路分享'、'辅路分享'；观看屏幕分享章节：'通过辅流进行分享'、'通过主流进行分享'",
+      "description": "文档前半部分使用'主路分享'/'辅路分享'描述两种方案，观看章节改用'主流'/'辅流'描述同一概念，虽含义可推断，但术语表达不统一，可能造成开发者困惑（'辅路'与'辅流'是否一回事未明确说明）。",
+      "suggestion": "统一使用'辅路（substream）'和'主路（bigstream）'，或在观看章节明确说明'辅流即辅路'，与文档开头保持一致。"
+    }
+  ]
+}

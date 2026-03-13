@@ -1,0 +1,7 @@
+{
+  "doc_path": "input-docs/batch_001/消息相关__全员推送__全员推送__108053688609185792.md",
+  "label": "api",
+  "gate_int_hit": false,
+  "priority_used": "api (no demo/integration criteria met; doc main content is REST API reference with method signatures, request/response parameters, field descriptions, error codes)",
+  "evidence": "文档主线为 REST API 接口说明：包含请求 URL 格式、请求参数说明表、请求包字段说明表、应答包字段说明表、私有错误码表。无 git clone/安装依赖/编译运行等 demo 链路，无"快速集成"/"快速接入"等 integration 关键词。判定为 api。"
+}

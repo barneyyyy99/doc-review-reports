@@ -1,0 +1,36 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Mac__86735807405711360.md",
+  "skill_id": "logic_review",
+  "rule_path": ".claude/skills/_shared/logic-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "前后描述矛盾",
+      "severity": "P0",
+      "category": "logic",
+      "location": "文档开头辅路分享说明 vs 开始屏幕分享章节代码块",
+      "original": "正文：'您可以在调用 startScreenCapture 接口时，通过将 TRTCVideoStreamType 参数指定为 TRTCVideoStreamTypeSub 来启用该模式'；代码块：'- (void)startScreenCapture:(NSView *)view;'（签名只有 view 参数）",
+      "description": "正文明确说明 startScreenCapture 需要传入 TRTCVideoStreamType 参数来区分主路/辅路，但代码块展示的方法签名只有 (NSView *)view 一个参数，没有 TRTCVideoStreamType 参数。开发者无法通过该代码块理解正确的调用方式，正文描述与代码签名直接矛盾。",
+      "suggestion": "代码块中应展示包含 TRTCVideoStreamType 参数的正确方法签名，或补充说明文档中展示的是简化签名，并给出完整调用示例（包含 streamType 参数赋值）。"
+    },
+    {
+      "type": "信息缺失",
+      "severity": "P1",
+      "category": "logic",
+      "location": "观看屏幕分享章节",
+      "original": "希望观看屏幕分享的用户可以通过 TRTCCloud#startRemoteView 接口来指定启动渲染远端用户辅路画面。",
+      "description": "文档开头明确提到观看辅路画面需要使用专门的 startRemoteSubStreamView 接口，但观看章节的正文却说使用 startRemoteView（并在代码示例中也使用 startRemoteView）。两处说法不一致：开头说需要用 startRemoteSubStreamView，正文实现章节说用 startRemoteView。",
+      "suggestion": "核实 Mac 平台观看辅路画面的正确接口。若 Mac 平台已统一为 startRemoteView（带 streamType 参数），则应在文档开头修正 startRemoteSubStreamView 的说法；若仍需 startRemoteSubStreamView，则观看章节正文和代码示例应更正为该接口。"
+    },
+    {
+      "type": "关键分支场景缺失",
+      "severity": "P1",
+      "category": "logic",
+      "location": "选择分享目标章节，说明框内",
+      "original": "参数 capturesCursor 用于指定是否捕获鼠标指针。\n参数 highlight 用于指定是否高亮正在共享的窗口，以及当捕获图像被遮挡时提示用户移走遮挡。",
+      "description": "capturesCursor 和 highlight 参数仅在说明框的列表中提及，但未说明这两个参数的默认值、取值类型（BOOL）以及与 selectScreenCaptureTarget 调用的关系（它们是 selectScreenCaptureTarget 的参数）。开发者不清楚在哪个方法调用中设置这两个参数。",
+      "suggestion": "补充说明 capturesCursor 和 highlight 是 TRTCCloud#selectScreenCaptureTarget 接口的参数，并说明其默认值（如 YES/NO）和数据类型，以便开发者正确传参。"
+    }
+  ]
+}

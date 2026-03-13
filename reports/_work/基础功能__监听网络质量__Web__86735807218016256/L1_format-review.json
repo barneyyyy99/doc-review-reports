@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__监听网络质量__Web__86735807218016256.md",
+  "skill_id": "format-review",
+  "rule_path": ".claude/skills/_shared/format-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "fmt-001",
+      "type": "空格",
+      "severity": "P2",
+      "category": "format",
+      "location": "通话前的网络质量检测 — 实现流程，第5步",
+      "original": "整个过程可持续15s左右",
+      "description": "英文单位字母"s"与紧跟的中文"左右"之间缺少空格",
+      "suggestion": "改为"整个过程可持续15s 左右""
+    }
+  ]
+}

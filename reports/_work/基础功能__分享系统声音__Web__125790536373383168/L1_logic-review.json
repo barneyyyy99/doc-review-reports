@@ -1,0 +1,18 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Web__125790536373383168.md",
+  "skill_id": "logic-review",
+  "rule_path": ".claude/skills/_shared/logic-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "信息缺失",
+      "severity": "P1",
+      "category": "logic",
+      "location": "实现流程 > 兼容性说明 — 兼容性表格列标题",
+      "original": "分享某个页面音频",
+      "description": "兼容性表格包含"分享某个页面音频"一列，但正文中从未介绍该功能是什么、如何启用，与文档标题及功能描述均无关联。读者无法判断该列数据的实际含义和使用方式。",
+      "suggestion": "在兼容性说明前补充对"分享某个页面音频"的简要解释（例如说明这是另一种通过 getDisplayMedia tab-capture 实现的方式），或将该列移至专门介绍该功能的文档，保持本文聚焦在"分享系统音频"。"
+    }
+  ]
+}

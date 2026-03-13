@@ -1,0 +1,17 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Flutter__134687481928679424.md",
+  "generated_at": "2026-03-13",
+  "removed_count": 2,
+  "removed_items": [
+    {
+      "removed_id": "BS-002",
+      "reason": "与 FEAT-002 高度重合（均描述「全文无代码示例」问题），合并为 P0-002，保留 FEAT-002（业务层视角更完整）",
+      "merged_into": "P0-002"
+    },
+    {
+      "removed_id": "LOGIC-002",
+      "reason": "「句末缺少句号」问题与 LANG-002（视角混乱）发生在同一句话，合并到 P1-003 一条中统一描述并给出修改建议",
+      "merged_into": "P1-003"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Flutter__86735807553560576.md",
+  "skill_id": "code_review",
+  "rule_path": ".claude/skills/_shared/code-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "代码块语言标记错误",
+      "severity": "P1",
+      "category": "code",
+      "location": "iOS 跨应用分享「步骤2：创建 Broadcast Upload Extension」SampleHandler 代码块（id=\"23\"，name=\"iOS\"）；步骤3「对接主 App 端的接收逻辑」代码块（id=\"24\"，name=\"dart\"）",
+      "original": "两个代码块均标记为 language=\"javascript\"",
+      "description": "id=\"23\" 的代码块包含 Swift 代码（import ReplayKit, class SampleHandler: RPBroadcastSampleHandler），实际语言为 Swift，被标记为 javascript 导致语法高亮错误。id=\"24\" 的代码块包含 Dart 代码（_trtcCloud.startScreenCaptureByReplaykit、ReplayKitLauncher.launchReplayKitBroadcast），实际语言为 dart，也被标记为 javascript。",
+      "suggestion": "将 id=\"23\" 的代码块语言标记改为 swift，将 id=\"24\" 的代码块语言标记改为 dart（文档的 name 字段已正确标注，但 language 字段需同步修改）。"
+    }
+  ]
+}

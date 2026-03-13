@@ -1,0 +1,37 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Electron__86735807516860416.md",
+  "label": "feature",
+  "business_skill_id": "review-feature",
+  "rule_path": ".claude/skills/review-feature/SKILL.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "时序流程不完整",
+      "severity": "P0",
+      "category": "feature",
+      "location": "文档整体 / 操作步骤",
+      "original": "（文档无销毁/清理阶段说明）",
+      "description": "文档描述了开启屏幕分享的完整步骤（获取目标→开始分享→设置质量→观看），但缺少停止屏幕分享的完整生命周期闭环说明。虽然步骤2中提到了 stopScreenCapture 接口（与 pauseScreenCapture 做对比），但没有独立的"停止屏幕分享"步骤或说明何时、如何调用 stopScreenCapture 来结束分享流程并释放资源。",
+      "suggestion": "在操作步骤中补充"步骤5：停止屏幕分享"或在步骤2末尾增加说明：分享结束后调用 stopScreenCapture() 停止采集并释放资源，示例：`trtcCloud.stopScreenCapture();`"
+    },
+    {
+      "type": "依赖关系缺失",
+      "severity": "P1",
+      "category": "feature",
+      "location": "文档开头 / 操作步骤",
+      "original": "（文档直接从获取分享目标开始，未说明前置条件）",
+      "description": "屏幕分享功能依赖已完成 SDK 初始化并加入 TRTC 房间，但文档开头没有明确说明前置条件（如"需先完成快速集成并加入房间"），也未提供相关文档链接。开发者若未进入房间直接调用屏幕分享接口，将无法正常工作。",
+      "suggestion": "在文档开头或操作步骤前增加前置条件说明，例如：'前置条件：需先完成 SDK 初始化并加入 TRTC 音视频房间（详见 [快速集成文档](链接)）。'"
+    },
+    {
+      "type": "核心 API 参数缺少说明",
+      "severity": "P1",
+      "category": "feature",
+      "location": "步骤2：开始屏幕分享",
+      "original": "使用 startScreenCapture 接口可以启动屏幕分享。",
+      "description": "startScreenCapture 是本文档的核心 API，其三个参数（第一个参数 dom、第二个参数 TRTCVideoStreamType、第三个参数 encParam）仅在步骤3中简要提及 encParam，而 dom 参数的含义（渲染本地预览的 DOM 元素，可传 null）及 TRTCVideoStreamType 的含义（选择主路/辅路）均未在正文中说明，只能从代码示例中推断。",
+      "suggestion": "在步骤2正文中补充 startScreenCapture 三个参数的含义说明：1) view：用于本地预览的 DOM 元素，不需要预览时可传 null；2) streamType：流类型，TRTCVideoStreamTypeSub 为辅路，TRTCVideoStreamTypeBig 为主路；3) encParam：编码参数，详见步骤3。"
+    }
+  ]
+}

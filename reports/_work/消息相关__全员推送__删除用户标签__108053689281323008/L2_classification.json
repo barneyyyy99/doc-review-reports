@@ -1,0 +1,7 @@
+{
+  "doc_path": "input-docs/batch_001/消息相关__全员推送__删除用户标签__108053689281323008.md",
+  "label": "api",
+  "gate_int_hit": false,
+  "priority_used": "api",
+  "evidence": "文档主线为 REST API 接口说明：包含请求 URL、请求参数说明表、请求包字段说明表、应答包字段说明表、私有错误码表。无 demo/integration 关键词。判定为 api。"
+}

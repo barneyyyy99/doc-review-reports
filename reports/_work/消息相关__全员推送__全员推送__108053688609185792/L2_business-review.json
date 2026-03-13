@@ -1,0 +1,20 @@
+{
+  "doc_path": "input-docs/batch_001/消息相关__全员推送__全员推送__108053688609185792.md",
+  "label": "api",
+  "business_skill_id": "review-api",
+  "rule_path": ".claude/skills/review-api/SKILL.md",
+  "executed_at": "2026-03-12T00:00:00Z",
+  "status": "done",
+  "issues": [
+    {
+      "id": "doc1-api-001",
+      "category": "api_issues",
+      "type": "字段说明缺少完整性",
+      "location": "请求包字段说明 > OfflinePushInfo",
+      "original": "\"OfflinePushInfo\": { ... } 字段描述：\"离线推送信息配置，具体可参考 消息格式描述\"",
+      "issue": "OfflinePushInfo 字段在请求示例中出现了 PushFlag、Desc、Ext、AndroidInfo、ApnsInfo（含 BadgeMode/Title/SubTitle/Image）等子字段，但字段说明表中未逐一描述这些子字段的含义、类型、是否必填，仅以引用链接代替。开发者无法在本页直接了解子字段含义。",
+      "suggestion": "补充 OfflinePushInfo 的子字段说明表，或在引用链接旁注明主要子字段列表",
+      "severity": "P2"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Android__86735807367962624.md",
+  "skill_id": "language_review",
+  "rule_path": ".claude/skills/_shared/language-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "标题规范",
+      "severity": "P1",
+      "category": "language",
+      "location": "常见问题 / H3 标题 "移除屏幕分享？"",
+      "original": "移除屏幕分享？",
+      "description": "FAQ 章节外的标题以完整疑问句形式出现，本条目"移除屏幕分享？"本身属于 FAQ 性质，但与同级 FAQ 标题"提示错误码 `-3343` 是什么问题？"结构不完全一致（一个是方法论题型，一个是诊断题型），且两者皆以问句形式出现是可接受的 FAQ 写法。实际问题点是：该标题过于简短，缺少主语/动词，建议改为完整问句。",
+      "suggestion": "改为：如何移除屏幕分享？"
+    },
+    {
+      "type": "简洁性",
+      "severity": "P2",
+      "category": "language",
+      "location": "步骤2：启动屏幕分享",
+      "original": "通过设置 TRTCCloud#startScreenCapture() 中的首个参数 `encParams` ，您可以指定屏幕分享的编码质量。如果您指定 `encParams` 为 null，SDK 会自动使用之前设定的编码参数，我们推荐的参数设定如下：",
+      "description": "同一段中连续出现"您可以""您指定"，"您"出现过于密集，与段落前后的"您只需要""您"叠加后频率偏高；同时"我们推荐"可改为更客观的表述。",
+      "suggestion": "改为：通过设置 TRTCCloud#startScreenCapture() 中的首个参数 `encParams`，可以指定屏幕分享的编码质量。若 `encParams` 为 null，SDK 将自动使用之前设定的编码参数，推荐的参数设定如下："
+    }
+  ]
+}

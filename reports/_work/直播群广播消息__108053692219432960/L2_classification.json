@@ -1,7 +1,0 @@
-{
-  "doc_path": "input-docs/batch_001/消息相关__发送消息__直播群广播消息__108053692219432960.md",
-  "label": "api",
-  "gate_int_hit": false,
-  "priority_used": "api (default for REST API reference)",
-  "evidence": "文档主线为 REST API 参考文档，包含请求URL、参数说明、请求包示例、请求包字段说明、应答包字段说明、错误码说明，无 demo 跑通流程，无快速集成/接入等 integration 触发词。"
-}

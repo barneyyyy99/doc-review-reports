@@ -1,0 +1,25 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__调整画面方向__Android&iOS&Windows&Mac__86735807915319296.md",
+  "executed_at": "2026-03-13",
+  "dedup_removed_count": 0,
+  "issues": [
+    {
+      "type": "代码块语言标记错误",
+      "severity": "P1",
+      "category": "code",
+      "location": "竖屏模式 > 步骤1 > iOS 平台 代码块；竖屏模式 > 步骤2 > iOS 平台 代码块",
+      "original": "```swift\n- (UIInterfaceOrientationMask)application:...",
+      "description": "代码块标记为 swift，但实际内容为 Objective-C 语法（含 `- (UIInterfaceOrientationMask)application:` 方法声明及 `TRTCVideoEncParam* encParam = [TRTCVideoEncParam new];` 语法），语言标记与内容不符",
+      "suggestion": "将这两个代码块的语言标记从 `swift` 改为 `objective-c`"
+    },
+    {
+      "type": "中英文空格缺失",
+      "severity": "P2",
+      "category": "format",
+      "location": "正文多处，如"将 resMode 指定为`TRTCVideoResolutionModePortrait`即可"、"应该指定为`TRTCVideoResolutionModeLandscape`"等",
+      "original": "将 resMode 指定为`TRTCVideoResolutionModePortrait`即可",
+      "description": "正文中代码前后缺少空格，影响可读性",
+      "suggestion": "将代码标记前后补充空格，如"将 resMode 指定为 `TRTCVideoResolutionModePortrait` 即可""
+    }
+  ]
+}

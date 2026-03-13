@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Windows__86735807479099392.md",
+  "skill_id": "logic-review",
+  "rule_path": ".claude/skills/_shared/logic-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "LOGIC-001",
+      "type": "关键分支场景缺失",
+      "severity": "P1",
+      "category": "logic",
+      "location": "文档开头（辅路分享与主路分享介绍段落）",
+      "original": "Windows 平台下的屏幕分享支持主路分享和辅路分享两种方案",
+      "description": "文档介绍了辅路分享（TRTCVideoStreamTypeSub）和主路分享（TRTCVideoStreamTypeBig）两种并列方案，但未给出明确的选择依据。辅路分享仅隐式提及「这是腾讯会议的使用方案」，主路分享的适用场景完全未说明，开发者无法判断应选择哪种方案。",
+      "suggestion": "在两种方案介绍后补充选择建议，例如：「推荐优先使用辅路分享：可同时上行摄像头和屏幕两路视频，适用于视频会议等场景；主路分享适用于仅需分享屏幕、无需同时上行摄像头的场景。」"
+    }
+  ]
+}

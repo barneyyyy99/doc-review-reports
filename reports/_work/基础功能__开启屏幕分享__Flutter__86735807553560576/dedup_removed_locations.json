@@ -1,0 +1,16 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Flutter__86735807553560576.md",
+  "executed_at": "2026-03-13",
+  "dedup_removed_count": 1,
+  "removed_issues": [
+    {
+      "removed_id": "L2-FEAT-001",
+      "removed_type": "时序流程不完整",
+      "removed_location": "H2「观看屏幕分享」",
+      "removed_description": "文档仅说明主路分享的观看方接入方式，缺少辅路分享的观看方流程。",
+      "reason": "与 L1-LOGIC-001（信息缺失：辅路观看方流程缺失）指向同一位置、同一根因，合并为 P0-001，保留最高优先级 P0。",
+      "kept_id": "P0-001",
+      "kept_location": "H2「观看屏幕分享」"
+    }
+  ]
+}

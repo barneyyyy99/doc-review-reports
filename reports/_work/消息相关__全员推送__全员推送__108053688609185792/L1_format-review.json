@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/消息相关__全员推送__全员推送__108053688609185792.md",
+  "skill_id": "format-review",
+  "rule_path": ".claude/skills/_shared/format-review.md",
+  "executed_at": "2026-03-12T00:00:00Z",
+  "status": "done",
+  "issues": [
+    {
+      "id": "doc1-fmt-001",
+      "category": "format_issues",
+      "type": "中英文之间未加空格",
+      "location": "接口调用说明 > 请求参数说明表格",
+      "original": "创建应用时，即时通信控制台分配的 SdkAppid",
+      "issue": "表格中对 sdkappid 参数的描述里，\"SdkAppid\" 与文档其他位置（如 URL 示例 sdkappid=88888888 的说明）及同系列文档中的 \"SDKAppID\" 写法不一致",
+      "suggestion": "统一改为 \"SDKAppID\"，与其他同系列文档保持一致",
+      "severity": "P2"
+    }
+  ]
+}

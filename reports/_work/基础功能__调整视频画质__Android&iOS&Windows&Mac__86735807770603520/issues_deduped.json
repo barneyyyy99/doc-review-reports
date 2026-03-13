@@ -1,0 +1,16 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__调整视频画质__Android&iOS&Windows&Mac__86735807770603520.md",
+  "executed_at": "2026-03-13",
+  "dedup_removed_count": 0,
+  "issues": [
+    {
+      "type": "字段名不一致",
+      "severity": "P2",
+      "category": "language",
+      "location": "TRTCVideoEncParam 参数说明 > resMode / videoResolutionMode 字段",
+      "original": "iOS 平台用 resMode，Android 平台用 videoResolutionMode",
+      "description": "文档中 iOS 平台参数名使用 resMode，而 Android 平台参数名使用 videoResolutionMode，两者含义相同，但正文未说明二者的对应关系。",
+      "suggestion": "在参数说明处注明各平台字段名差异。"
+    }
+  ]
+}

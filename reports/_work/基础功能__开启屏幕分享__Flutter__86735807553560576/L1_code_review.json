@@ -1,0 +1,18 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Flutter__86735807553560576.md",
+  "skill_id": "code_review",
+  "rule_path": ".claude/skills/_shared/code_review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "代码块语言标记错误（批量）",
+      "severity": "P1",
+      "category": "code",
+      "location": "iOS 跨应用分享"步骤2" SampleHandler 代码块；步骤3 Flutter 调用 startScreenCaptureByReplaykit 代码块",
+      "original": "```javascript\n// SampleHandler Swift 代码内容\n```\n\n```javascript\n// Flutter Dart 调用代码内容\n```",
+      "description": "iOS 部分的 SampleHandler 代码块实际为 Swift 语言，被错误标记为 `javascript`；步骤3 中 Flutter 调用 `startScreenCaptureByReplaykit` 的代码块实际为 Dart 语言，也被错误标记为 `javascript`。错误的语言标记会导致代码高亮失效，影响可读性。",
+      "suggestion": "将 iOS SampleHandler 相关代码块的语言标记由 `javascript` 改为 `swift`；将 Flutter/Dart 代码块的语言标记由 `javascript` 改为 `dart`。"
+    }
+  ]
+}

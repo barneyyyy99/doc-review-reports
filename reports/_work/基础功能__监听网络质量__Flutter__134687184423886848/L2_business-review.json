@@ -1,0 +1,20 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__监听网络质量__Flutter__134687184423886848.md",
+  "label": "feature",
+  "business_skill_id": "review-feature",
+  "rule_path": ".claude/skills/review-feature/SKILL.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "feat-001",
+      "type": "时序流程不完整",
+      "severity": "P1",
+      "category": "feature",
+      "location": "调用指引 章节",
+      "original_description": "文档直接展示 TRTCCloudListener 回调代码，未说明前置条件或如何注册监听",
+      "description": "代码示例中直接展示了 TRTCCloudListener 的回调处理逻辑，但未说明如何将该 Listener 注册到 TRTCCloud 实例（即缺少 addListener 或等效的调用方式），也未说明需要先进入房间。开发者仅参考本文档无法完成完整的集成",
+      "suggestion": "在代码示例前补充完整的注册监听步骤，例如：先获取 TRTCCloud 实例，调用 registerListener 注册 TRTCCloudListener，再进房后才能收到 onNetworkQuality 回调"
+    }
+  ]
+}

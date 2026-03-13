@@ -1,0 +1,18 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Mac__86735807661563904.md",
+  "skill_id": "code-review",
+  "rule_path": ".claude/skills/_shared/code-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "代码块语言标记错误",
+      "severity": "P1",
+      "category": "code",
+      "location": "步骤4：开始系统声音采集、步骤5：停止系统声音采集、步骤6：设置系统声音采集音量",
+      "original": "三处代码块均标记为 language=\"swift\"，但代码内容使用 Objective-C 语法（方括号消息发送语法：[trtcCloud startSystemAudioLoopback]、[TRTCCloud sharedInstance] 等）",
+      "description": "代码块声明的语言为 swift，但实际内容全部是 Objective-C 语法（使用了 ObjC 的方括号消息发送语法 `[object method]`）。这会导致语法高亮显示错误，影响开发者阅读体验。另外，步骤4中"集成说明"页面的 CocoaPods Podfile 代码块，文件名注释标为 ruby 但语言标签为 bash，虽是 Ruby 语法的 Podfile，语言标签选 ruby 或省略均可，但声明为 bash 也属于不匹配。",
+      "suggestion": "将步骤4、5、6 三处代码块的语言标记从 swift 改为 objc（或 objective-c），以正确反映示例代码语言；CocoaPods Podfile 代码块建议标记为 ruby。"
+    }
+  ]
+}

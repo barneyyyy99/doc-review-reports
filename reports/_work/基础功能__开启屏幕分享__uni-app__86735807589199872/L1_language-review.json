@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__uni-app__86735807589199872.md",
+  "skill_id": "language-review",
+  "rule_path": ".claude/skills/_shared/language-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "lang-001",
+      "type": "标题规范",
+      "severity": "P2",
+      "category": "language",
+      "location": "调用指引 — 观看屏幕分享 章节",
+      "original": "观看 Android / iOS 屏幕分享",
+      "description": "段落标题（粗体加粗文字充当小标题）使用了完整名词短语，结构为"宾语"，缺少动词；且不属于 FAQ，不符合"动词+宾语"的标题规范",
+      "suggestion": "改为"观看 Android / iOS 端屏幕分享""
+    }
+  ]
+}

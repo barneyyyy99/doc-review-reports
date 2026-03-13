@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__iOS__86735807331250176.md",
+  "skill_id": "terms_review",
+  "rule_path": ".claude/skills/_shared/terms-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "TERMS-001",
+      "type": "功能概念术语不一致",
+      "severity": "P2",
+      "category": "terms",
+      "location": "全文（观看屏幕分享 章节）",
+      "original": "观看屏幕分享章节：'屏幕分享'；代码注释：'屏幕共享已结束'（SampleHandler.m 代码块）",
+      "description": "文档正文统一使用"屏幕分享"描述该功能，但在 SampleHandler 代码示例的中文注释字符串中出现了"屏幕共享已结束"，两种表述混用可能造成阅读者对概念的混淆。",
+      "suggestion": "将代码注释中的 \"屏幕共享已结束\" 改为 \"屏幕分享已结束\"，与全文保持一致。"
+    }
+  ]
+}

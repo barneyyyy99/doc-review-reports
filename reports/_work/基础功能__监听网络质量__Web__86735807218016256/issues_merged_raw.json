@@ -1,0 +1,9 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__监听网络质量__Web__86735807218016256.md",
+  "merged_at": "2026-03-13",
+  "total_before_dedup": 2,
+  "all_issues": [
+    {"id": "fmt-001", "type": "空格", "severity": "P2", "category": "format"},
+    {"id": "logic-001", "type": "信息缺失", "severity": "P1", "category": "logic"}
+  ]
+}

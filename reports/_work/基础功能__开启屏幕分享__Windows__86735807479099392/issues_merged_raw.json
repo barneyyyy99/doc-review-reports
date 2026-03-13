@@ -1,0 +1,24 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Windows__86735807479099392.md",
+  "executed_at": "2026-03-13",
+  "issues": [
+    {
+      "type": "场景适配缺失",
+      "severity": "P1",
+      "category": "feature",
+      "location": "文档开头介绍辅路分享与主路分享章节",
+      "original": "辅路分享……主路分享……",
+      "description": "文档开头介绍了辅路分享和主路分享两种方案，描述了各自区别，但未说明选择依据。开发者不清楚在什么场景下应选择辅路还是主路。",
+      "suggestion": "补充选择建议：辅路分享适用于需要同时上传摄像头和屏幕的场景；主路分享适用于纯屏幕展示，二者在主路通道上互斥。"
+    },
+    {
+      "type": "中英文空格缺失（批量）",
+      "severity": "P2",
+      "category": "format",
+      "location": ""辅路分享"列表项；"主路分享"列表项；"获取分享目标"章节",
+      "original": "您可以在调用`startScreenCapture`接口时，通过将`TRTCVideoStreamType`参数指定为`TRTCVideoStreamTypeSub`……通过`getScreenCaptureSources`可以枚举",
+      "description": "正文中多处行内代码 token 前后缺少空格，共 5 处以上。涉及"辅路分享"列表项中的 `startScreenCapture`、`TRTCVideoStreamType`、`TRTCVideoStreamTypeSub`；"主路分享"列表项中的相同问题；"获取分享目标"章节中的 `getScreenCaptureSources`。",
+      "suggestion": "批量在行内代码前后各添加一个空格，例如：您可以在调用 `startScreenCapture` 接口时，通过将 `TRTCVideoStreamType` 参数指定为 `TRTCVideoStreamTypeSub`……通过 `getScreenCaptureSources` 可以枚举。"
+    }
+  ]
+}

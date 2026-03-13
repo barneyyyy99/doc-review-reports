@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__iOS__115998184532062208.md",
+  "skill_id": "logic-review",
+  "rule_path": ".claude/skills/_shared/logic-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "LOGIC-001",
+      "type": "信息缺失",
+      "severity": "P1",
+      "category": "logic",
+      "location": "步骤3：中途开启和关闭系统声音",
+      "original": "SDK 提供了 TRTCCloud#setSystemAudioLoopbackVolume 方法对系统声音进行音量调节。当您不希望将系统声音输出时，可以将音量设置为0。",
+      "description": "`setSystemAudioLoopbackVolume` 的参数（取值范围、类型、单位）在正文中未说明，仅通过链接指向 API 文档。对于步骤说明类文档，在首次介绍核心调用时应在正文中简要说明关键参数，否则开发者需要跳转后才能确认如何使用。",
+      "suggestion": "在正文中补充参数说明，例如："`setSystemAudioLoopbackVolume` 接受一个整型参数，取值范围 0–100，其中 0 表示静音。当您不希望输出系统声音时，将其设置为 0。""
+    }
+  ]
+}

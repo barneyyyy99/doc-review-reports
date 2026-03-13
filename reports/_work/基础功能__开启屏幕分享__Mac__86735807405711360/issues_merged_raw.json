@@ -1,0 +1,24 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Mac__86735807405711360.md",
+  "executed_at": "2026-03-13",
+  "issues": [
+    {
+      "type": "代码块语言标记错误（批量）",
+      "severity": "P1",
+      "category": "code",
+      "location": "H2"开始屏幕分享"代码块；H2"观看屏幕分享"代码块",
+      "original": "```swift\n-(void)startScreenCapture:(NSView *)view;\n```\n\n```swift\n[self.trtcCloud startRemoteView:...]\n```",
+      "description": "两个代码块均标记为 `swift`，但实际内容为 Objective-C 语法（`-(void)` 方法声明、方括号消息发送语法等）。错误标记导致代码高亮失效。",
+      "suggestion": "将这两个代码块的语言标记由 `swift` 改为 `objective-c`。"
+    },
+    {
+      "type": "场景适配缺失",
+      "severity": "P1",
+      "category": "feature",
+      "location": "文档开头介绍辅路分享与主路分享章节",
+      "original": "辅路分享……主路分享……",
+      "description": "文档开头介绍了辅路分享和主路分享两种方案，并描述了各自特点，但未提供选择建议。开发者不清楚在哪种业务场景下应选择辅路还是主路，增加了决策成本。",
+      "suggestion": "补充场景选择说明：辅路分享适用于需要同时上传摄像头画面和屏幕画面的场景（如视频会议）；主路分享适用于纯屏幕展示、无需同时上传摄像头画面的场景。两者在主路通道上互斥，如选主路分享则摄像头画面将被替换。"
+    }
+  ]
+}

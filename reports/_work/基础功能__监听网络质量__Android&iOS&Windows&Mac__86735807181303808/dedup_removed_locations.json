@@ -1,0 +1,13 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__监听网络质量__Android&iOS&Windows&Mac__86735807181303808.md",
+  "dedup_removed_at": "2026-03-13",
+  "removed_count": 1,
+  "removed_issues": [
+    {
+      "id": "terms-001",
+      "type": "技术术语不一致",
+      "category": "terms",
+      "reason": "与 logic-001 描述同一个问题（正文"6个等级"与表格实际7个值不符），logic-001 优先级为 P0 更准确，已合并入 logic-001"
+    }
+  ]
+}

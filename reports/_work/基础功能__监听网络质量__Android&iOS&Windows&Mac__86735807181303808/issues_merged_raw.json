@@ -1,0 +1,13 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__监听网络质量__Android&iOS&Windows&Mac__86735807181303808.md",
+  "merged_at": "2026-03-13",
+  "total_before_dedup": 5,
+  "all_issues": [
+    {"id": "fmt-001", "type": "空格", "severity": "P2", "category": "format"},
+    {"id": "terms-001", "type": "技术术语不一致", "severity": "P2", "category": "terms"},
+    {"id": "logic-001", "type": "前后描述矛盾", "severity": "P0", "category": "logic"},
+    {"id": "code-001", "type": "API 拼写错误", "severity": "P0", "category": "code"},
+    {"id": "code-002", "type": "语法错误", "severity": "P0", "category": "code"},
+    {"id": "feat-001", "type": "核心 API 参数缺少说明", "severity": "P1", "category": "feature"}
+  ]
+}

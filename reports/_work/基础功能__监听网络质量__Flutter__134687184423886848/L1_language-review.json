@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__监听网络质量__Flutter__134687184423886848.md",
+  "skill_id": "language-review",
+  "rule_path": ".claude/skills/_shared/language-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "lang-001",
+      "type": "口语化",
+      "severity": "P2",
+      "category": "language",
+      "location": "调用指引 — 正文描述段落",
+      "original": "它会每隔两秒钟一次向您汇报当前的网络质量",
+      "description": ""每隔两秒钟一次"表达冗余，"一次"为口语化赘词，应删除",
+      "suggestion": "改为"它会每隔两秒向您汇报当前的网络质量""
+    }
+  ]
+}

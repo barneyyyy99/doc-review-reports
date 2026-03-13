@@ -1,0 +1,18 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__iOS__86735807331250176.md",
+  "skill_id": "code_review",
+  "rule_path": ".claude/skills/_shared/code_review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "代码块语言标记错误（批量）",
+      "severity": "P1",
+      "category": "code",
+      "location": "跨应用分享"步骤2" SampleHandler.m 代码块；"步骤3" startScreenCapture/stopScreenCapture 代码块；"步骤4" onScreenButtonTapped 代码块",
+      "original": "```swift\n@interface SampleHandler : RPBroadcastSampleHandler\n```\n\n```swift\n-(void)startScreenCaptureByReplaykit:...\n```\n\n```swift\n-(void)onScreenButtonTapped:...\n```",
+      "description": "三个代码块均标记为 `swift`，但内容为 Objective-C 语法（`@interface`、`-(void)`、`@implementation`、`[xxx method]` 等 ObjC 特征）。错误标记导致代码高亮失效，影响阅读体验。",
+      "suggestion": "将步骤2、步骤3、步骤4 的代码块语言标记由 `swift` 改为 `objective-c`。"
+    }
+  ]
+}

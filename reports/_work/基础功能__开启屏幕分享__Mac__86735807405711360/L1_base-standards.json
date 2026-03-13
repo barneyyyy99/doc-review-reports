@@ -1,0 +1,27 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Mac__86735807405711360.md",
+  "skill_id": "base_standards",
+  "rule_path": ".claude/skills/_shared/base_standards.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "代码示例完整性",
+      "severity": "P0",
+      "category": "base_standards",
+      "location": "开始屏幕分享 章节",
+      "original": "- (void)startScreenCapture:(NSView *)view;",
+      "description": "文档开头明确描述调用 startScreenCapture 时需要通过 TRTCVideoStreamType 参数指定辅路或主路模式，但代码块中展示的 API 签名只有 (NSView *)view 一个参数，缺少 TRTCVideoStreamType 参数。两处信息不一致，开发者无法确定正确的调用方式。",
+      "suggestion": "代码块应展示包含 TRTCVideoStreamType 参数的完整方法签名，例如 - (void)startScreenCapture:(TRTCVideoStreamType)type encParam:(TRTCVideoEncParam *)encParam view:(NSView *)view; 或补充正文说明 Mac 平台该方法的实际参数结构。"
+    },
+    {
+      "type": "代码块语言标记错误",
+      "severity": "P1",
+      "category": "base_standards",
+      "location": "开始屏幕分享 章节、观看屏幕分享 章节",
+      "original": "language=\"swift\"（两个代码块均标记为 swift）",
+      "description": "两个代码块（开始屏幕分享、观看屏幕分享）均标记为 swift，但代码内容使用 Objective-C 语法（`- (void)method:(Type *)param` 形式声明、`[object method:param]` 方括号调用语法），与 swift 语言不符。",
+      "suggestion": "将两个代码块的语言标记从 swift 改为 objc 或 objective-c。"
+    }
+  ]
+}

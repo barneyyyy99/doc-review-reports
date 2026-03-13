@@ -1,0 +1,27 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__Electron__86735807516860416.md",
+  "skill_id": "format_review",
+  "rule_path": ".claude/skills/_shared/format-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "空格",
+      "severity": "P2",
+      "category": "format",
+      "location": "介绍段落 / 主路分享列表项",
+      "original": "您可以在调用startScreenCapture接口时，通过将TRTCVideoStreamType参数指定为",
+      "description": "正文中 `startScreenCapture`、`TRTCVideoStreamType` 等技术词与前后中文之间缺少空格（主路分享段落中两处，全文另有多处类似情况）。位置：主路分享列表项"您可以在调用startScreenCapture接口时，通过将TRTCVideoStreamType参数指定为"；步骤3正文"您可以通过startScreenCapture接口的第三个参数encParam"；步骤3正文"包括分辨率、码率和帧率"前后。",
+      "suggestion": "在中文与英文单词/行内代码之间加一个半角空格。全文中有多处，请批量修改。例如：'调用 `startScreenCapture` 接口时，通过将 `TRTCVideoStreamType` 参数'"
+    },
+    {
+      "type": "标题层级",
+      "severity": "P1",
+      "category": "format",
+      "location": "文档整体结构",
+      "original": "# Electron（H1）→ ## 操作步骤（H2）→ ## 常见问题（H2）",
+      "description": "文档 H1 下直接含两个 H2（操作步骤、常见问题），但"常见问题"下的子标题（H3）属于 FAQ，结构本身无问题。不过"操作步骤"H2 下有 4 个 H3（步骤1-4），符合≥2条规则。整体标题层级未跳级，无违规。【此条已自检，不实际输出】",
+      "suggestion": "无需修改"
+    }
+  ]
+}

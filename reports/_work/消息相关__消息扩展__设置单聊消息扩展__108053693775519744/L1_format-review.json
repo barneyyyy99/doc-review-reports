@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/消息相关__消息扩展__设置单聊消息扩展__108053693775519744.md",
+  "skill_id": "format-review",
+  "rule_path": ".claude/skills/_shared/format-review.md",
+  "executed_at": "2026-03-12T00:00:00Z",
+  "status": "done",
+  "issues": [
+    {
+      "id": "doc4-fmt-001",
+      "category": "format_issues",
+      "type": "中英文之间缺少空格",
+      "location": "接口调用说明 > 请求参数说明表格 > contenttype 行",
+      "original": "请求格式固定值为json",
+      "issue": "\"固定值为json\" 中 \"为\" 与 \"json\" 之间缺少空格，且写法与同系列其他文档（如 Doc2/3 中写作「固定值为：json」）不一致，当前写法也缺少分隔符号",
+      "suggestion": "改为「请求格式固定值为：json」（与其他文档写法保持一致）",
+      "severity": "P2"
+    }
+  ]
+}

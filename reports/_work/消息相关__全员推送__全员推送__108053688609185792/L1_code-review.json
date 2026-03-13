@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/消息相关__全员推送__全员推送__108053688609185792.md",
+  "skill_id": "code-review",
+  "rule_path": ".claude/skills/_shared/code-review.md",
+  "executed_at": "2026-03-12T00:00:00Z",
+  "status": "done",
+  "issues": [
+    {
+      "id": "doc1-code-001",
+      "category": "code_issues",
+      "type": "JSON 代码块内含非法注释",
+      "location": "请求包示例 > 第3个示例（设置离线推送信息）",
+      "original": "\"BadgeMode\": 1, // 这个字段缺省或者为 0 表示需要计数，为 1 表示本条消息不需要计数，即右上角图标数字不增加\n\"Title\":\"apns title\", // apns title\n\"SubTitle\":\"apns subtitle\", // apns subtitle\n\"Image\":\"www.image.com\" // image url",
+      "issue": "JSON 格式不支持 `//` 行注释，代码块中出现了多处 `// ...` 注释，该 JSON 示例无法直接解析，会导致开发者复制使用时报错",
+      "suggestion": "将注释移到代码块外部作为文字说明，或改用 JSON5/JSONC 注明语言标记；若必须在代码块内保留说明，可将注释改写为独立的字段说明表格",
+      "severity": "P1"
+    }
+  ]
+}

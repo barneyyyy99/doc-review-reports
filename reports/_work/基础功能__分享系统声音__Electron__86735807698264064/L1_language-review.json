@@ -1,0 +1,18 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Electron__86735807698264064.md",
+  "skill_id": "language_review",
+  "rule_path": ".claude/skills/_shared/language-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "简洁性",
+      "severity": "P2",
+      "category": "language",
+      "location": "步骤1、步骤2、步骤3 正文描述",
+      "original": "在您的代码中调用 startSystemAudioLoopback 接口……；在您的代码中调用 stopSystemAudioLoopback 接口……；在您的代码中调用 setSystemAudioLoopbackVolume 接口……",
+      "description": ""在您的代码中"属于冗余修饰，开发者文档的默认读者即为开发者，无需显式强调。全文3处均出现此表达。",
+      "suggestion": "将"在您的代码中调用 X 接口"改为"调用 X 接口"，全文共3处，请批量修改。"
+    }
+  ]
+}

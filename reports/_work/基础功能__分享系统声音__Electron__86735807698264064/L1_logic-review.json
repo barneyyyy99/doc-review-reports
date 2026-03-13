@@ -1,0 +1,27 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Electron__86735807698264064.md",
+  "skill_id": "logic_review",
+  "rule_path": ".claude/skills/_shared/logic-review.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "type": "信息缺失",
+      "severity": "P1",
+      "category": "logic",
+      "location": "步骤3：设置系统声音采集音量",
+      "original": "trtcCloud.setSystemAudioLoopbackVolume(60);",
+      "description": "setSystemAudioLoopbackVolume 的参数值 60 仅在代码中出现，正文无任何说明：参数含义（音量值）、取值范围（如 0-100）均未在正文中说明，用户无法知道合法取值范围。",
+      "suggestion": "在调用示例前补充说明，例如："调用 setSystemAudioLoopbackVolume 接口设置系统声音的采集音量，参数范围为 0~100，默认值为 100。""
+    },
+    {
+      "type": "信息缺失",
+      "severity": "P1",
+      "category": "logic",
+      "location": "场景痛点及解决方案 / 全文",
+      "original": "具体接入步骤见下文。",
+      "description": "文档说明该功能仅适用于 Mac 端，但未说明 Windows 端是否同样适用，也未说明 Electron for Windows 的情况。开发者使用 Electron 同时面向 Mac 和 Windows 时，不清楚该功能是否对 Windows 生效。",
+      "suggestion": "在场景说明中明确该功能的平台限制，例如：'本功能仅适用于 Mac 端，Windows 系统无需安装虚拟声卡插件，可直接采集系统音频（或说明不支持）。'"
+    }
+  ]
+}

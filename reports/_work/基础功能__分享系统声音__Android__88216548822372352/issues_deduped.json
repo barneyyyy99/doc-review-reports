@@ -1,0 +1,29 @@
+[
+  {
+    "type": "标题层级",
+    "severity": "P1",
+    "category": "format",
+    "location": "H2「调用指引」",
+    "original": "## 调用指引\n### 开启分享系统声音",
+    "description": "「调用指引」（H2）下只有一个子章节「开启分享系统声音」（H3），违反"一个标题下至少需要有两个子章节"规范，形成孤儿章节。",
+    "suggestion": "若后续无其他 H3 子章节计划补充，可将「调用指引」H2 层级移除，直接以「开启分享系统声音」作为顶层章节；或补充其他并列子章节（如「注意事项」等）。"
+  },
+  {
+    "type": "标题规范",
+    "severity": "P1",
+    "category": "language",
+    "location": "H3「开启分享系统声音」",
+    "original": "### 开启分享系统声音",
+    "description": "H3「开启分享系统声音」标题下的三个步骤既包含「开启」（步骤1、步骤2）也包含「关闭」（步骤3），标题与内容不匹配，容易误导读者以为该章节只介绍开启流程。",
+    "suggestion": "将 H3 标题改为「分享系统声音」或「开启和关闭分享系统声音」，以准确反映章节内容范围。"
+  },
+  {
+    "type": "回调处理缺失",
+    "severity": "P1",
+    "category": "feature",
+    "location": "步骤2：开启分享系统声音",
+    "original": "调用 TRTCCloud 中的 startSystemAudioLoopback 接口即可，这时候采集的系统声音会自动混入上行流中。",
+    "description": "文档未说明 startSystemAudioLoopback 的调用结果如何确认（成功/失败），开发者无法感知接口调用是否成功，也不知道是否有错误回调或返回值。",
+    "suggestion": "补充说明接口是否有返回值或对应的结果回调（如 onSystemAudioLoopbackError 等），指明开发者如何判断开启是否成功；若该接口为同步无返回值，请明确说明。"
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__开启屏幕分享__uni-app__86735807589199872.md",
+  "label": "feature",
+  "business_skill_id": "review-feature",
+  "rule_path": ".claude/skills/review-feature/SKILL.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "feat-001",
+      "type": "时序流程不完整",
+      "severity": "P1",
+      "category": "feature",
+      "location": "开启屏幕分享 章节",
+      "original_description": "代码直接调用 startScreenCapture，无前置条件说明",
+      "description": "文档直接展示调用 startScreenCapture 的示例代码，但未说明开启屏幕分享的前置条件（如需要先进入 TRTC 房间），也没有引用说明前置条件的文档链接。如果用户在未进房的情况下调用，可能无法生效",
+      "suggestion": "在"开启屏幕分享"章节开头补充前置条件说明，例如："调用本接口前，请确保已完成 TRTC 进房操作（参考 [快速开始](链接)）。""
+    },
+    {
+      "id": "feat-002",
+      "type": "时序流程不完整",
+      "severity": "P1",
+      "category": "feature",
+      "location": "全文",
+      "original_description": "文档没有介绍如何停止屏幕分享",
+      "description": "文档介绍了如何开启屏幕分享，但缺少对应的停止屏幕分享接口说明（stopScreenCapture 或等效接口），生命周期不完整。开发者无法通过本文档完成完整的屏幕分享功能闭环",
+      "suggestion": "增加"停止屏幕分享"章节，说明调用 stopScreenCapture 接口的时机和方法"
+    }
+  ]
+}

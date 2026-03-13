@@ -1,0 +1,19 @@
+{
+  "doc_path": "input-docs/batch_001/消息相关__全员推送__全员推送__108053688609185792.md",
+  "skill_id": "terms-review",
+  "rule_path": ".claude/skills/_shared/terms-review.md",
+  "executed_at": "2026-03-12T00:00:00Z",
+  "status": "done",
+  "issues": [
+    {
+      "id": "doc1-terms-001",
+      "category": "terms_issues",
+      "type": "产品名称不一致",
+      "location": "功能说明 > HINT 块",
+      "original": "\"全员推送\"为 IM 专业版、专业版Plus或企业版功能",
+      "issue": "HINT 块中使用了 \"IM 专业版\"，而同系列其他文档（删除用户所有标签、删除用户标签、设置单聊消息扩展等）均使用 \"Chat 专业版\"",
+      "suggestion": "统一改为 \"Chat 专业版\"（与同系列文档一致），或确认是否有意区分，需统一写法",
+      "severity": "P1"
+    }
+  ]
+}

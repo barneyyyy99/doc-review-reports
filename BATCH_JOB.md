@@ -1,11 +1,13 @@
-# BATCH JOB - Dynamic Input Mode
+# BATCH JOB - Dynamic Input Mode (Feature Fixed Mode)
 
 ## 当前任务模式
 
-本任务为**动态输入模式**。
+本任务为**动态输入模式 + 固定 feature 审查模式**。
 
 Claude Code 不应在本文件中预设固定的目标文件夹。  
 本次审查的目标文件或目标目录，必须从**用户当前输入**中读取。
+
+**所有输入文档固定按 `feature` 类型处理，不再执行分类判断。**
 
 允许的用户输入形式包括但不限于：
 
@@ -76,12 +78,6 @@ Claude Code 不应在本文件中预设固定的目标文件夹。
 - 输入 `input-docs/batch_001/017_xxx.md`  
   -> 输出到 `reports_final/batch_001/`
 
-当第一轮报告文件已成功生成并写入目标目录后，执行：
-`bash scripts/publish_reports.sh main "update round1 review reports"`
-
-若无文件变更，则跳过提交与推送。
-若推送失败，保留本地生成结果并输出失败原因。
-
 ---
 
 ## 本批次必须先读取的文件
@@ -96,11 +92,12 @@ Claude Code 不应在本文件中预设固定的目标文件夹。
 6. `.claude/skills/_shared/terms-review.md`
 7. `.claude/skills/_shared/logic-review.md`
 8. `.claude/skills/_shared/code-review.md`
+9. `.claude/skills/review-feature/SKILL.md`
 
 在生成最终报告前，必须使用：
 
-9. `.claude/skills/_shared/generate-review-report/`
-10. `.claude/skills/_shared/check-review-report/`
+10. `.claude/skills/_shared/generate-review-report/`
+11. `.claude/skills/_shared/check-review-report/`
 
 ---
 
@@ -110,13 +107,14 @@ Claude Code 不应在本文件中预设固定的目标文件夹。
 
 1. 读取文档内容
 2. 执行全部 7 个 L1 共享技能
-3. 生成 `L2_classification.json`
-4. 只执行一个匹配的业务 Skill
-5. 聚合全部 issues
+3. 执行固定的 L2 feature 业务技能
+4. 聚合全部 issues
+5. 生成 `issues_merged_raw.json`
 6. 生成 `issues_deduped.json`
 7. 生成最终报告
 8. 执行报告后二次去重检查
 9. 写入运行日志
+10. 执行发布脚本
 
 ---
 
@@ -133,11 +131,14 @@ Claude Code 不应在本文件中预设固定的目标文件夹。
 - `logic-review.md`
 - `code-review.md`
 
-### 2. 每篇文档只允许一个 L2 标签
-- api
-- demo
-- integration
-- feature
+### 2. 固定执行 feature 业务审查
+每篇文档固定执行：
+- `review-feature/SKILL.md`
+
+禁止：
+- 分类
+- 选择其他业务 Skill
+- 同时执行多个业务 Skill
 
 ### 3. 不允许直接生成最终报告
 必须先有以下中间文件：
@@ -149,8 +150,8 @@ Claude Code 不应在本文件中预设固定的目标文件夹。
 - `L1_terms-review.json`
 - `L1_logic-review.json`
 - `L1_code-review.json`
-- `L2_classification.json`
 - `L2_business-review.json`
+- `issues_merged_raw.json`
 - `issues_deduped.json`
 
 缺任一文件，禁止输出最终报告。
@@ -165,6 +166,47 @@ Claude Code 不应在本文件中预设固定的目标文件夹。
 - 必须继续处理下一篇
 - 不允许不留痕迹直接跳过
 
+### 6. 固定 feature 语境
+即使文档中包含：
+- 接口片段
+- 参数表
+- 示例代码
+- 局部接入步骤
+
+也仍然按 feature 审查，不得切换到其他类型逻辑。
+
+---
+
+## 运行产物要求
+
+### 每篇文档必须生成
+- `reports/_work/<doc_basename>/L1_base-standards.json`
+- `reports/_work/<doc_basename>/L1_severity-standards.json`
+- `reports/_work/<doc_basename>/L1_format-review.json`
+- `reports/_work/<doc_basename>/L1_language-review.json`
+- `reports/_work/<doc_basename>/L1_terms-review.json`
+- `reports/_work/<doc_basename>/L1_logic-review.json`
+- `reports/_work/<doc_basename>/L1_code-review.json`
+- `reports/_work/<doc_basename>/L2_business-review.json`
+- `reports/_work/<doc_basename>/issues_merged_raw.json`
+- `reports/_work/<doc_basename>/issues_deduped.json`
+- `reports/_work/<doc_basename>/dedup_removed_locations.json`
+
+### 每篇成功文档必须生成
+- `reports_final/<target_name>/<doc_basename>-review.md`
+
+---
+
+## 发布规则
+
+当第一轮报告文件已成功生成并写入目标目录后，执行：
+
+`bash scripts/publish_reports.sh main "update round1 review reports"`
+
+若无文件变更，则跳过提交与推送。  
+若推送失败，保留本地生成结果并输出失败原因。  
+发布动作必须记录到 `reports/_meta/run_log.md`。
+
 ---
 
 ## 完成标准
@@ -176,7 +218,7 @@ Claude Code 不应在本文件中预设固定的目标文件夹。
 3. 所有成功文档的最终报告均位于对应的 `reports_final/<target_name>/`
 4. `reports/_meta/run_log.md` 中存在每篇文档的处理结果
 5. 没有“未执行全部 L1 但仍生成报告”的情况
-6. 没有“执行多个 L2 业务技能”的情况
+6. 没有“未执行 L2 feature 业务技能却仍生成报告”的情况
 7. 没有“报告中重复问题未删除”的情况
 
 ---
@@ -191,6 +233,11 @@ Claude Code 不应在本文件中预设固定的目标文件夹。
 - `missing_files`（如有）
 - `next_action`
 
+如涉及发布失败，额外记录：
+- `publish_attempted`
+- `publish_status`
+- `publish_error`
+
 ---
 
 ## 小规模验证建议
@@ -199,9 +246,10 @@ Claude Code 不应在本文件中预设固定的目标文件夹。
 
 1. 先处理其中 1 篇文档
 2. 检查 `reports/_work/<doc_basename>/` 是否真的生成了全部 L1 证据文件
-3. 检查是否生成了 `L2_classification.json`
+3. 检查是否生成了 `L2_business-review.json`
 4. 检查是否生成了 `issues_deduped.json`
-5. 确认无误后再处理整个目录
+5. 检查是否生成了最终报告
+6. 确认无误后再处理整个目录
 
 ---
 
@@ -221,3 +269,13 @@ Claude Code 不应在本文件中预设固定的目标文件夹。
 也可使用：
 
 - `Read CLAUDE.md and BATCH_JOB.md first, then run review for <路径>.`
+
+---
+
+## 核心执行心智
+
+本批任务的执行原则只有一句话：
+
+> **所有输入文档固定走 feature 审查链路；完整生成证据文件、聚合去重、输出报告、校验报告、记录日志、自动发布。**
+
+禁止分类，禁止跳步，禁止绕过中间产物直接生成最终报告。

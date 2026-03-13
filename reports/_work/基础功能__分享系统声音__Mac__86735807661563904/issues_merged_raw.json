@@ -1,0 +1,57 @@
+{
+  "doc_path": "input-docs/batch_001/基础功能__分享系统声音__Mac__86735807661563904.md",
+  "executed_at": "2026-03-13",
+  "status": "completed",
+  "issues": [
+    {
+      "id": "issue-001",
+      "type": "链接错误",
+      "severity": "P0",
+      "category": "format",
+      "location": "步骤4：开始系统声音采集 / 步骤5：停止系统声音采集 / 步骤6：设置系统声音采集音量",
+      "original": "stopSystemAudioLoopback、setSystemAudioLoopbackVolume 的超链接 URL 与 startSystemAudioLoopback 完全相同（均为 #a2979e32c019708dcc9209bb6d2db9486）；所有 API 链接指向 iOS API 路径（group__TRTCCloud__ios / group__TRTCCloudDelegate__ios）",
+      "description": "1) stopSystemAudioLoopback 和 setSystemAudioLoopbackVolume 的超链接 URL 与 startSystemAudioLoopback 完全相同，链接文案与目标内容完全不符，明显是复制粘贴错误。2) 步骤4、5、6 的所有 API 链接路径均指向 iOS API 文档，但本文档为 Mac 文档，应指向 Mac API 文档。",
+      "suggestion": "分别为 stopSystemAudioLoopback、setSystemAudioLoopbackVolume、onSystemAudioLoopbackError 补充对应的正确 Mac API 文档链接，不得沿用 startSystemAudioLoopback 或 iOS 的 API URL。"
+    },
+    {
+      "id": "issue-002",
+      "type": "前后描述矛盾",
+      "severity": "P0",
+      "category": "logic",
+      "location": "步骤4：开始系统声音采集",
+      "original": "接口执行完成会通过 onSystemAudioLoopbackError 回调成功或失败的结果。",
+      "description": "onSystemAudioLoopbackError 从命名来看是错误回调，不应同时回调成功结果。正文描述与 API 命名存在矛盾，开发者无法判断成功时是否也会触发此回调。",
+      "suggestion": "若该回调仅在失败时触发，应将正文改为"接口执行失败时，会通过 onSystemAudioLoopbackError 回调错误信息"；若同时回调成功，请补充说明成功时的回调参数（如错误码为 0 表示成功）。"
+    },
+    {
+      "id": "issue-003",
+      "type": "代码块语言标记错误",
+      "severity": "P1",
+      "category": "code",
+      "location": "步骤4：开始系统声音采集、步骤5：停止系统声音采集、步骤6：设置系统声音采集音量",
+      "original": "三处代码块均标记为 language=\"swift\"，但代码内容使用 Objective-C 方括号消息发送语法",
+      "description": "代码块声明的语言为 swift，但实际内容全部是 Objective-C 语法，导致语法高亮错误，影响阅读体验。",
+      "suggestion": "将三处代码块的语言标记从 swift 改为 objc（或 objective-c）。"
+    },
+    {
+      "id": "issue-004",
+      "type": "核心 API 参数缺少说明",
+      "severity": "P1",
+      "category": "feature",
+      "location": "步骤6：设置系统声音采集音量",
+      "original_description": "调用 setSystemAudioLoopbackVolume 接口设置系统声音的采集音量。代码示例：[trtcCloud setSystemAudioLoopbackVolume:80];",
+      "description": "setSystemAudioLoopbackVolume 的参数（音量值）未在正文中说明类型、取值范围和默认值，开发者无法判断合法输入。",
+      "suggestion": "在步骤6正文中补充参数说明，如：'参数为整数，取值范围 0-100，0 为静音，100 为原始采集音量，默认值为 [XX]。'"
+    },
+    {
+      "id": "issue-005",
+      "type": "空格",
+      "severity": "P2",
+      "category": "format",
+      "location": "步骤1：集成 TRTCPrivilegedTask 库 > 手动集成 > 第3步",
+      "original": "展开Link Binary With Libraries 项",
+      "description": "中文"展开"与英文"Link"之间缺少空格。",
+      "suggestion": "改为"展开 Link Binary With Libraries 项""
+    }
+  ]
+}
